@@ -227,11 +227,11 @@ button.danger:hover {
   color: var(--warning);
 }
 
-.question-nav {
+#question-navigation {
   display: none;
 }
 
-.question-nav button {
+#question-navigation button {
   width: 40px;
   height: 40px;
   padding: 0;
@@ -241,24 +241,24 @@ button.danger:hover {
   border: 1px solid var(--border);
 }
 
-.question-nav button.answered {
+#question-navigation button.answered {
   background: var(--bg);
   border-color: var(--primary);
 }
 
-.question-nav button.correct {
+#question-navigation button.correct {
   background: var(--correct);
   color: white;
   border-color: var(--correct);
 }
 
-.question-nav button.incorrect {
+#question-navigation button.incorrect {
   background: var(--incorrect);
   color: white;
   border-color: var(--incorrect);
 }
 
-.question-nav button.active {
+#question-navigation button.active {
   border-width: 2px;
 }
 
@@ -568,11 +568,11 @@ button.danger:hover {
     padding: 14px;
   }
 
-  .question-nav {
+  #question-navigation {
     gap: 6px;
   }
 
-  .question-nav button {
+  #question-navigation button {
     width: 32px;
     height: 32px;
     font-size: 0.75rem;
