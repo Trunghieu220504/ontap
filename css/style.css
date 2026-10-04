@@ -1,8 +1,8 @@
 :root {
   --primary: #6186dd;
   --primary-hover: #6683da;
-  --correct: #16a34a;
-  --incorrect: #dc2626;
+  --correct: #26af58;
+  --incorrect: #c43535;
   --warning: #f59e0b;
   --text: #1f2937;
   --text-light: #6b7280;
@@ -304,12 +304,12 @@ button.danger:hover {
 
 .option.correct {
   border-color: var(--correct);
-  background: #f0fdf4;
+  background: rgba(38, 175, 88, 0.25);
 }
 
 .option.incorrect {
   border-color: var(--incorrect);
-  background: #fef2f2;
+  background: rgba(196, 53, 53, 0.18);
 }
 
 .option.disabled {
