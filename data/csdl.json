@@ -1,0 +1,3542 @@
+{
+  "id": "csdl",
+  "name": "Cơ sở dữ liệu nâng cao",
+  "chapters": [
+    {
+      "id": 1,
+      "name": "Giới thiệu hệ quản trị CSDL MS SQL Server"
+    },
+    {
+      "id": 2,
+      "name": "Tạo CSDL quan hệ & Ngôn ngữ truy vấn T-SQL"
+    },
+    {
+      "id": 3,
+      "name": "Làm việc với kiểu dữ liệu và mã kịch bản"
+    },
+    {
+      "id": 4,
+      "name": "Stored Procedure & Giao dịch"
+    },
+    {
+      "id": 5,
+      "name": "Hàm người dùng định nghĩa, View & Trigger"
+    }
+  ],
+  "questions": [
+    {
+      "id": "csdl-001",
+      "chapter": 1,
+      "text": "Theo slide, cơ sở dữ liệu là gì?",
+      "options": [
+        "Một tập hợp dữ liệu được tổ chức sao cho nội dung dễ dàng được truy cập, quản lý và cập nhật",
+        "Một ngôn ngữ dùng để truy vấn dữ liệu",
+        "Một phần mềm dùng để viết chương trình ứng dụng",
+        "Một tập tin văn bản chứa các bản ghi rời rạc"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 1.2: CSDL là tập hợp dữ liệu được tổ chức để dễ truy cập, quản lý, cập nhật."
+    },
+    {
+      "id": "csdl-002",
+      "chapter": 1,
+      "text": "Khi các dữ liệu được tập hợp và phân tích thì sinh ra điều gì?",
+      "options": [
+        "Bản sao lưu",
+        "Bảng",
+        "Thông tin",
+        "Khóa chính"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 1.2: dữ liệu được tập hợp và phân tích sẽ sinh ra thông tin."
+    },
+    {
+      "id": "csdl-003",
+      "chapter": 1,
+      "text": "Nhược điểm nào KHÔNG thuộc về hệ thống dựa trên tập tin (File-based system)?",
+      "options": [
+        "Giảm thiểu sự dư thừa của dữ liệu được lưu trữ",
+        "Cô lập dữ liệu",
+        "Dị thường khi nhiều người đồng thời truy cập dữ liệu",
+        "Dữ liệu dư thừa và không nhất quán"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Giảm dư thừa dữ liệu là ưu điểm của hệ cơ sở dữ liệu."
+    },
+    {
+      "id": "csdl-004",
+      "chapter": 1,
+      "text": "Một khách hàng vừa có tài khoản tiết kiệm vừa có khoản vay thế chấp, thông tin khách hàng bị lưu trùng ở hai tập tin khác nhau. Đây là nhược điểm nào của hệ thống dựa trên tập tin?",
+      "options": [
+        "Các vấn đề bảo mật",
+        "Dữ liệu dư thừa và không nhất quán",
+        "Cô lập dữ liệu",
+        "Những truy vấn bất ngờ"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 1.3.1: ví dụ khách hàng có tài khoản tiết kiệm và khoản vay."
+    },
+    {
+      "id": "csdl-005",
+      "chapter": 1,
+      "text": "Nhân viên ngân hàng cần danh sách khách hàng có số dư tài khoản trên 20000$ nhưng hệ thống tập tin không hỗ trợ sẵn. Đây là nhược điểm nào?",
+      "options": [
+        "Các vấn đề toàn vẹn",
+        "Dị thường khi truy cập đồng thời",
+        "Dữ liệu dư thừa",
+        "Những truy vấn bất ngờ"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.3.1: nhược điểm 'Những truy vấn bất ngờ'."
+    },
+    {
+      "id": "csdl-006",
+      "chapter": 1,
+      "text": "Dữ liệu phân tán trên nhiều tập tin với các định dạng khác nhau, dù các chương trình có liên quan. Đây là nhược điểm nào?",
+      "options": [
+        "Dư thừa dữ liệu",
+        "Dị thường truy cập đồng thời",
+        "Cô lập dữ liệu",
+        "Truy vấn bất ngờ"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 1.3.1: nhược điểm 'Cô lập dữ liệu'."
+    },
+    {
+      "id": "csdl-007",
+      "chapter": 1,
+      "text": "Ưu điểm nào sau đây là của hệ cơ sở dữ liệu so với hệ thống dựa trên tập tin?",
+      "options": [
+        "Dữ liệu được lưu trong các tập tin rời rạc trên từng máy",
+        "Không cần quan tâm đến phân quyền",
+        "Dữ liệu lưu trữ có thể chia sẻ, các chuẩn có thể được thiết lập và tuân thủ",
+        "Mỗi phòng ban tự lưu bản dữ liệu riêng"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 1.3.2: các ưu điểm của hệ CSDL."
+    },
+    {
+      "id": "csdl-008",
+      "chapter": 1,
+      "text": "Hệ cơ sở dữ liệu phát triển vào thời gian nào?",
+      "options": [
+        "Cuối những năm 1960",
+        "Năm 2012",
+        "Đầu những năm 2000",
+        "Cuối những năm 1980"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 1.3.2."
+    },
+    {
+      "id": "csdl-009",
+      "chapter": 1,
+      "text": "Chức năng nào của DBMS cung cấp các hàm để thêm, thay đổi, xóa dữ liệu?",
+      "options": [
+        "Thao tác dữ liệu",
+        "Hiệu năng",
+        "Định nghĩa dữ liệu",
+        "Lưu trữ dữ liệu"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 1.4: Thao tác dữ liệu."
+    },
+    {
+      "id": "csdl-010",
+      "chapter": 1,
+      "text": "Chức năng nào của DBMS cho phép định nghĩa cấu trúc bản ghi, kiểu và kích cỡ của trường, các ràng buộc?",
+      "options": [
+        "Điều khiển đa truy cập",
+        "Thao tác dữ liệu",
+        "Định nghĩa dữ liệu",
+        "Phục hồi dữ liệu"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 1.4: Định nghĩa dữ liệu."
+    },
+    {
+      "id": "csdl-011",
+      "chapter": 1,
+      "text": "Ngôn ngữ vấn tin được sử dụng rộng rãi nhất trong các hệ quản trị CSDL là gì?",
+      "options": [
+        "HTML",
+        "SQL",
+        "OLAP",
+        "XML"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-012",
+      "chapter": 1,
+      "text": "Trong CSDL quan hệ, cơ sở dữ liệu được chia thành các đơn vị logic gọi là gì?",
+      "options": [
+        "Tệp",
+        "Thủ tục",
+        "Chỉ mục",
+        "Bảng"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-013",
+      "chapter": 1,
+      "text": "Trong mô hình quan hệ, một bảng còn được gọi là gì; hàng và cột lần lượt được gọi là gì?",
+      "options": [
+        "Thuộc tính; bản ghi và trường",
+        "Thực thể; cột và hàng",
+        "Bộ; thuộc tính và quan hệ",
+        "Quan hệ; bộ (tuple) và thuộc tính"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5.3: bảng = quan hệ, hàng = bộ dữ liệu, cột = thuộc tính."
+    },
+    {
+      "id": "csdl-014",
+      "chapter": 1,
+      "text": "Phát biểu nào về đặc tính của bảng là SAI?",
+      "options": [
+        "Tất cả các giá trị trong một cột phải có cùng định dạng dữ liệu",
+        "Mỗi giao nhau của hàng với cột biểu diễn một giá trị dữ liệu duy nhất",
+        "Mỗi cột có một tên riêng biệt",
+        "Thứ tự của các hàng và cột là quan trọng trong một DBMS"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5.3: thứ tự hàng và cột là KHÔNG quan trọng."
+    },
+    {
+      "id": "csdl-015",
+      "chapter": 1,
+      "text": "Mỗi bảng phải có một khóa (khóa chính) để làm gì?",
+      "options": [
+        "Sắp xếp các cột theo thứ tự",
+        "Tăng dung lượng lưu trữ",
+        "Che dấu dữ liệu quan trọng",
+        "Xác định duy nhất mỗi hàng"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5.3."
+    },
+    {
+      "id": "csdl-016",
+      "chapter": 1,
+      "text": "Ai chịu trách nhiệm cho phép truy cập CSDL, phối hợp giám sát việc sử dụng, mua phần mềm/phần cứng khi cần và xử lý các vi phạm bảo mật?",
+      "options": [
+        "DBMS Designer",
+        "DBA (Người quản trị cơ sở dữ liệu)",
+        "Database Designer",
+        "End User"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5.2."
+    },
+    {
+      "id": "csdl-017",
+      "chapter": 1,
+      "text": "Ai chịu trách nhiệm nhận diện dữ liệu cần lưu trữ và lựa chọn cấu trúc phù hợp để biểu diễn dữ liệu đó?",
+      "options": [
+        "DBA",
+        "End User",
+        "Nhà lập trình ứng dụng",
+        "Người thiết kế cơ sở dữ liệu (Database Designer)"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 1.5.2."
+    },
+    {
+      "id": "csdl-018",
+      "chapter": 1,
+      "text": "SQL Server là sản phẩm của hãng nào và hoạt động theo mô hình nào?",
+      "options": [
+        "Microsoft; mô hình khách chủ (client-server)",
+        "Microsoft; mô hình dựa trên tập tin",
+        "IBM; mô hình khách chủ",
+        "Oracle; mô hình tập trung đơn máy"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 2.1."
+    },
+    {
+      "id": "csdl-019",
+      "chapter": 1,
+      "text": "Phiên bản đầu tiên của SQL Server được phát hành vào năm nào?",
+      "options": [
+        "1989",
+        "1998",
+        "2000",
+        "1991"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 2.2: SQL Server 1.0 – 1989."
+    },
+    {
+      "id": "csdl-020",
+      "chapter": 1,
+      "text": "Ấn bản nào của SQL Server 2012 là ấn bản miễn phí?",
+      "options": [
+        "Developer",
+        "Express",
+        "Standard",
+        "Enterprise"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-021",
+      "chapter": 1,
+      "text": "Ấn bản nào của SQL Server 2012 được dùng riêng bởi lập trình viên cho phát triển, testing và minh họa?",
+      "options": [
+        "Express",
+        "Web",
+        "Standard",
+        "Developer"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-022",
+      "chapter": 1,
+      "text": "Ấn bản nào lần đầu tiên được giới thiệu trong SQL Server 2012?",
+      "options": [
+        "Business Intelligence",
+        "Web",
+        "Enterprise",
+        "Standard"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-023",
+      "chapter": 1,
+      "text": "Công cụ dòng lệnh có thể dùng thay cho SSMS là gì?",
+      "options": [
+        "SQL Server Installation Center",
+        "SQLCMD",
+        "SQL Server Data Tools",
+        "SQL Server Profiler"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 2.3.1."
+    },
+    {
+      "id": "csdl-024",
+      "chapter": 1,
+      "text": "Công cụ nào dùng để khởi động/dừng máy CSDL, đổi chế độ khởi động dịch vụ và kích hoạt kết nối từ xa?",
+      "options": [
+        "SQLCMD",
+        "SQL Server Profiler",
+        "SQL Server Management Studio",
+        "SQL Server Configuration Manager"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-025",
+      "chapter": 1,
+      "text": "Chế độ khởi động (Start Mode) nào làm dịch vụ tự động chạy mỗi khi khởi động máy tính?",
+      "options": [
+        "Disabled",
+        "Manual",
+        "Automatic",
+        "Remote"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-026",
+      "chapter": 1,
+      "text": "Dịch vụ cốt lõi của SQL Server dùng để lưu trữ, xử lý và bảo mật dữ liệu là gì?",
+      "options": [
+        "SQL Server Database Engine",
+        "SQL Server Master Data Services",
+        "SQL Server Reporting Services",
+        "SQL Server Analysis Services"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 2.3.2."
+    },
+    {
+      "id": "csdl-027",
+      "chapter": 1,
+      "text": "Dịch vụ nào dùng để di chuyển, sao chép và chuyển đổi dữ liệu bằng công cụ đồ họa?",
+      "options": [
+        "SQL Server Integration Services",
+        "SQL Server Analysis Services",
+        "SQL Server Reporting Services",
+        "SQL Server Database Engine"
+      ],
+      "answer": 0,
+      "hint": "Chương I",
+      "explanation": "Slide 2.3.2."
+    },
+    {
+      "id": "csdl-028",
+      "chapter": 1,
+      "text": "Dịch vụ nào chứa các công cụ giúp tạo và quản lý OLAP?",
+      "options": [
+        "SQL Server Reporting Services",
+        "SQL Server Integration Services",
+        "SQL Server Analysis Services",
+        "SQL Server Master Data Services"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 2.3.2."
+    },
+    {
+      "id": "csdl-029",
+      "chapter": 1,
+      "text": "Hai kiểu xác thực khi kết nối tới SQL Server trong Management Studio là gì?",
+      "options": [
+        "Windows Authentication và Oracle Authentication",
+        "Windows Authentication và SQL Server Authentication",
+        "Local Authentication và Remote Authentication",
+        "Password Authentication và Key Authentication"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-030",
+      "chapter": 1,
+      "text": "Khi attach CSDL, hai loại file chính là gì?",
+      "options": [
+        ".sql (file dữ liệu) và .mdf (file log)",
+        ".mdf (file dữ liệu) và .ldf (file log)",
+        ".mdf (file log) và .ldf (file dữ liệu)",
+        ".ldf (file dữ liệu) và .sql (file log)"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.1."
+    },
+    {
+      "id": "csdl-031",
+      "chapter": 1,
+      "text": "Để di chuyển file CSDL đang được attach sang vị trí mới, cần làm thế nào?",
+      "options": [
+        "Dừng dịch vụ SQL Server rồi đổi tên file",
+        "Xóa CSDL rồi tạo lại",
+        "Di chuyển file trực tiếp khi CSDL đang attach",
+        "Detach CSDL, di chuyển file, sau đó attach lại"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.3."
+    },
+    {
+      "id": "csdl-032",
+      "chapter": 1,
+      "text": "Trong Query Editor, phím nào dùng để thực thi lệnh?",
+      "options": [
+        "Alt + mũi tên phải",
+        "Esc",
+        "F5",
+        "F1"
+      ],
+      "answer": 2,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.5: thực thi lệnh bằng nút Execute hoặc F5."
+    },
+    {
+      "id": "csdl-033",
+      "chapter": 1,
+      "text": "Trong Query Editor, tổ hợp phím nào dùng để hoàn tất từ đang gõ (Complete Word) và hiển thị danh sách gợi ý?",
+      "options": [
+        "Shift + F5",
+        "Ctrl + Alt + Delete",
+        "Ctrl + Esc",
+        "Alt + mũi tên sang phải"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.5: Alt + → là Complete Word, hiển thị danh sách gợi ý (ẩn danh sách bằng phím Esc). Lưu ý: tổ hợp List Members riêng là Ctrl + J."
+    },
+    {
+      "id": "csdl-034",
+      "chapter": 1,
+      "text": "Hạn chế của công cụ Query Designer là gì?",
+      "options": [
+        "Không thể sắp xếp dữ liệu",
+        "Chỉ tạo được các truy vấn đơn giản",
+        "Không tạo được câu lệnh SELECT",
+        "Chỉ làm việc với một bảng duy nhất"
+      ],
+      "answer": 1,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.8."
+    },
+    {
+      "id": "csdl-035",
+      "chapter": 1,
+      "text": "Đối tượng CSDL nào cung cấp khả năng truy cập nhanh tới dữ liệu của một bảng dựa trên giá trị khóa?",
+      "options": [
+        "Constraint",
+        "View",
+        "Trigger",
+        "Index (Chỉ mục)"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.2."
+    },
+    {
+      "id": "csdl-036",
+      "chapter": 1,
+      "text": "Trigger là gì (theo bảng đối tượng CSDL)?",
+      "options": [
+        "Một kiểu dữ liệu do người dùng định nghĩa",
+        "Một bảng ảo",
+        "Một ràng buộc kiểm tra trên cột",
+        "Một loại stored procedure đặc biệt được thực thi khi có thay đổi trên một bảng xác định"
+      ],
+      "answer": 3,
+      "hint": "Chương I",
+      "explanation": "Slide 2.5.2."
+    },
+    {
+      "id": "csdl-037",
+      "chapter": 2,
+      "text": "SQL Server 2012 có bao nhiêu kiểu dữ liệu chính thức và chia thành mấy nhóm?",
+      "options": [
+        "20 kiểu, chia thành 3 nhóm",
+        "30 kiểu, chia thành 5 nhóm",
+        "40 kiểu, chia thành 4 nhóm",
+        "30 kiểu, chia thành 4 nhóm"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 1.1: 4 nhóm gồm chuỗi, số, thời gian, kiểu khác."
+    },
+    {
+      "id": "csdl-038",
+      "chapter": 2,
+      "text": "Kiểu dữ liệu nào lưu chuỗi Unicode có độ dài cố định?",
+      "options": [
+        "nvarchar(n)",
+        "char(n)",
+        "varchar(n)",
+        "nchar(n)"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-039",
+      "chapter": 2,
+      "text": "Kiểu nvarchar(n) dùng bao nhiêu byte để lưu mỗi ký tự?",
+      "options": [
+        "1 byte",
+        "2 byte",
+        "8 byte",
+        "4 byte"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 1.2: nchar/nvarchar dùng 2n byte."
+    },
+    {
+      "id": "csdl-040",
+      "chapter": 2,
+      "text": "Giá trị n tối đa của char/varchar và của nchar/nvarchar lần lượt là bao nhiêu?",
+      "options": [
+        "255 và 255",
+        "8.000 và 4.000",
+        "8.000 và 8.000",
+        "4.000 và 8.000"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-041",
+      "chapter": 2,
+      "text": "Cột 'Mã sinh viên' có độ dài cố định nên chọn kiểu dữ liệu nào?",
+      "options": [
+        "tinyint",
+        "varchar(max)",
+        "datetime",
+        "char/nchar"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-042",
+      "chapter": 2,
+      "text": "Hệ thống hỗ trợ đa ngôn ngữ nên sử dụng kiểu dữ liệu chuỗi nào?",
+      "options": [
+        "bit, tinyint",
+        "text, image",
+        "nchar, nvarchar",
+        "char, varchar"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-043",
+      "chapter": 2,
+      "text": "Kiểu dữ liệu nào lưu số nguyên từ 0 đến 255?",
+      "options": [
+        "tinyint",
+        "smallint",
+        "int",
+        "bit"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-044",
+      "chapter": 2,
+      "text": "Kiểu int chiếm bao nhiêu byte và có phạm vi nào?",
+      "options": [
+        "8 byte, từ -2^63 đến 2^63-1",
+        "4 byte, từ -2.147.483.648 đến 2.147.483.647",
+        "1 byte, từ 0 đến 255",
+        "2 byte, từ -32.768 đến 32.767"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-045",
+      "chapter": 2,
+      "text": "Kiểu money đồng nghĩa với kiểu nào?",
+      "options": [
+        "float(24)",
+        "decimal(19,4)",
+        "decimal(38,0)",
+        "decimal(10,4)"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 1.3: smallmoney = decimal(10,4)."
+    },
+    {
+      "id": "csdl-046",
+      "chapter": 2,
+      "text": "Kiểu real đồng nghĩa với kiểu nào?",
+      "options": [
+        "float(24)",
+        "money",
+        "decimal(24)",
+        "float(53)"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-047",
+      "chapter": 2,
+      "text": "Kiểu dữ liệu thời gian nào chỉ chứa ngày, không có phần giờ?",
+      "options": [
+        "datetime",
+        "datetimeoffset",
+        "date",
+        "time"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-048",
+      "chapter": 2,
+      "text": "Kiểu dữ liệu nào là mở rộng của datetime2 và có thêm thông tin múi giờ?",
+      "options": [
+        "date",
+        "time",
+        "smalldatetime",
+        "datetimeoffset"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-049",
+      "chapter": 2,
+      "text": "Các kiểu varchar(max), nvarchar(max), varbinary(max) thay thế cho các kiểu cũ nào?",
+      "options": [
+        "char, nchar, binary",
+        "money, smallmoney, real",
+        "text, ntext, image",
+        "date, time, datetime"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-050",
+      "chapter": 2,
+      "text": "Kiểu dữ liệu nào nên dùng cho số điện thoại, số chứng minh, mã ZipCode?",
+      "options": [
+        "Kiểu chuỗi",
+        "Kiểu float",
+        "Kiểu số nguyên int",
+        "Kiểu bit"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-051",
+      "chapter": 2,
+      "text": "Với các kiểu dữ liệu text, ntext và image, khuyến cáo của slide là gì?",
+      "options": [
+        "Nên dùng cho mọi dữ liệu chuỗi",
+        "Bắt buộc dùng khi tạo khóa chính",
+        "Chỉ dùng cho dữ liệu số",
+        "Nên tránh sử dụng"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-052",
+      "chapter": 2,
+      "text": "Có hai cách để tạo CSDL quan hệ trên SQL Server. Đó là:",
+      "options": [
+        "Dùng Excel hoặc Word",
+        "Chỉ dùng câu lệnh DML",
+        "Dùng câu lệnh DDL hoặc dùng công cụ Management Studio",
+        "Chỉ dùng SQLCMD"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide Tổng kết chương II."
+    },
+    {
+      "id": "csdl-053",
+      "chapter": 2,
+      "text": "Trong Table Designer, nút Relationships dùng để làm gì?",
+      "options": [
+        "Thiết lập khóa chính",
+        "Kiểm tra ràng buộc cho cột",
+        "Làm việc với quan hệ khóa ngoại",
+        "Làm việc với index"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-054",
+      "chapter": 2,
+      "text": "Trong Table Designer, nút Manage Check Constraints dùng để làm gì?",
+      "options": [
+        "Đổi tên cơ sở dữ liệu",
+        "Tạo khóa ngoại",
+        "Tạo/quản lý ràng buộc kiểm tra (CHECK) cho cột",
+        "Xóa bảng"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 2.4.2."
+    },
+    {
+      "id": "csdl-055",
+      "chapter": 2,
+      "text": "Các từ khóa của T-SQL (SELECT, FROM, WHERE...) có phân biệt chữ hoa, chữ thường hay không?",
+      "options": [
+        "Có phân biệt",
+        "Chỉ phân biệt khi nằm trong khối BEGIN...END",
+        "Không phân biệt",
+        "Chỉ phân biệt khi nằm trong mệnh đề WHERE"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 3.1: từ khóa T-SQL không phân biệt hoa/thường (tên đối tượng và dữ liệu còn phụ thuộc collation)."
+    },
+    {
+      "id": "csdl-056",
+      "chapter": 2,
+      "text": "Nhóm câu lệnh nào thuộc ngôn ngữ thao tác dữ liệu (DML)?",
+      "options": [
+        "CREATE, ALTER, DROP",
+        "SELECT, INSERT, UPDATE, DELETE",
+        "GRANT, REVOKE, DENY",
+        "BEGIN, COMMIT, ROLLBACK"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 3.3."
+    },
+    {
+      "id": "csdl-057",
+      "chapter": 2,
+      "text": "Nhóm câu lệnh nào thuộc ngôn ngữ định nghĩa dữ liệu (DDL)?",
+      "options": [
+        "CREATE, ALTER, DROP",
+        "SELECT, INSERT, DELETE",
+        "IF, WHILE, CASE",
+        "PRINT, DECLARE, SET"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 3.2."
+    },
+    {
+      "id": "csdl-058",
+      "chapter": 2,
+      "text": "Cú pháp chú thích nhiều dòng trong T-SQL là gì?",
+      "options": [
+        "`<!-- ... -->`",
+        "`-- ... --`",
+        "`/* ... */`",
+        "`// ... //`"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 3.4 (chú thích một dòng dùng --)."
+    },
+    {
+      "id": "csdl-059",
+      "chapter": 2,
+      "text": "Theo slide, hai loại biến do người dùng khai báo bằng DECLARE trong T-SQL là gì?",
+      "options": [
+        "Biến vô hướng và biến bảng",
+        "Biến cục bộ và biến toàn cục",
+        "Biến số và biến chuỗi",
+        "Biến tạm và biến thường"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5."
+    },
+    {
+      "id": "csdl-060",
+      "chapter": 2,
+      "text": "Điều nào sau đây là đúng về biến bảng?",
+      "options": [
+        "Không thể sử dụng câu lệnh SELECT INTO với biến bảng",
+        "Biến bảng bắt đầu bằng dấu #",
+        "Biến bảng không thể dùng với INSERT",
+        "Biến bảng luôn tồn tại vĩnh viễn trong CSDL"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.2."
+    },
+    {
+      "id": "csdl-061",
+      "chapter": 2,
+      "text": "Khi mệnh đề IF hoặc ELSE thực thi hai hay nhiều câu lệnh, cần làm gì?",
+      "options": [
+        "Dùng ký tự ; sau mỗi lệnh",
+        "Dùng lệnh GO",
+        "Không cần làm gì thêm",
+        "Bao các câu lệnh trong khối BEGIN...END"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.3."
+    },
+    {
+      "id": "csdl-062",
+      "chapter": 2,
+      "text": "Trong vòng lặp WHILE, lệnh nào dùng để thoát khỏi vòng lặp và lệnh nào dùng để quay về đầu vòng lặp?",
+      "options": [
+        "RETURN; GOTO",
+        "CONTINUE; BREAK",
+        "BREAK; CONTINUE",
+        "EXIT; NEXT"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.4."
+    },
+    {
+      "id": "csdl-063",
+      "chapter": 2,
+      "text": "Hàm CASE trong T-SQL có mấy loại cú pháp?",
+      "options": [
+        "1 loại",
+        "4 loại",
+        "3 loại",
+        "2 loại: CASE đơn giản và CASE tìm kiếm"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.5."
+    },
+    {
+      "id": "csdl-064",
+      "chapter": 2,
+      "text": "Kết quả của đoạn mã sau là gì? ```sql DECLARE @a int, @Tong int SET @a = 1 SET @Tong = 0 WHILE (@a <= 10) BEGIN SELECT @Tong = @Tong + @a SET @a = @a + 1 END SELECT @Tong ```",
+      "options": [
+        "55",
+        "66",
+        "45",
+        "10"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Vòng lặp cộng a từ 1 đến 10 → 1+2+…+10 = 55 (slide 3.5.4)."
+    },
+    {
+      "id": "csdl-065",
+      "chapter": 2,
+      "text": "Nếu sửa điều kiện vòng lặp thành WHILE (@a \\<= 5), giá trị @Tong cuối cùng là bao nhiêu? ```sql DECLARE @a int, @Tong int SET @a = 1 SET @Tong = 0 WHILE (@a <= 5) BEGIN SELECT @Tong = @Tong + @a SET @a = @a + 1 END SELECT @Tong ```",
+      "options": [
+        "15",
+        "10",
+        "5",
+        "21"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "1+2+3+4+5 = 15."
+    },
+    {
+      "id": "csdl-066",
+      "chapter": 2,
+      "text": "Dòng nào sau đây khai báo đúng cú pháp biến bảng?",
+      "options": [
+        "CREATE @BigVendors TABLE (VendorID int, VendorName varchar(50))",
+        "DECLARE @BigVendors AS VARIABLE (VendorID int, VendorName varchar(50))",
+        "DECLARE @BigVendors TABLE (VendorID int, VendorName varchar(50))",
+        "DECLARE TABLE @BigVendors (VendorID int, VendorName varchar(50))"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.2: DECLARE @\\<tên bảng> TABLE (\\<định nghĩa cột>)."
+    },
+    {
+      "id": "csdl-067",
+      "chapter": 2,
+      "text": "Câu lệnh nào sau đây KHÔNG hợp lệ với biến bảng @BigVendors?",
+      "options": [
+        "SELECT * FROM @BigVendors",
+        "SELECT VendorID, VendorName INTO @BigVendors FROM Vendors",
+        "INSERT @BigVendors SELECT VendorID, VendorName FROM Vendors",
+        "DELETE @BigVendors"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.2: không thể dùng SELECT INTO với biến bảng."
+    },
+    {
+      "id": "csdl-068",
+      "chapter": 2,
+      "text": "Câu lệnh nào sau đây gán giá trị cho CẢ HAI biến trong một lần SELECT?",
+      "options": [
+        "DECLARE @MaxInvoice = MAX(InvoiceTotal), @MinInvoice = MIN(InvoiceTotal) FROM Invoices",
+        "PRINT @MaxInvoice, @MinInvoice FROM Invoices",
+        "SELECT @MaxInvoice = MAX(InvoiceTotal), @MinInvoice = MIN(InvoiceTotal) FROM Invoices WHERE VendorID = @VendorIDVar",
+        "SET @MaxInvoice = MAX(InvoiceTotal), @MinInvoice = MIN(InvoiceTotal) FROM Invoices"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.1: SELECT có thể gán giá trị cho 2 hoặc nhiều biến."
+    },
+    {
+      "id": "csdl-069",
+      "chapter": 2,
+      "text": "Để gán cho @MaxInvoice giá trị hóa đơn lớn nhất của nhà cung cấp @VendorIDVar bằng lệnh SET, ta viết:",
+      "options": [
+        "SET @MaxInvoice = (SELECT MAX(InvoiceTotal) FROM Invoices WHERE VendorID = @VendorIDVar)",
+        "SET MaxInvoice = (SELECT MAX(InvoiceTotal) FROM Invoices)",
+        "SET @MaxInvoice := MAX(InvoiceTotal) FROM Invoices",
+        "SET @MaxInvoice = SELECT MAX(InvoiceTotal) FROM Invoices WHERE VendorID = @VendorIDVar"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.1: truy vấn con phải đặt trong dấu ngoặc khi dùng SET."
+    },
+    {
+      "id": "csdl-070",
+      "chapter": 2,
+      "text": "Đoạn mã sau in ra thông báo nào khi KHÔNG tồn tại nhà cung cấp 'US Postal Service'? ```sql DECLARE @vendorID int SELECT @vendorID = VendorID FROM VENDORS WHERE VendorName = 'US Postal Service' IF @vendorID IS NULL PRINT 'Không tồn tại nhà cung cấp US Postal Service' ELSE PRINT 'US Postal Service có VendorID là ' + CAST(@vendorID AS VARCHAR) ```",
+      "options": [
+        "Không in gì cả",
+        "Báo lỗi cú pháp",
+        "Không tồn tại nhà cung cấp US Postal Service",
+        "US Postal Service có VendorID là NULL"
+      ],
+      "answer": 2,
+      "hint": "Chương II",
+      "explanation": "Khi không có dòng nào thỏa, @vendorID giữ giá trị NULL → nhánh IF được thực thi (slide 3.5.3)."
+    },
+    {
+      "id": "csdl-071",
+      "chapter": 2,
+      "text": "Với câu lệnh CASE đơn giản sau, cột Terms của hóa đơn có TermsID = 3 sẽ hiển thị giá trị nào? ```sql SELECT InvoiceNumber, TermsID, CASE TermsID WHEN 1 THEN 'Net due 10 days' WHEN 2 THEN 'Net due 20 days' WHEN 3 THEN 'Net due 30 days' WHEN 4 THEN 'Net due 60 days' WHEN 5 THEN 'Net due 90 days' END AS Terms FROM Invoices ```",
+      "options": [
+        "Net due 20 days",
+        "Net due 10 days",
+        "NULL",
+        "Net due 30 days"
+      ],
+      "answer": 3,
+      "hint": "Chương II",
+      "explanation": "TermsID = 3 khớp mệnh đề WHEN 3 (slide 3.5.5)."
+    },
+    {
+      "id": "csdl-072",
+      "chapter": 2,
+      "text": "Với hóa đơn có InvoiceDueDate quá hạn 15 ngày so với GETDATE(), cột Status nhận giá trị nào? ```sql SELECT InvoiceNumber, InvoiceTotal, InvoiceDate, InvoiceDueDate, CASE WHEN DATEDIFF(day, InvoiceDueDate, GETDATE()) > 30 THEN 'Over 30 days past due' WHEN DATEDIFF(day, InvoiceDueDate, GETDATE()) > 0 THEN '1 to 30 days past due' ELSE 'Current' END AS Status FROM Invoices WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0 ```",
+      "options": [
+        "NULL",
+        "1 to 30 days past due",
+        "Current",
+        "Over 30 days past due"
+      ],
+      "answer": 1,
+      "hint": "Chương II",
+      "explanation": "DATEDIFF = 15: không > 30 nhưng > 0 nên rơi vào WHEN thứ hai (slide 3.5.5)."
+    },
+    {
+      "id": "csdl-073",
+      "chapter": 2,
+      "text": "Với hóa đơn chưa đến hạn thanh toán (DATEDIFF(day, InvoiceDueDate, GETDATE()) \\<= 0), Status nhận giá trị nào trong câu lệnh CASE ở câu trên? ```sql CASE WHEN DATEDIFF(day, InvoiceDueDate, GETDATE()) > 30 THEN 'Over 30 days past due' WHEN DATEDIFF(day, InvoiceDueDate, GETDATE()) > 0 THEN '1 to 30 days past due' ELSE 'Current' END AS Status ```",
+      "options": [
+        "Current",
+        "1 to 30 days past due",
+        "Over 30 days past due",
+        "Câu lệnh báo lỗi"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Không thỏa hai WHEN nên rơi vào ELSE → 'Current'."
+    },
+    {
+      "id": "csdl-074",
+      "chapter": 2,
+      "text": "Đoạn mã sau thực hiện công việc gì? ```sql DECLARE @BigVendors TABLE (VendorID int, VendorName varchar(50)) INSERT @BigVendors SELECT VendorID, VendorName FROM Vendors WHERE VendorID IN (SELECT VendorID FROM Invoices WHERE InvoiceTotal > 5000) SELECT * FROM @BigVendors ```",
+      "options": [
+        "Lưu VendorID và VendorName của các nhà cung cấp có hóa đơn > 5000 vào biến bảng @BigVendors, rồi hiển thị ra",
+        "Xóa các nhà cung cấp có hóa đơn > 5000",
+        "Cập nhật VendorName trong bảng Vendors",
+        "Tạo bảng tạm cục bộ #BigVendors"
+      ],
+      "answer": 0,
+      "hint": "Chương II",
+      "explanation": "Slide 3.5.2 (Demo): lưu VendorID & VendorName của các nhà cung cấp có InvoiceTotal > 5000."
+    },
+    {
+      "id": "csdl-075",
+      "chapter": 3,
+      "text": "Hai loại chuyển đổi kiểu dữ liệu trong SQL Server là gì?",
+      "options": [
+        "Chuyển đổi tự động và chuyển đổi thủ công cấp độ bit",
+        "Chuyển đổi ngầm và chuyển đổi tường minh",
+        "Chuyển đổi một chiều và hai chiều",
+        "Chuyển đổi cục bộ và toàn cục"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1."
+    },
+    {
+      "id": "csdl-076",
+      "chapter": 3,
+      "text": "Trong biểu thức có nhiều kiểu dữ liệu, SQL Server chuyển đổi ngầm theo hướng nào?",
+      "options": [
+        "Luôn chuyển sang kiểu int",
+        "Luôn chuyển sang kiểu chuỗi",
+        "Từ kiểu có độ ưu tiên cao sang thấp",
+        "Từ kiểu có độ ưu tiên thấp hơn sang kiểu có độ ưu tiên cao hơn"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.1."
+    },
+    {
+      "id": "csdl-077",
+      "chapter": 3,
+      "text": "Trong biểu thức InvoiceTotal * .0775 (InvoiceTotal kiểu money), điều gì xảy ra?",
+      "options": [
+        "Báo lỗi khác kiểu dữ liệu",
+        ".0775 bị chuyển sang money",
+        "InvoiceTotal bị chuyển đổi ngầm sang kiểu decimal",
+        "Cả hai được chuyển sang kiểu chuỗi"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.1."
+    },
+    {
+      "id": "csdl-078",
+      "chapter": 3,
+      "text": "Trong biểu thức PaymentTotal - 100 (PaymentTotal kiểu money), điều gì xảy ra?",
+      "options": [
+        "Báo lỗi",
+        "100 bị chuyển sang chuỗi",
+        "PaymentTotal bị chuyển sang int",
+        "Giá trị 100 bị chuyển đổi ngầm sang kiểu money"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.1."
+    },
+    {
+      "id": "csdl-079",
+      "chapter": 3,
+      "text": "Trong bảng độ ưu tiên của các kiểu dữ liệu thông dụng ở slide, kiểu nào có độ ưu tiên CAO NHẤT và THẤP NHẤT?",
+      "options": [
+        "Cao nhất: int; thấp nhất: varchar",
+        "Cao nhất: char; thấp nhất: datetime",
+        "Cao nhất: datetime; thấp nhất: char",
+        "Cao nhất: float; thấp nhất: bit"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.1."
+    },
+    {
+      "id": "csdl-080",
+      "chapter": 3,
+      "text": "Khi nào cần dùng chuyển đổi tường minh (CAST/CONVERT)?",
+      "options": [
+        "Khi chuyển từ kiểu độ ưu tiên thấp sang cao",
+        "Khi không thể chuyển ngầm, hoặc khi chuyển từ kiểu có độ ưu tiên cao về kiểu có độ ưu tiên thấp",
+        "Chỉ khi làm việc với kiểu ngày/giờ",
+        "Không bao giờ cần"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.2."
+    },
+    {
+      "id": "csdl-081",
+      "chapter": 3,
+      "text": "Hàm nào sau đây là hàm chuẩn ANSI và được dùng phổ biến hơn?",
+      "options": [
+        "FORMAT",
+        "CAST",
+        "CONVERT",
+        "STR"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.2.2: CONVERT chỉ có SQL Server hỗ trợ, ít dùng hơn CAST."
+    },
+    {
+      "id": "csdl-082",
+      "chapter": 3,
+      "text": "Khi nào nên dùng CONVERT thay vì CAST?",
+      "options": [
+        "Khi chuyển chuỗi sang số nguyên",
+        "Khi chuyển sang kiểu ký tự và cần định dạng hiển thị cho ngày/giờ, số thực, tiền tệ",
+        "Khi cần gán giá trị NULL",
+        "Khi cần tương thích chuẩn ANSI"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.2.2."
+    },
+    {
+      "id": "csdl-083",
+      "chapter": 3,
+      "text": "Hàm nào trả về chiều dài (số ký tự) của chuỗi?",
+      "options": [
+        "REVERSE",
+        "LEN",
+        "SPACE",
+        "LEFT"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-084",
+      "chapter": 3,
+      "text": "Hàm CHARINDEX trả về giá trị nào nếu không tìm thấy chuỗi cần tìm?",
+      "options": [
+        "-1",
+        "NULL",
+        "Chuỗi rỗng",
+        "0"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-085",
+      "chapter": 3,
+      "text": "Sự khác nhau giữa PATINDEX và CHARINDEX là gì?",
+      "options": [
+        "PATINDEX tìm từ cuối chuỗi",
+        "PATINDEX cho phép chuỗi mẫu chứa ký tự thay thế (wildcard)",
+        "PATINDEX trả về chuỗi con",
+        "PATINDEX phân biệt hoa thường"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-086",
+      "chapter": 3,
+      "text": "Hàm nào thay thế tất cả các chuỗi con tìm thấy bằng một chuỗi khác?",
+      "options": [
+        "LTRIM",
+        "REVERSE",
+        "SUBSTRING",
+        "REPLACE"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-087",
+      "chapter": 3,
+      "text": "Hàm nào trả về số hàng chịu ảnh hưởng bởi câu lệnh SQL gần nhất?",
+      "options": [
+        "@@ERROR",
+        "@@IDENTITY",
+        "@@ROWCOUNT",
+        "@@SERVERNAME"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-088",
+      "chapter": 3,
+      "text": "Khi sắp xếp một cột kiểu chuỗi chứa số theo ORDER BY, kết quả không như mong đợi. Cách khắc phục theo slide là gì?",
+      "options": [
+        "Dùng CAST để chuyển cột sang kiểu số trong mệnh đề ORDER BY",
+        "Đổi cột sang kiểu text",
+        "Dùng DISTINCT",
+        "Dùng GROUP BY"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-089",
+      "chapter": 3,
+      "text": "Để tách một chuỗi gồm nhiều thành phần, ta kết hợp các hàm nào?",
+      "options": [
+        "CHARINDEX để định vị ký tự phân tách, rồi LEFT, RIGHT, SUBSTRING và LEN để trích xuất",
+        "Chỉ dùng REPLACE",
+        "UPPER và LOWER",
+        "GETDATE và DATEDIFF"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-090",
+      "chapter": 3,
+      "text": "Hàm nào trả về ngày giờ hiện tại dưới dạng datetime2(7)?",
+      "options": [
+        "GETDATE()",
+        "SYSDATETIMEOFFSET()",
+        "GETUTCDATE()",
+        "SYSDATETIME()"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-091",
+      "chapter": 3,
+      "text": "Hàm nào trả về ngày giờ hiện tại theo UTC kiểu datetime?",
+      "options": [
+        "SYSDATETIME()",
+        "ISDATE()",
+        "GETDATE()",
+        "GETUTCDATE()"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-092",
+      "chapter": 3,
+      "text": "Hàm ISDATE(expression) trả về giá trị gì?",
+      "options": [
+        "Số ngày giữa hai ngày",
+        "Ngày hiện tại",
+        "1 nếu biểu thức là giá trị ngày/giờ hợp lệ, ngược lại 0",
+        "Tên tháng"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-093",
+      "chapter": 3,
+      "text": "Điểm khác biệt giữa DATEPART và DATENAME là gì?",
+      "options": [
+        "Không có sự khác biệt nào",
+        "DATEPART trả về chuỗi, DATENAME trả về số",
+        "DATEPART trả về số nguyên, DATENAME trả về tên (chuỗi) của phần ngày",
+        "DATEPART chỉ lấy năm"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3: DATENAME(month, ...) = 'September'; DATEPART(month, ...) = 9."
+    },
+    {
+      "id": "csdl-094",
+      "chapter": 3,
+      "text": "Tham số datepart nào sau đây có dạng viết tắt là 'qq' hoặc 'q'?",
+      "options": [
+        "week",
+        "minute",
+        "month",
+        "quarter"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3: bảng datepart."
+    },
+    {
+      "id": "csdl-095",
+      "chapter": 3,
+      "text": "Câu lệnh sau không trả về dòng nào dù có dữ liệu ngày 28/02/2008, nguyên nhân là gì? ```sql SELECT * FROM DateSample WHERE StartDate = '2008-02-28' ```",
+      "options": [
+        "Sai cú pháp ngày tháng",
+        "Cột datetime chứa cả thành phần giờ nên không bằng đúng '2008-02-28 00:00:00'",
+        "Cột StartDate không thể so sánh với chuỗi",
+        "Thiếu mệnh đề ORDER BY"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-096",
+      "chapter": 3,
+      "text": "Trong các kỹ thuật tìm kiếm theo ngày, kỹ thuật nào hiệu quả nhất vì không dùng hàm trong mệnh đề WHERE?",
+      "options": [
+        "Dùng MONTH, DAY, YEAR",
+        "Dùng CAST hai lần",
+        "Tìm kiếm theo miền của ngày (>= ngày đó và \\< ngày kế tiếp)",
+        "Dùng CONVERT sang char"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-097",
+      "chapter": 3,
+      "text": "Vì sao tìm kiếm theo thành phần giờ như StartDate = CAST('10:00:00' AS datetime) không trả về kết quả?",
+      "options": [
+        "Vì thiếu GETDATE()",
+        "Vì phần giây bị bỏ qua",
+        "Giá trị giờ được chuyển ngầm thành datetime với phần ngày mặc định là 1900-01-01",
+        "Vì kiểu time không hỗ trợ so sánh"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-098",
+      "chapter": 3,
+      "text": "Với ngôn ngữ mặc định us_english của SQL Server, dữ liệu ngày/giờ dạng chuỗi được xử lý theo định dạng nào khi INSERT?",
+      "options": [
+        "Ngày/năm/tháng",
+        "Ngày/tháng/năm",
+        "Tháng/ngày/năm",
+        "Năm/ngày/tháng"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-099",
+      "chapter": 3,
+      "text": "Để lấy ra giá trị ngày dạng ngày/tháng/năm, dùng CONVERT với mã định dạng nào?",
+      "options": [
+        "1 hoặc 101",
+        "3 hoặc 103",
+        "8",
+        "107"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-100",
+      "chapter": 3,
+      "text": "Lệnh nào đánh dấu điểm kết thúc của một nhóm câu lệnh (batch) trong mã kịch bản?",
+      "options": [
+        "GO",
+        "END",
+        "EXIT",
+        "STOP"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.1."
+    },
+    {
+      "id": "csdl-101",
+      "chapter": 3,
+      "text": "Câu lệnh nào dùng để thay đổi CSDL hiện thời?",
+      "options": [
+        "USE",
+        "PRINT",
+        "DECLARE",
+        "EXEC"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-102",
+      "chapter": 3,
+      "text": "Câu lệnh nào trả về thông báo tới client?",
+      "options": [
+        "USE",
+        "PRINT",
+        "SET",
+        "GOTO"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-103",
+      "chapter": 3,
+      "text": "Bảng tạm cục bộ và bảng tạm toàn cục có tên bắt đầu bằng ký tự nào?",
+      "options": [
+        "# và ##",
+        "@ và @@",
+        "$ và $$",
+        "## và #"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-104",
+      "chapter": 3,
+      "text": "Bảng tạm được lưu trong CSDL nào?",
+      "options": [
+        "master",
+        "model",
+        "msdb",
+        "tempdb"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-105",
+      "chapter": 3,
+      "text": "Để xóa một bảng tạm, ta dùng câu lệnh nào?",
+      "options": [
+        "TRUNCATE VIEW",
+        "REMOVE TABLE",
+        "DELETE TABLE",
+        "DROP TABLE"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-106",
+      "chapter": 3,
+      "text": "Các hàm ERROR_NUMBER(), ERROR_MESSAGE(), ERROR_SEVERITY(), ERROR_STATE() dùng được trong khối nào?",
+      "options": [
+        "Khối CATCH",
+        "Khối CASE",
+        "Khối WHILE",
+        "Khối TRY"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-107",
+      "chapter": 3,
+      "text": "Câu lệnh TRY...CATCH chỉ bắt và xử lý được các lỗi có mức nghiêm trọng nào (theo slide chương III)?",
+      "options": [
+        "Từ 1 đến 5",
+        "Từ 21 đến 25",
+        "Mọi mức từ 0 đến 25",
+        "Từ 11 đến 19"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 2.5: chỉ bắt lỗi có mức nghiêm trọng lớn hơn 10 và không làm đứt kết nối (mức 20–25 ngắt kết nối; mức ≤ 10 chỉ là thông báo)."
+    },
+    {
+      "id": "csdl-108",
+      "chapter": 3,
+      "text": "Hàm nào trả về giá trị định danh (IDENTITY) cuối cùng được tạo cho một BẢNG xác định?",
+      "options": [
+        "@@ROWCOUNT",
+        "IDENT_CURRENT('tablename')",
+        "@@ERROR",
+        "@@IDENTITY"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-109",
+      "chapter": 3,
+      "text": "Hàm @@ERROR trả về giá trị nào nếu câu lệnh gần nhất KHÔNG gây lỗi?",
+      "options": [
+        "0",
+        "-1",
+        "NULL",
+        "1"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-110",
+      "chapter": 3,
+      "text": "Hàm HOST_NAME() và SYSTEM_USER lần lượt trả về gì?",
+      "options": [
+        "Tên trạm làm việc hiện thời; tên người dùng hiện thời",
+        "Tên server; tên CSDL",
+        "Tên người dùng; tên trạm làm việc",
+        "Tên CSDL; tên bảng"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-111",
+      "chapter": 3,
+      "text": "Kết quả của hai phép toán sau là gì? ```sql SELECT 50/100 SELECT 50/CAST(100 AS decimal(3)) ```",
+      "options": [
+        ".500000 và 0",
+        "0 (kiểu int) và .500000 (kiểu decimal)",
+        "0 và 0",
+        "0.5 và 0.5"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Phép chia hai số nguyên cho kết quả nguyên; ép 100 sang decimal(3) mới ra số thập phân (slide 1.1.2.1)."
+    },
+    {
+      "id": "csdl-112",
+      "chapter": 3,
+      "text": "Cú pháp nào sau đây là đúng để ép kiểu InvoiceTotal sang int bằng CAST?",
+      "options": [
+        "CAST(InvoiceTotal, int)",
+        "CAST(int AS InvoiceTotal)",
+        "CAST(InvoiceTotal AS int)",
+        "CAST(int, InvoiceTotal)"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.2.1: CAST(\\<Biểu thức> AS \\<Kiểu dữ liệu>)."
+    },
+    {
+      "id": "csdl-113",
+      "chapter": 3,
+      "text": "Cú pháp nào sau đây là đúng để chuyển InvoiceDate sang chuỗi định dạng mã 107 bằng CONVERT?",
+      "options": [
+        "CONVERT(varchar, InvoiceDate, 107)",
+        "CONVERT(InvoiceDate, varchar, 107)",
+        "CONVERT(InvoiceDate AS varchar, 107)",
+        "CONVERT(107, varchar, InvoiceDate)"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.1.2.2: CONVERT(\\<Kiểu>, \\<Biểu thức>, \\<Mã định dạng>)."
+    },
+    {
+      "id": "csdl-114",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT LEFT('SQL Server', 3) ```",
+      "options": [
+        "'SQL'",
+        "'SQL '",
+        "'Ser'",
+        "'Server'"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "LEFT lấy 3 ký tự đầu (slide 1.2)."
+    },
+    {
+      "id": "csdl-115",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT LEN('SQL Server') ```",
+      "options": [
+        "9",
+        "0",
+        "11",
+        "10"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "'SQL Server' có 10 ký tự gồm cả dấu cách (slide 1.2)."
+    },
+    {
+      "id": "csdl-116",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT LOWER('SQL Server') ```",
+      "options": [
+        "'Sql Server'",
+        "'SQL SERVER'",
+        "'SQL Server'",
+        "'sql server'"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "LOWER chuyển toàn bộ sang chữ thường."
+    },
+    {
+      "id": "csdl-117",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT CHARINDEX('-', '(559) 555-1212') ```",
+      "options": [
+        "11",
+        "9",
+        "6",
+        "10"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Dấu '-' đứng ở vị trí thứ 10 của '(559) 555-1212' (slide 1.2)."
+    },
+    {
+      "id": "csdl-118",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT SUBSTRING('(559) 555-1212', 7, 8) ```",
+      "options": [
+        "'559) 555-'",
+        "'555-12'",
+        "'(559) 555'",
+        "'555-1212'"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Lấy 8 ký tự bắt đầu từ vị trí 7 (slide 1.2)."
+    },
+    {
+      "id": "csdl-119",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT PATINDEX('%v_r%', 'SQL Server') ```",
+      "options": [
+        "7",
+        "8",
+        "10",
+        "0"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Mẫu '%v_r%' khớp 'ver' bắt đầu ở vị trí 8 của 'SQL Server' (slide 1.2)."
+    },
+    {
+      "id": "csdl-120",
+      "chapter": 3,
+      "text": "Kết quả của biểu thức sau là gì? ```sql SELECT REPLACE(RIGHT('(559) 555-1212', 13), ') ', '-') ```",
+      "options": [
+        "'(559)-555-1212'",
+        "'(559) 555-1212'",
+        "'559-555-1212'",
+        "'559) 555-1212'"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "RIGHT lấy 13 ký tự '559) 555-1212', REPLACE đổi ') ' thành '-' (slide 1.2)."
+    },
+    {
+      "id": "csdl-121",
+      "chapter": 3,
+      "text": "Với bảng StringSample, cột Name = 'Ann Smith', kết quả cột First và Last là gì? ```sql SELECT Name, LEFT(Name, CHARINDEX(' ', Name) - 1) AS First, RIGHT(Name, LEN(Name) - CHARINDEX(' ', Name)) AS Last FROM StringSample ```",
+      "options": [
+        "First = 'An', Last = 'Smith'",
+        "First = 'Ann', Last = 'Smith'",
+        "First = 'Ann ', Last = ' Smith'",
+        "First = 'Smith', Last = 'Ann'"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "CHARINDEX(' ', Name) = 4; LEFT lấy 3 ký tự; RIGHT lấy LEN − 4 = 5 ký tự (slide 1.3)."
+    },
+    {
+      "id": "csdl-122",
+      "chapter": 3,
+      "text": "Mục đích của câu lệnh sau là gì? ```sql SELECT * FROM StringSample ORDER BY CAST(ID AS int) ```",
+      "options": [
+        "Lọc bỏ các dòng có ID không phải số",
+        "Chuyển đổi vĩnh viễn kiểu cột ID sang int",
+        "Đếm số dòng của bảng",
+        "Sắp xếp theo giá trị số của cột ID dù ID có kiểu chuỗi"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3: CAST chỉ tác động trong câu truy vấn, không đổi kiểu cột."
+    },
+    {
+      "id": "csdl-123",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT MONTH('2008-09-30') ```",
+      "options": [
+        "2008",
+        "10",
+        "9",
+        "8"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-124",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT YEAR('2008-09-30') ```",
+      "options": [
+        "2008",
+        "9",
+        "8",
+        "30"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-125",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT ISDATE('2008-09-31') ```",
+      "options": [
+        "0",
+        "Báo lỗi",
+        "1",
+        "NULL"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Ngày 31/09 không tồn tại nên ISDATE trả về 0 (slide 1.3)."
+    },
+    {
+      "id": "csdl-126",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATEPART(quarter, '2008-09-30 11:35:00') ```",
+      "options": [
+        "30",
+        "9",
+        "4",
+        "3"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "30/09 thuộc quý 3 (slide 1.3)."
+    },
+    {
+      "id": "csdl-127",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATENAME(month, '2008-09-30 11:35:00') ```",
+      "options": [
+        "'Sep'",
+        "9",
+        "'September'",
+        "'Thang 9'"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "DATENAME trả về tên tháng (slide 1.3)."
+    },
+    {
+      "id": "csdl-128",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATEADD(day, 1, '2008-09-30 11:35:00') ```",
+      "options": [
+        "2008-10-01 11:35:00.000",
+        "2008-09-29 11:35:00.000",
+        "2008-10-01 00:00:00.000",
+        "2008-09-30 12:35:00.000"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Cộng 1 ngày (slide 1.3)."
+    },
+    {
+      "id": "csdl-129",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATEADD(week, 1, '2008-09-30 11:35:00') ```",
+      "options": [
+        "2008-10-07 11:35:00.000",
+        "2008-10-01 11:35:00.000",
+        "2008-10-30 11:35:00.000",
+        "2008-09-23 11:35:00.000"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Cộng 1 tuần = 7 ngày (slide 1.3)."
+    },
+    {
+      "id": "csdl-130",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATEDIFF(month, '2007-12-01', '2008-09-30') ```",
+      "options": [
+        "303",
+        "9",
+        "10",
+        "3"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Từ 12/2007 đến 9/2008 cách nhau 9 tháng (slide 1.3)."
+    },
+    {
+      "id": "csdl-131",
+      "chapter": 3,
+      "text": "Kết quả của hàm sau là gì? ```sql SELECT DATEDIFF(second, '06:46:45', '11:35:00') ```",
+      "options": [
+        "4",
+        "289",
+        "17295",
+        "288"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Số giây giữa 06:46:45 và 11:35:00 (slide 1.3)."
+    },
+    {
+      "id": "csdl-132",
+      "chapter": 3,
+      "text": "Câu lệnh nào sau đây tìm đúng các dòng có StartDate (datetime) trong ngày 28/02/2008 và là cách hiệu quả nhất?",
+      "options": [
+        "WHERE StartDate >= '2008-02-28' AND StartDate \\< '2008-02-29'",
+        "WHERE MONTH(StartDate) = 2 AND DAY(StartDate) = 28",
+        "WHERE CAST(CAST(StartDate AS char(11)) AS datetime) = '2008-02-28'",
+        "WHERE StartDate = '2008-02-28'"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.4: tìm theo miền ngày là kỹ thuật hiệu quả nhất."
+    },
+    {
+      "id": "csdl-133",
+      "chapter": 3,
+      "text": "Câu lệnh nào sau đây loại bỏ thành phần giờ để so sánh theo ngày (SQL Server 2008 trở lên)?",
+      "options": [
+        "WHERE DATEPART(date, StartDate) = '2008-02-28'",
+        "WHERE CONVERT(date, StartDate) = '2008-02-28'",
+        "WHERE CONVERT(time, StartDate) = '2008-02-28'",
+        "WHERE CAST(StartDate AS int) = '2008-02-28'"
+      ],
+      "answer": 1,
+      "hint": "Chương III",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-134",
+      "chapter": 3,
+      "text": "Câu lệnh nào sau đây lọc theo thành phần giờ từ 09:00:00 đến trước 13:00:00 (SQL Server 2008 trở lên)?",
+      "options": [
+        "WHERE CONVERT(time, StartDate) >= '09:00:00' AND CONVERT(time, StartDate) \\< '13:00:00'",
+        "WHERE HOUR(StartDate) BETWEEN 9 AND 12",
+        "WHERE CONVERT(date, StartDate) >= '09:00:00'",
+        "WHERE StartDate >= '09:00:00' AND StartDate \\< '13:00:00'"
+      ],
+      "answer": 0,
+      "hint": "Chương III",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-135",
+      "chapter": 3,
+      "text": "Đoạn mã sau in ra dòng nào nếu tổng dư nợ @TotalDue > 0? ```sql USE AP DECLARE @TotalDue money SET @TotalDue = (SELECT SUM(InvoiceTotal - PaymentTotal - CreditTotal) FROM Invoices) IF @TotalDue > 0 PRINT 'Total invoices due = $' + CONVERT(varchar, @TotalDue, 1) ELSE PRINT 'Invoices paid in full' ```",
+      "options": [
+        "Báo lỗi vì thiếu GO",
+        "Không in gì",
+        "Invoices paid in full",
+        "Total invoices due = $ cùng với giá trị @TotalDue định dạng có dấu phẩy"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 2.2: CONVERT(varchar, @TotalDue, 1) có dấu ngăn cách nghìn."
+    },
+    {
+      "id": "csdl-136",
+      "chapter": 3,
+      "text": "Đoạn mã sau lưu gì vào bảng tạm #TopVendors? ```sql SELECT TOP 1 VendorID, AVG(InvoiceTotal) AS AvgInvoice INTO #TopVendors FROM Invoices GROUP BY VendorID ORDER BY AvgInvoice DESC ```",
+      "options": [
+        "Tổng số hóa đơn của mỗi nhà cung cấp",
+        "Tất cả các nhà cung cấp",
+        "Nhà cung cấp có hóa đơn nhỏ nhất",
+        "Nhà cung cấp có giá trị hóa đơn trung bình (AvgInvoice) cao nhất"
+      ],
+      "answer": 3,
+      "hint": "Chương III",
+      "explanation": "Slide 2.4: TOP 1 ... ORDER BY AvgInvoice DESC INTO #TopVendors."
+    },
+    {
+      "id": "csdl-137",
+      "chapter": 3,
+      "text": "Nếu câu lệnh INSERT trong khối TRY bị lỗi (ví dụ vi phạm ràng buộc khóa ngoại), đoạn mã sau in ra gì? ```sql BEGIN TRY INSERT Invoices VALUES (799, 'ZXK-799', '2008-07-01', 299.95, 0, 0, 1, '2008-08-01', NULL) PRINT 'SUCCESS: Record was inserted.' END TRY BEGIN CATCH PRINT 'FAILURE: Record was not inserted.' PRINT 'Error ' + CONVERT(varchar, ERROR_NUMBER(), 1) + ': ' + ERROR_MESSAGE() END CATCH ```",
+      "options": [
+        "SUCCESS: Record was inserted.",
+        "Cả SUCCESS và FAILURE",
+        "Dòng 'FAILURE: Record was not inserted.' và dòng thông báo lỗi kèm mã lỗi",
+        "Không in gì"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Lỗi chuyển điều khiển sang khối CATCH (slide 2.5)."
+    },
+    {
+      "id": "csdl-138",
+      "chapter": 3,
+      "text": "Trong đoạn mã sau, hai biến @MyIdentity và @MyRowCount nhận giá trị gì? ```sql INSERT Vendors (VendorName, VendorAddress1, VendorCity, VendorState, VendorZipCode, VendorPhone, DefaultTermsID, DefaultAccountNo) VALUES ('Peerless Binding', '1112 S Windsor St', 'Hallowell', 'ME', '04347', '(207) 555-1555', 4, 400) SET @MyIdentity = @@IDENTITY SET @MyRowCount = @@ROWCOUNT ```",
+      "options": [
+        "Cả hai đều là mã lỗi",
+        "@MyIdentity là số hàng; @MyRowCount là VendorID",
+        "@MyIdentity là VendorID vừa tự sinh; @MyRowCount là số hàng bị ảnh hưởng bởi INSERT (1 nếu thành công)",
+        "@MyIdentity là tên nhà cung cấp; @MyRowCount là tổng số nhà cung cấp"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6: @@IDENTITY và @@ROWCOUNT."
+    },
+    {
+      "id": "csdl-139",
+      "chapter": 3,
+      "text": "Vì sao đoạn mã sau cần kiểm tra IF @MyRowCount = 1 trước khi INSERT vào Invoices? ```sql IF @MyRowCount = 1 INSERT Invoices VALUES (@MyIdentity, 'BA-0199', '2008-08-01', 4598.23, 0, 0, 4, '2008-09-06', NULL) ```",
+      "options": [
+        "Để tăng tốc độ thực thi",
+        "Để tránh báo lỗi cú pháp",
+        "Để chỉ thêm hóa đơn khi nhà cung cấp mới đã được thêm thành công",
+        "Vì INSERT luôn cần điều kiện IF"
+      ],
+      "answer": 2,
+      "hint": "Chương III",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-140",
+      "chapter": 4,
+      "text": "Stored Procedure là gì?",
+      "options": [
+        "Một tập các câu lệnh T-SQL thực hiện một nhiệm vụ cụ thể, được đặt tên và lưu trữ trong CSDL dưới dạng đã biên dịch",
+        "Một bảng ảo lưu kết quả truy vấn",
+        "Một ràng buộc kiểm tra dữ liệu",
+        "Một file kịch bản lưu trên ổ đĩa"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-141",
+      "chapter": 4,
+      "text": "Lợi ích chính của Stored Procedure là gì?",
+      "options": [
+        "Tái sử dụng code: thực thi lại nhiệm vụ bằng lời gọi thay vì viết lại các câu lệnh",
+        "Tự động thực thi khi dữ liệu thay đổi",
+        "Không cần lưu trong CSDL",
+        "Luôn trả về một bảng"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-142",
+      "chapter": 4,
+      "text": "Trong bảng so sánh các tùy chọn lập trình thủ tục, đối tượng nào được lưu trong file trên ổ đĩa và KHÔNG có tham số?",
+      "options": [
+        "Hàm người dùng định nghĩa",
+        "Trigger",
+        "Mã kịch bản (Script)",
+        "Stored Procedure"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.1."
+    },
+    {
+      "id": "csdl-143",
+      "chapter": 4,
+      "text": "Đối tượng nào được server TỰ ĐỘNG thực thi khi một hành động cụ thể xảy ra và không có tham số?",
+      "options": [
+        "Trigger",
+        "Stored Procedure",
+        "Mã kịch bản",
+        "Hàm người dùng định nghĩa"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.1."
+    },
+    {
+      "id": "csdl-144",
+      "chapter": 4,
+      "text": "Lệnh CREATE PROC phải ở vị trí nào trong nhóm câu lệnh?",
+      "options": [
+        "Là câu lệnh cuối cùng",
+        "Là câu lệnh đầu tiên của nhóm câu lệnh",
+        "Ở vị trí bất kỳ",
+        "Phải nằm trong khối TRY"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-145",
+      "chapter": 4,
+      "text": "Theo slide, tên thủ tục chứa tối đa bao nhiêu ký tự và nên đặt tiền tố nào?",
+      "options": [
+        "255 ký tự; tiền tố usp\\_",
+        "64 ký tự; tiền tố proc",
+        "128 ký tự; tiền tố fn",
+        "128 ký tự; tiền tố sp (không dùng sp_)"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.3: tiền tố sp (vd. spCopyInvoices); tránh sp_ vì dễ trùng thủ tục hệ thống."
+    },
+    {
+      "id": "csdl-146",
+      "chapter": 4,
+      "text": "Các tùy chọn có thể dùng trong mệnh đề WITH khi tạo Stored Procedure là gì?",
+      "options": [
+        "SCHEMABINDING, CHECK OPTION",
+        "TOP, DISTINCT",
+        "OUTPUT, DEFAULT",
+        "RECOMPILE, ENCRYPTION, EXECUTE AS"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.3."
+    },
+    {
+      "id": "csdl-147",
+      "chapter": 4,
+      "text": "Tham số tùy chọn của Stored Procedure có đặc điểm gì?",
+      "options": [
+        "Được gán giá trị mặc định; nếu không truyền giá trị trong lời gọi sẽ nhận giá trị mặc định",
+        "Phải khai báo bằng từ khóa OPTIONAL",
+        "Bắt buộc phải truyền giá trị",
+        "Dùng để trả kết quả về"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-148",
+      "chapter": 4,
+      "text": "Tham số đầu ra của Stored Procedure được khai báo bằng từ khóa nào?",
+      "options": [
+        "RESULT",
+        "RETURN",
+        "RETURNS",
+        "OUTPUT (hoặc OUT)"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-149",
+      "chapter": 4,
+      "text": "Nếu giá trị mặc định của tham số là NULL và người dùng không truyền tham số thì SQL Server làm gì?",
+      "options": [
+        "Báo lỗi",
+        "Gán giá trị 0",
+        "Thi hành thủ tục theo các tham số khác",
+        "Dừng thủ tục"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4 (Lưu ý)."
+    },
+    {
+      "id": "csdl-150",
+      "chapter": 4,
+      "text": "Giá trị mặc định của tham số có thể chứa ký tự đại diện (%, \\_, \\[ \\], \\[^\\]) khi nào?",
+      "options": [
+        "Khi dùng từ khóa IN",
+        "Khi dùng từ khóa BETWEEN",
+        "Không bao giờ",
+        "Khi thủ tục sử dụng tham số đó với từ khóa LIKE"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4 (Lưu ý)."
+    },
+    {
+      "id": "csdl-151",
+      "chapter": 4,
+      "text": "Có mấy cách truyền giá trị cho tham số khi gọi Stored Procedure?",
+      "options": [
+        "3 cách: vị trí, tên và kiểu",
+        "2 cách: theo vị trí và theo tên",
+        "2 cách: theo kiểu và theo giá trị",
+        "1 cách: theo vị trí"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-152",
+      "chapter": 4,
+      "text": "Có thể trả giá trị về từ Stored Procedure bằng những cách nào?",
+      "options": [
+        "Tham số OUTPUT (kiểu bất kỳ) và câu lệnh RETURN (số nguyên)",
+        "Bằng lệnh PRINT",
+        "Chỉ bằng OUTPUT, kiểu số nguyên",
+        "Chỉ bằng RETURN, kiểu bất kỳ"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-153",
+      "chapter": 4,
+      "text": "Câu lệnh RETURN trong Stored Procedure trả về giá trị kiểu nào?",
+      "options": [
+        "Chuỗi",
+        "Số nguyên",
+        "Ngày giờ",
+        "Bảng"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.5: RETURN \\<biểu thức số nguyên>."
+    },
+    {
+      "id": "csdl-154",
+      "chapter": 4,
+      "text": "Khi ngăn chặn lỗi, nếu dữ liệu không hợp lệ ta dùng câu lệnh nào để sinh lỗi?",
+      "options": [
+        "GOTO",
+        "PRINT",
+        "RAISERROR",
+        "BREAK"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-155",
+      "chapter": 4,
+      "text": "Trong RAISERROR, tham số độ nghiêm trọng nào sẽ được xử lý trong khối CATCH?",
+      "options": [
+        "Từ 26 trở lên",
+        "Từ 11 đến 19",
+        "Từ 20 đến 25",
+        "Từ 0 đến 10"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6: 20–25 làm kết nối từ client tới CSDL bị ngắt đột ngột."
+    },
+    {
+      "id": "csdl-156",
+      "chapter": 4,
+      "text": "Khi RAISERROR có độ nghiêm trọng từ 20 đến 25 thì điều gì xảy ra?",
+      "options": [
+        "Kết nối từ client tới CSDL bị ngắt đột ngột",
+        "Lỗi được xử lý trong khối CATCH",
+        "Giao dịch tự động COMMIT",
+        "Chỉ in cảnh báo"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-157",
+      "chapter": 4,
+      "text": "Khi RAISERROR được truyền chuỗi thông báo tự định nghĩa, ERROR_NUMBER() trong khối CATCH thường trả về giá trị nào?",
+      "options": [
+        "0",
+        "50000",
+        "11",
+        "1"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6 (ví dụ IF ERROR_NUMBER() = 50000 → 'This is a custom error message.')."
+    },
+    {
+      "id": "csdl-158",
+      "chapter": 4,
+      "text": "Dùng hàm nào để xem nội dung của một Stored Procedure đã tạo?",
+      "options": [
+        "sp_helptext 'Tên Stored Procedure'",
+        "sp_who",
+        "sp_help_proc 'Tên'",
+        "sp_rename"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.7."
+    },
+    {
+      "id": "csdl-159",
+      "chapter": 4,
+      "text": "Vì sao không xem được nội dung của một SP bằng sp_helptext?",
+      "options": [
+        "Vì SP đó dùng RETURN",
+        "Vì SP đó được định nghĩa với tùy chọn ENCRYPTION",
+        "Vì SP đó dùng TRY...CATCH",
+        "Vì SP đó có tham số OUTPUT"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.7."
+    },
+    {
+      "id": "csdl-160",
+      "chapter": 4,
+      "text": "Câu lệnh nào dùng để chỉnh sửa nội dung một Stored Procedure đã tồn tại?",
+      "options": [
+        "CHANGE PROC",
+        "UPDATE PROC",
+        "ALTER PROC",
+        "MODIFY PROC"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.8."
+    },
+    {
+      "id": "csdl-161",
+      "chapter": 4,
+      "text": "Câu lệnh nào dùng để xóa Stored Procedure?",
+      "options": [
+        "DROP PROC",
+        "DELETE PROC",
+        "REMOVE PROC",
+        "TRUNCATE PROC"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.8."
+    },
+    {
+      "id": "csdl-162",
+      "chapter": 4,
+      "text": "Vấn đề không nhất quán dữ liệu khi chèn trong ví dụ Invoices/InvoiceLineItems xảy ra vì sao?",
+      "options": [
+        "Vì bảng Invoices không có khóa chính",
+        "Vì thiếu lệnh GO",
+        "Lệnh INSERT 1 và 2 thành công nhưng lệnh INSERT 3 thất bại nên InvoiceTotal không bằng tổng InvoiceLineItemAmount",
+        "Vì dùng @@IDENTITY sai cú pháp"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.1."
+    },
+    {
+      "id": "csdl-163",
+      "chapter": 4,
+      "text": "Giao dịch (transaction) là gì?",
+      "options": [
+        "Một bảng tạm lưu kết quả truy vấn",
+        "Một kiểu dữ liệu đặc biệt",
+        "Một nhóm thao tác cơ sở dữ liệu được kết hợp thành một đơn vị lôgíc",
+        "Một loại ràng buộc khóa ngoại"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-164",
+      "chapter": 4,
+      "text": "Các thay đổi trong giao dịch chỉ thực sự được ghi vào CSDL khi nào?",
+      "options": [
+        "Khi giao dịch được COMMIT",
+        "Khi có lệnh ROLLBACK",
+        "Ngay sau mỗi câu lệnh bên trong",
+        "Khi giao dịch bắt đầu (BEGIN TRAN)"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.2 và Tổng kết."
+    },
+    {
+      "id": "csdl-165",
+      "chapter": 4,
+      "text": "Khi một câu lệnh trong giao dịch gây lỗi, giao dịch cần được xử lý thế nào (ví dụ bằng TRY...CATCH hoặc XACT_ABORT)?",
+      "options": [
+        "Bị bỏ qua hoàn toàn",
+        "Tự động COMMIT phần đã làm",
+        "Tiếp tục thực hiện các lệnh còn lại",
+        "Phải được quay lui (ROLLBACK) về điểm bắt đầu giao dịch hoặc điểm lưu trữ"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide Tổng kết."
+    },
+    {
+      "id": "csdl-166",
+      "chapter": 4,
+      "text": "Trường hợp nào KHÔNG thuộc các trường hợp nên sử dụng giao dịch theo slide?",
+      "options": [
+        "Khi viết hai hay nhiều truy vấn thao tác tác động tới các dữ liệu có liên kết",
+        "Khi sự thất bại của một tập lệnh SQL vi phạm tính toàn vẹn dữ liệu",
+        "Khi chỉ chạy một câu lệnh SELECT đơn giản không thay đổi dữ liệu",
+        "Khi chuyển hàng từ bảng này sang bảng khác"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.3."
+    },
+    {
+      "id": "csdl-167",
+      "chapter": 4,
+      "text": "Lệnh nào đánh dấu điểm bắt đầu của giao dịch?",
+      "options": [
+        "SAVE TRAN",
+        "START TRAN",
+        "BEGIN TRAN",
+        "OPEN TRAN"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-168",
+      "chapter": 4,
+      "text": "Lệnh SAVE TRAN dùng để làm gì?",
+      "options": [
+        "Lưu vĩnh viễn thay đổi",
+        "Hủy giao dịch",
+        "Thiết lập điểm lưu trữ (save point) bên trong giao dịch",
+        "Bắt đầu giao dịch mới"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-169",
+      "chapter": 4,
+      "text": "Nếu không khai báo điểm bắt đầu giao dịch, SQL Server xử lý thế nào?",
+      "options": [
+        "Mọi câu lệnh được gộp thành một giao dịch lớn",
+        "Chỉ ROLLBACK bằng tay",
+        "Mỗi câu lệnh là một giao dịch và tự động COMMIT; nếu gây lỗi thì tự động ROLLBACK",
+        "Không thực thi câu lệnh nào"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.4."
+    },
+    {
+      "id": "csdl-170",
+      "chapter": 4,
+      "text": "Giao dịch lồng (nested transaction) là gì?",
+      "options": [
+        "Giao dịch chỉ có lệnh SELECT",
+        "Giao dịch không có COMMIT",
+        "Giao dịch được viết bên trong một giao dịch khác",
+        "Giao dịch chạy song song trên hai server"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-171",
+      "chapter": 4,
+      "text": "Mỗi khi BEGIN TRAN được thực thi, hàm hệ thống @@TRANCOUNT thay đổi thế nào?",
+      "options": [
+        "Không đổi",
+        "Tăng thêm 1",
+        "Gán về 0",
+        "Giảm đi 1"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-172",
+      "chapter": 4,
+      "text": "Khi thực thi COMMIT TRAN mà @@TRANCOUNT > 1 thì điều gì xảy ra?",
+      "options": [
+        "Rollback toàn bộ",
+        "@@TRANCOUNT gán về 0",
+        "Các thay đổi chưa được commit; @@TRANCOUNT giảm đi 1",
+        "Commit toàn bộ thay đổi"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-173",
+      "chapter": 4,
+      "text": "Câu lệnh ROLLBACK TRAN (không kèm tên save point) trong các giao dịch lồng nhau làm gì?",
+      "options": [
+        "Chỉ roll-back giao dịch trong cùng",
+        "Roll-back toàn bộ các giao dịch đang hoạt động và đưa @@TRANCOUNT về 0",
+        "Commit giao dịch ngoài cùng",
+        "Giảm @@TRANCOUNT đi 1"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5."
+    },
+    {
+      "id": "csdl-174",
+      "chapter": 4,
+      "text": "Để ROLLBACK TRAN quay lui đến một điểm lưu trữ xác định cần làm gì?",
+      "options": [
+        "Dùng COMMIT TRAN kèm tên điểm lưu trữ",
+        "Dùng BEGIN TRAN kèm tên điểm lưu trữ",
+        "Không thể quay lui đến điểm lưu trữ",
+        "Tạo điểm lưu trữ bằng SAVE TRAN, rồi viết ROLLBACK TRAN kèm tên điểm lưu trữ"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-175",
+      "chapter": 4,
+      "text": "Nếu ROLLBACK TRAN không kèm tên điểm lưu trữ thì sao?",
+      "options": [
+        "Chỉ quay lui đến save point gần nhất",
+        "Quay lui toàn bộ giao dịch",
+        "Không làm gì",
+        "Chỉ quay lui câu lệnh cuối cùng"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.6."
+    },
+    {
+      "id": "csdl-176",
+      "chapter": 4,
+      "text": "Lời gọi nào sau đây đúng để thực thi thủ tục spCopyInvoices (không có tham số)?",
+      "options": [
+        "SELECT spCopyInvoices",
+        "EXEC spCopyInvoices",
+        "RUN spCopyInvoices",
+        "CALL spCopyInvoices"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-177",
+      "chapter": 4,
+      "text": "Đoạn mã sau thực hiện việc gì khi gọi EXEC spCopyInvoices? ```sql CREATE PROC spCopyInvoices AS IF OBJECT_ID('InvoiceCopy') IS NOT NULL DROP TABLE InvoiceCopy SELECT * INTO InvoiceCopy FROM Invoices ```",
+      "options": [
+        "Xóa bảng Invoices",
+        "Chỉ sao chép cấu trúc, không có dữ liệu",
+        "Xóa bảng InvoiceCopy nếu đã tồn tại, rồi sao chép toàn bộ dữ liệu từ Invoices sang bảng InvoiceCopy mới",
+        "Cập nhật dữ liệu bảng InvoiceCopy theo Invoices"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.2."
+    },
+    {
+      "id": "csdl-178",
+      "chapter": 4,
+      "text": "Trong thủ tục spInvTotal3 sau, tham số nào là tham số đầu ra và tham số nào có giá trị mặc định? ```sql CREATE PROC spInvTotal3 @InvTotal money OUTPUT, @DateVar smalldatetime = NULL, @VendorVar varchar(40) = '%' AS IF @DateVar IS NULL SELECT @DateVar = MIN(InvoiceDate) FROM Invoices SELECT @InvTotal = SUM(InvoiceTotal) FROM Invoices JOIN Vendors ON Invoices.VendorID = Vendors.VendorID WHERE (InvoiceDate >= @DateVar) AND (VendorName LIKE @VendorVar) ```",
+      "options": [
+        "@DateVar là đầu ra; @InvTotal có mặc định",
+        "@VendorVar là đầu ra; @DateVar có mặc định",
+        "Cả ba đều là tham số đầu ra",
+        "@InvTotal là tham số đầu ra; @DateVar và @VendorVar có giá trị mặc định"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-179",
+      "chapter": 4,
+      "text": "Nếu gọi spInvTotal3 mà không truyền @DateVar, thủ tục sẽ lấy hóa đơn từ ngày nào? ```sql IF @DateVar IS NULL SELECT @DateVar = MIN(InvoiceDate) FROM Invoices ```",
+      "options": [
+        "Từ ngày hóa đơn nhỏ nhất trong bảng Invoices",
+        "Báo lỗi vì thiếu tham số",
+        "Từ ngày hiện tại",
+        "Từ ngày 01/01/1900"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Nhánh IF @DateVar IS NULL gán @DateVar = MIN(InvoiceDate) (slide 1.4)."
+    },
+    {
+      "id": "csdl-180",
+      "chapter": 4,
+      "text": "Giả sử đã khai báo DECLARE @MyInvTotal money. Lời gọi nào sau đây truyền tham số THEO VỊ TRÍ đúng cho spInvTotal3?",
+      "options": [
+        "EXEC spInvTotal3 '2008-06-01', 'P%', @MyInvTotal OUTPUT",
+        "EXEC spInvTotal3 @DateVar = '2008-06-01', 'P%'",
+        "EXEC spInvTotal3 @MyInvTotal OUTPUT, '2008-06-01', 'P%'",
+        "EXEC spInvTotal3 @MyInvTotal, '2008-06-01', 'P%'"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4: thứ tự phải khớp với khai báo (@InvTotal, @DateVar, @VendorVar) và OUTPUT khi gọi."
+    },
+    {
+      "id": "csdl-181",
+      "chapter": 4,
+      "text": "Giả sử đã khai báo DECLARE @MyInvTotal money. Lời gọi nào sau đây truyền tham số THEO TÊN và bỏ qua tham số @VendorVar (tùy chọn)?",
+      "options": [
+        "EXEC spInvTotal3 @VendorVar = NULL",
+        "EXEC spInvTotal3 @DateVar = '2008-06-01', @InvTotal = @MyInvTotal OUTPUT",
+        "EXEC spInvTotal3 '2008-06-01', @MyInvTotal",
+        "EXEC spInvTotal3 @InvTotal OUTPUT = @MyInvTotal"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4."
+    },
+    {
+      "id": "csdl-182",
+      "chapter": 4,
+      "text": "Sau khi chạy đoạn mã sau, câu lệnh SELECT @MyInvTotal hiển thị gì? ```sql DECLARE @MyInvTotal money EXEC spInvTotal3 @MyInvTotal OUTPUT, '2008-06-01', 'P%' SELECT @MyInvTotal ```",
+      "options": [
+        "Số lượng hóa đơn",
+        "Tổng tất cả hóa đơn trong CSDL",
+        "Tổng InvoiceTotal của các hóa đơn từ 01/06/2008 của nhà cung cấp có tên bắt đầu bằng 'P'",
+        "Giá trị NULL vì thiếu OUTPUT"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.4: giá trị OUTPUT được gán vào @MyInvTotal."
+    },
+    {
+      "id": "csdl-183",
+      "chapter": 4,
+      "text": "Thủ tục spInvCount trả về kết quả bằng cách nào? ```sql CREATE PROC spInvCount @DateVar smalldatetime = NULL, @VendorVar varchar(40) = '%' AS IF @DateVar IS NULL SELECT @DateVar = MIN(InvoiceDate) FROM Invoices DECLARE @InvCount int SELECT @InvCount = COUNT(InvoiceID) FROM Invoices JOIN Vendors ON Invoices.VendorID = Vendors.VendorID WHERE ((InvoiceDate >= @DateVar) AND (VendorName LIKE @VendorVar)) RETURN @InvCount ```",
+      "options": [
+        "Bằng tham số OUTPUT",
+        "Bằng câu lệnh RETURN @InvCount (số nguyên)",
+        "Bằng lệnh PRINT",
+        "Bằng lệnh SELECT trả bảng"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.5."
+    },
+    {
+      "id": "csdl-184",
+      "chapter": 4,
+      "text": "Dòng EXEC @InvCount = spInvCount '2008-06-01', 'P%' làm gì? ```sql DECLARE @InvCount int EXEC @InvCount = spInvCount '2008-06-01', 'P%' PRINT 'Invoice count: ' + CONVERT(varchar, @InvCount) ```",
+      "options": [
+        "Tạo tham số OUTPUT cho thủ tục",
+        "Khai báo biến @InvCount",
+        "Gán giá trị RETURN của thủ tục vào biến @InvCount",
+        "Gán 'P%' vào @InvCount"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.5. Nếu thủ tục trả 7 thì in ra 'Invoice count: 7'."
+    },
+    {
+      "id": "csdl-185",
+      "chapter": 4,
+      "text": "Nếu spInsertInvoice được gọi với VendorID không tồn tại trong bảng Vendors, điều gì xảy ra? ```sql CREATE PROC spInsertInvoice @VendorID int, @InvoiceNumber varchar(50), @InvoiceDate smalldatetime, @InvoiceTotal money, @TermsID int, @InvoiceDueDate smalldatetime AS IF EXISTS (SELECT * FROM Vendors WHERE VendorID = @VendorID) BEGIN INSERT Invoices VALUES (@VendorID, @InvoiceNumber, @InvoiceDate, @InvoiceTotal, 0, 0, @TermsID, @InvoiceDueDate, NULL) END ELSE BEGIN RAISERROR('Not a valid VendorID!', 11, 1) END ```",
+      "options": [
+        "Thủ tục tự tạo Vendor mới",
+        "Dữ liệu vẫn được chèn vào Invoices",
+        "Thủ tục kết thúc mà không báo gì",
+        "Nhánh ELSE chạy RAISERROR('Not a valid VendorID!', 11, 1) và không chèn dữ liệu"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6."
+    },
+    {
+      "id": "csdl-186",
+      "chapter": 4,
+      "text": "Với VendorID = 799 không tồn tại, đoạn mã gọi thủ tục sau in ra những dòng nào? ```sql BEGIN TRY EXEC spInsertInvoice 799, 'ZXK-799', '2008-07-01', 299.95, 1, '2008-08-01' END TRY BEGIN CATCH PRINT 'An error occurred.' PRINT 'Message: ' + CONVERT(varchar, ERROR_MESSAGE()) IF ERROR_NUMBER() = 50000 PRINT 'This is a custom error message.' END CATCH ```",
+      "options": [
+        "Message: 799",
+        "Không in gì vì lỗi không bị bắt",
+        "Chỉ in 'An error occurred.'",
+        "An error occurred. / Message: Not a valid VendorID! / This is a custom error message."
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.6: ERROR_NUMBER() = 50000 với lỗi tự định nghĩa."
+    },
+    {
+      "id": "csdl-187",
+      "chapter": 4,
+      "text": "Sau khi ALTER, nếu gọi EXEC spVendorState (không truyền tham số) thì kết quả là gì? ```sql ALTER PROC spVendorState @State varchar(20) = NULL AS IF @State IS NULL SELECT VendorName FROM Vendors ELSE SELECT VendorName FROM Vendors WHERE VendorState = @State ```",
+      "options": [
+        "Báo lỗi thiếu tham số @State",
+        "Danh sách rỗng",
+        "Chỉ các nhà cung cấp có VendorState = NULL",
+        "Danh sách VendorName của tất cả nhà cung cấp"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.8: @State có mặc định NULL nên IF @State IS NULL chạy nhánh lấy tất cả."
+    },
+    {
+      "id": "csdl-188",
+      "chapter": 4,
+      "text": "Lệnh nào xóa thủ tục spVendorState?",
+      "options": [
+        "DROP PROC spVendorState",
+        "REMOVE spVendorState",
+        "ALTER PROC spVendorState DROP",
+        "DELETE PROC spVendorState"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 1.8."
+    },
+    {
+      "id": "csdl-189",
+      "chapter": 4,
+      "text": "Trong đoạn mã giao dịch sau, nếu một lệnh INSERT lỗi thì điều gì xảy ra? ```sql BEGIN TRY BEGIN TRAN INSERT Invoices VALUES (34,'ZXA-080','2008-08-30',14092.59,0,0,3,'2008-09-30',NULL) SET @InvoiceID = @@IDENTITY INSERT InvoiceLineItems VALUES (@InvoiceID,1,160,4447.23,'HW upgrade') INSERT InvoiceLineItems VALUES (@InvoiceID,2,167,9645.36,'OS upgrade') COMMIT TRAN END TRY BEGIN CATCH ROLLBACK TRAN END CATCH ```",
+      "options": [
+        "Các lệnh INSERT trước đó vẫn được lưu",
+        "Khối CATCH chạy ROLLBACK TRAN, toàn bộ các lệnh chèn bị hủy bỏ",
+        "Giao dịch được COMMIT tự động",
+        "Chương trình tiếp tục chạy các INSERT còn lại"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.2."
+    },
+    {
+      "id": "csdl-190",
+      "chapter": 4,
+      "text": "Vì sao cần đặt ba lệnh INSERT (Invoices và hai InvoiceLineItems) trong cùng một giao dịch?",
+      "options": [
+        "Để cả ba cùng thành công hoặc cùng bị hủy, giữ InvoiceTotal bằng tổng các InvoiceLineItemAmount",
+        "Để tăng tốc độ thực thi",
+        "Để không phải dùng khóa chính",
+        "Để tự sinh giá trị @@IDENTITY"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.1 – 2.2."
+    },
+    {
+      "id": "csdl-191",
+      "chapter": 4,
+      "text": "Đoạn mã sau in thông báo gì nếu lệnh DELETE xóa 2 hàng? ```sql BEGIN TRAN DELETE Invoices WHERE VendorID = 34 IF @@ROWCOUNT > 1 BEGIN ROLLBACK TRAN PRINT 'Deletions rolled back.' END ELSE BEGIN COMMIT TRAN PRINT 'Deletions committed to the database.' END ```",
+      "options": [
+        "Báo lỗi cú pháp",
+        "Deletions rolled back.",
+        "Deletions committed to the database.",
+        "Không in gì"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.4: @@ROWCOUNT = 2 > 1 → ROLLBACK TRAN."
+    },
+    {
+      "id": "csdl-192",
+      "chapter": 4,
+      "text": "Nếu lệnh DELETE trong đoạn mã trên chỉ xóa 1 hàng thì kết quả là gì? ```sql IF @@ROWCOUNT > 1 ROLLBACK TRAN ... ELSE COMMIT TRAN ... ```",
+      "options": [
+        "Báo lỗi",
+        "COMMIT TRAN và in 'Deletions committed to the database.'",
+        "Không COMMIT cũng không ROLLBACK",
+        "ROLLBACK TRAN và in 'Deletions rolled back.'"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.4: @@ROWCOUNT = 1 không > 1 → nhánh ELSE."
+    },
+    {
+      "id": "csdl-193",
+      "chapter": 4,
+      "text": "Trong đoạn mã giao dịch lồng sau, giá trị @@TRANCOUNT in ra ở 'First Tran', 'Second Tran', 'COMMIT' lần lượt là bao nhiêu? ```sql BEGIN TRAN PRINT 'First Tran @@TRANCOUNT: ' + CONVERT(varchar, @@TRANCOUNT) DELETE Invoices BEGIN TRAN PRINT 'Second Tran @@TRANCOUNT: ' + CONVERT(varchar, @@TRANCOUNT) DELETE Vendors COMMIT TRAN PRINT 'COMMIT @@TRANCOUNT: ' + CONVERT(varchar, @@TRANCOUNT) ROLLBACK TRAN PRINT 'ROLLBACK @@TRANCOUNT: ' + CONVERT(varchar, @@TRANCOUNT) ```",
+      "options": [
+        "1, 2, 0",
+        "1, 1, 0",
+        "1, 2, 1",
+        "0, 1, 0"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5: BEGIN TRAN thứ nhất → 1; thứ hai → 2; COMMIT trong → giảm còn 1."
+    },
+    {
+      "id": "csdl-194",
+      "chapter": 4,
+      "text": "Trong đoạn mã giao dịch lồng ở câu trên, sau ROLLBACK TRAN giá trị @@TRANCOUNT và dữ liệu hai bảng Invoices, Vendors thế nào?",
+      "options": [
+        "@@TRANCOUNT = 1; Vendors bị xóa",
+        "@@TRANCOUNT = 0; dữ liệu của cả hai bảng được khôi phục như ban đầu",
+        "@@TRANCOUNT = 0; Vendors bị xóa vì đã COMMIT",
+        "@@TRANCOUNT = 0; chỉ Invoices được khôi phục"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.5: ROLLBACK TRAN roll-back toàn bộ giao dịch đang hoạt động; COMMIT bên trong chưa thực sự lưu."
+    },
+    {
+      "id": "csdl-195",
+      "chapter": 4,
+      "text": "Tại điểm SELECT * FROM #VendorCopy đầu tiên (sau khi xóa VendorID 1, 2 và 3), bảng tạm còn những VendorID nào? ```sql SELECT VendorID, VendorName INTO #VendorCopy FROM Vendors WHERE VendorID < 5 BEGIN TRAN DELETE #VendorCopy WHERE VendorID = 1 SAVE TRAN Vendor1 DELETE #VendorCopy WHERE VendorID = 2 SAVE TRAN Vendor2 DELETE #VendorCopy WHERE VendorID = 3 SELECT * FROM #VendorCopy -- (a) ROLLBACK TRAN Vendor2 SELECT * FROM #VendorCopy -- (b) ROLLBACK TRAN Vendor1 SELECT * FROM #VendorCopy -- (c) COMMIT TRAN SELECT * FROM #VendorCopy -- (d) ```",
+      "options": [
+        "Chỉ VendorID = 4",
+        "VendorID 2, 3, 4",
+        "VendorID 1, 2, 3",
+        "VendorID 3 và 4"
+      ],
+      "answer": 0,
+      "hint": "Chương IV",
+      "explanation": "Slide 2.6: bảng ban đầu VendorID \\< 5 gồm 1, 2, 3, 4."
+    },
+    {
+      "id": "csdl-196",
+      "chapter": 4,
+      "text": "Với đoạn mã trên, tại điểm (b) sau ROLLBACK TRAN Vendor2, bảng tạm còn những VendorID nào?",
+      "options": [
+        "VendorID 1, 2, 3, 4",
+        "VendorID 2, 3, 4",
+        "VendorID 3 và 4",
+        "Chỉ VendorID 4"
+      ],
+      "answer": 2,
+      "hint": "Chương IV",
+      "explanation": "Quay lui về Vendor2 chỉ hủy lệnh DELETE VendorID = 3 (slide 2.6)."
+    },
+    {
+      "id": "csdl-197",
+      "chapter": 4,
+      "text": "Với đoạn mã trên, tại điểm (c) sau ROLLBACK TRAN Vendor1, bảng tạm còn những VendorID nào?",
+      "options": [
+        "VendorID 3 và 4",
+        "VendorID 1, 2, 3, 4",
+        "Chỉ VendorID 4",
+        "VendorID 2, 3 và 4"
+      ],
+      "answer": 3,
+      "hint": "Chương IV",
+      "explanation": "Quay lui về Vendor1 hủy thêm lệnh DELETE VendorID = 2; lệnh DELETE VendorID = 1 (trước Vendor1) vẫn còn hiệu lực."
+    },
+    {
+      "id": "csdl-198",
+      "chapter": 4,
+      "text": "Với đoạn mã trên, sau COMMIT TRAN, kết quả SELECT ở điểm (d) là gì?",
+      "options": [
+        "VendorID 1, 2, 3, 4",
+        "VendorID 2, 3 và 4 (giống điểm (c))",
+        "Chỉ VendorID 4",
+        "Bảng rỗng"
+      ],
+      "answer": 1,
+      "hint": "Chương IV",
+      "explanation": "COMMIT lưu trạng thái hiện tại – VendorID = 1 đã bị xóa vĩnh viễn."
+    },
+    {
+      "id": "csdl-199",
+      "chapter": 5,
+      "text": "Hàm người dùng tự định nghĩa (UDF) là gì?",
+      "options": [
+        "Một bảng ảo lưu trong CSDL",
+        "Một file kịch bản lưu trên ổ đĩa",
+        "Một đối tượng tự động chạy khi dữ liệu thay đổi",
+        "Một đối tượng CSDL chứa các câu lệnh SQL, được biên dịch sẵn và lưu trữ, thực hiện một hành động (như tính toán phức tạp) và trả về kết quả là một giá trị"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Hàm người dùng tự định nghĩa."
+    },
+    {
+      "id": "csdl-200",
+      "chapter": 5,
+      "text": "Giá trị trả về của hàm người dùng định nghĩa có thể là gì?",
+      "options": [
+        "Chỉ chuỗi",
+        "Chỉ số nguyên",
+        "Chỉ NULL",
+        "Giá trị vô hướng hoặc một bảng"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Hàm người dùng tự định nghĩa."
+    },
+    {
+      "id": "csdl-201",
+      "chapter": 5,
+      "text": "Điểm khác nhau giữa hàm người dùng định nghĩa và Stored Procedure là gì?",
+      "options": [
+        "Hàm không bao giờ có tham số",
+        "Hàm không thể lưu trong CSDL",
+        "Hàm luôn phải trả về một giá trị bằng RETURN và không có tham số đầu ra",
+        "Hàm có tham số OUTPUT còn SP thì không"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: Khác với Stored Procedure."
+    },
+    {
+      "id": "csdl-202",
+      "chapter": 5,
+      "text": "Trong thân hàm người dùng định nghĩa, thao tác nào KHÔNG được phép?",
+      "options": [
+        "Dùng câu lệnh RETURN",
+        "INSERT trên biến bảng tạo trong thân hàm",
+        "INSERT, UPDATE, DELETE trên bảng hoặc view đang tồn tại trong CSDL",
+        "Khai báo biến"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: được thao tác trên bảng, bảng tạm, biến bảng vừa tạo trong thân hàm."
+    },
+    {
+      "id": "csdl-203",
+      "chapter": 5,
+      "text": "Có bao nhiêu loại hàm người dùng tự định nghĩa và gồm những loại nào?",
+      "options": [
+        "3 loại: hàm giá trị vô hướng, hàm giá trị bảng đơn giản, hàm giá trị bảng nhiều câu lệnh",
+        "4 loại gồm cả trigger",
+        "2 loại: hàm số và hàm chuỗi",
+        "3 loại: hàm số, hàm chuỗi, hàm ngày giờ"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Các loại hàm."
+    },
+    {
+      "id": "csdl-204",
+      "chapter": 5,
+      "text": "Khi gọi hàm giá trị vô hướng, điều nào sau đây đúng?",
+      "options": [
+        "Chỉ cần truyền các tham số bắt buộc",
+        "Có thể truyền theo tên như Stored Procedure",
+        "Không được phép dùng từ khóa DEFAULT",
+        "Không thể truyền tham số theo tên; phải truyền đủ tham số theo vị trí, dùng DEFAULT cho tham số tùy chọn muốn lấy giá trị mặc định"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo hàm giá trị vô hướng (Chú ý)."
+    },
+    {
+      "id": "csdl-205",
+      "chapter": 5,
+      "text": "Hàm giá trị bảng đơn giản còn được gọi là gì?",
+      "options": [
+        "Hàm vô hướng nhiều câu lệnh",
+        "Hàm giá trị bảng nội tuyến",
+        "Hàm bảng tạm",
+        "Hàm hệ thống"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Hàm giá trị bảng đơn giản."
+    },
+    {
+      "id": "csdl-206",
+      "chapter": 5,
+      "text": "Hàm giá trị bảng đơn giản có thể được dùng ở đâu trong câu truy vấn?",
+      "options": [
+        "Thay thế cho tên bảng hoặc tên view",
+        "Không thể dùng trong câu truy vấn",
+        "Chỉ sau từ khóa ORDER BY",
+        "Chỉ trong mệnh đề WHERE"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Hàm giá trị bảng đơn giản."
+    },
+    {
+      "id": "csdl-207",
+      "chapter": 5,
+      "text": "Câu lệnh nào dùng để xóa hàm người dùng định nghĩa?",
+      "options": [
+        "REMOVE FUNCTION",
+        "DROP FUNCTION",
+        "DELETE FUNCTION",
+        "ALTER FUNCTION DROP"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Xóa và chỉnh sửa hàm."
+    },
+    {
+      "id": "csdl-208",
+      "chapter": 5,
+      "text": "Để chỉnh sửa hàm giá trị vô hướng, ta làm thế nào?",
+      "options": [
+        "Phải DROP rồi không thể tạo lại",
+        "Dùng cú pháp như CREATE FUNCTION nhưng thay từ khóa CREATE bằng ALTER",
+        "Dùng MODIFY FUNCTION",
+        "Dùng UPDATE FUNCTION"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Xóa và chỉnh sửa hàm."
+    },
+    {
+      "id": "csdl-209",
+      "chapter": 5,
+      "text": "View là gì?",
+      "options": [
+        "Một bảng ảo (virtual table), thực chất là một câu lệnh truy vấn được biên dịch sẵn và lưu trữ như một đối tượng trong CSDL",
+        "Một bản sao vật lý của bảng",
+        "Một chỉ mục của bảng",
+        "Một thủ tục tự động chạy khi INSERT"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Khung nhìn - View."
+    },
+    {
+      "id": "csdl-210",
+      "chapter": 5,
+      "text": "Các bảng mà View lấy dữ liệu từ đó được gọi là gì?",
+      "options": [
+        "Bảng tạm",
+        "Bảng cơ sở",
+        "Bảng logic",
+        "Bảng ảo"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Khung nhìn - View."
+    },
+    {
+      "id": "csdl-211",
+      "chapter": 5,
+      "text": "Lợi ích nào là của View?",
+      "options": [
+        "Thay thế hoàn toàn khóa chính",
+        "Luôn cho phép INSERT vào mọi cột",
+        "Tự động thực thi khi dữ liệu thay đổi",
+        "Che dấu và bảo mật dữ liệu, hiển thị dữ liệu tùy biến cho từng người dùng, lưu trữ câu truy vấn phức tạp thường dùng"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Lợi ích của View."
+    },
+    {
+      "id": "csdl-212",
+      "chapter": 5,
+      "text": "Khi dùng View để cập nhật dữ liệu bảng cơ sở thì SQL Server làm gì?",
+      "options": [
+        "Bỏ qua mọi ràng buộc",
+        "Không cho phép cập nhật",
+        "Chỉ kiểm tra khóa ngoại",
+        "Tự động kiểm tra các ràng buộc toàn vẹn trên các bảng"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Lợi ích của View."
+    },
+    {
+      "id": "csdl-213",
+      "chapter": 5,
+      "text": "Quy tắc nào đúng khi tạo View?",
+      "options": [
+        "Tên view không được trùng với tên bảng hoặc view đã tồn tại",
+        "SELECT tạo view bắt buộc có mệnh đề INTO",
+        "Luôn dùng được ORDER BY mà không cần TOP",
+        "Cột tính toán không cần đặt tên"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo View (Chú ý)."
+    },
+    {
+      "id": "csdl-214",
+      "chapter": 5,
+      "text": "Câu lệnh SELECT tạo VIEW không được chứa gì (trừ trường hợp đặc biệt)?",
+      "options": [
+        "Mệnh đề WHERE",
+        "Mệnh đề FROM",
+        "Mệnh đề INTO, hoặc ORDER BY trừ khi có từ khóa TOP",
+        "Mệnh đề JOIN"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo View (Chú ý)."
+    },
+    {
+      "id": "csdl-215",
+      "chapter": 5,
+      "text": "Cột trong View chứa giá trị tính toán từ nhiều cột khác thì phải làm gì?",
+      "options": [
+        "Phải bỏ cột đó",
+        "Phải dùng kiểu dữ liệu text",
+        "Tên được mặc định theo tên cột bảng cơ sở",
+        "Phải được đặt tên"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo View (Chú ý)."
+    },
+    {
+      "id": "csdl-216",
+      "chapter": 5,
+      "text": "Có mấy loại View?",
+      "options": [
+        "1 loại",
+        "2 loại: View chỉ đọc (read-only) và View có thể cập nhật (updatable)",
+        "4 loại",
+        "3 loại"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Hai loại View."
+    },
+    {
+      "id": "csdl-217",
+      "chapter": 5,
+      "text": "Theo quy tắc phân loại của slide, điều kiện nào khiến View được xếp vào loại View chỉ đọc?",
+      "options": [
+        "SELECT có chọn khóa chính",
+        "SELECT chứa DISTINCT hoặc TOP, hàm kết tập, giá trị tính toán, GROUP BY/HAVING hoặc UNION",
+        "SELECT lấy dữ liệu từ một bảng duy nhất",
+        "SELECT có mệnh đề WHERE"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: View có thể cập nhật."
+    },
+    {
+      "id": "csdl-218",
+      "chapter": 5,
+      "text": "Câu lệnh nào dùng để xóa View?",
+      "options": [
+        "REMOVE VIEW",
+        "DROP VIEW \\<tên View>",
+        "TRUNCATE VIEW",
+        "DELETE VIEW"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Xóa và chỉnh sửa View."
+    },
+    {
+      "id": "csdl-219",
+      "chapter": 5,
+      "text": "Câu lệnh nào dùng để chỉnh sửa View và có thể kèm tùy chọn WITH CHECK OPTION?",
+      "options": [
+        "ALTER VIEW",
+        "UPDATE VIEW",
+        "REPLACE VIEW",
+        "MODIFY VIEW"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Xóa và chỉnh sửa View."
+    },
+    {
+      "id": "csdl-220",
+      "chapter": 5,
+      "text": "Công cụ nào trong Management Studio dùng để làm việc với View (tương tự Query Designer)?",
+      "options": [
+        "View Designer",
+        "Table Designer",
+        "SQLCMD",
+        "Profiler"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Hướng dẫn sử dụng View Designer."
+    },
+    {
+      "id": "csdl-221",
+      "chapter": 5,
+      "text": "Trigger là gì?",
+      "options": [
+        "Một hàm trả về bảng",
+        "Một đối tượng chứa tập câu lệnh SQL, được thực thi tự động khi có thay đổi CSDL",
+        "Một bảng ảo",
+        "Một thủ tục chỉ chạy khi có lời gọi EXEC"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-222",
+      "chapter": 5,
+      "text": "Điểm khác nhau giữa Trigger và Stored Procedure là gì?",
+      "options": [
+        "Trigger tự động thực thi khi có thay đổi CSDL; SP chỉ thực hiện khi có lời gọi",
+        "Trigger có tham số OUTPUT",
+        "Trigger gọi bằng EXEC",
+        "SP không lưu trong CSDL"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-223",
+      "chapter": 5,
+      "text": "Mỗi trigger được tạo và gắn liền với đối tượng nào?",
+      "options": [
+        "Một View bất kỳ",
+        "Một bảng",
+        "Một CSDL",
+        "Một người dùng"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-224",
+      "chapter": 5,
+      "text": "Trigger được sử dụng để làm gì?",
+      "options": [
+        "Nhận biết, ngăn chặn/hủy bỏ thao tác làm thay đổi trái phép dữ liệu, và kiểm tra các mối quan hệ phức tạp giữa các bảng mà ràng buộc không thực hiện được",
+        "Chỉ để sao lưu dữ liệu",
+        "Chỉ để tạo chỉ mục",
+        "Chỉ để đổi tên bảng"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-225",
+      "chapter": 5,
+      "text": "Hai bảng logic mà SQL Server định nghĩa để dùng trong trigger là gì?",
+      "options": [
+        "current và previous",
+        "new và old",
+        "inserted và deleted",
+        "added và removed"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-226",
+      "chapter": 5,
+      "text": "Khi câu lệnh DELETE được thực thi trên bảng, các bảng logic có nội dung gì?",
+      "options": [
+        "Các dòng bị xóa vào inserted; deleted rỗng",
+        "Các dòng bị xóa được sao chép vào bảng deleted; bảng inserted không có dữ liệu",
+        "Cả hai đều chứa dòng bị xóa",
+        "Cả hai đều rỗng"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-227",
+      "chapter": 5,
+      "text": "Khi câu lệnh UPDATE được thực thi trên bảng, các bảng logic có nội dung gì?",
+      "options": [
+        "deleted chứa các dòng trước khi cập nhật; inserted chứa các dòng sau khi cập nhật",
+        "Cả hai rỗng",
+        "deleted chứa dòng sau khi cập nhật; inserted chứa dòng trước",
+        "Cả hai chứa dòng sau cập nhật"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER."
+    },
+    {
+      "id": "csdl-228",
+      "chapter": 5,
+      "text": "Hàm UPDATE(tên_cột) trong trigger dùng để làm gì?",
+      "options": [
+        "Cập nhật giá trị cho cột",
+        "Kiểm tra xem cột được chỉ định có bị cập nhật hay không",
+        "Xóa cột",
+        "Tạo cột mới"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER (Cú pháp: IF UPDATE(tên_cột))."
+    },
+    {
+      "id": "csdl-229",
+      "chapter": 5,
+      "text": "Đoạn mã sau tạo ra loại hàm nào và cách gọi hàm trong SELECT ra sao? ```sql CREATE FUNCTION fnVendorID (@VendorName varchar(50)) RETURNS int BEGIN RETURN (SELECT VendorID FROM Vendors WHERE VendorName = @VendorName) END GO SELECT InvoiceDate, InvoiceTotal FROM Invoices WHERE VendorID = dbo.fnVendorID('IBM') ```",
+      "options": [
+        "Hàm giá trị vô hướng trả về int; gọi bằng dbo.fnVendorID('IBM')",
+        "Hàm giá trị bảng; gọi bằng fnVendorID('IBM')",
+        "Hàm giá trị vô hướng; gọi bằng fnVendorID = 'IBM'",
+        "Stored Procedure; gọi bằng EXEC"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Một ví dụ về hàm người dùng định nghĩa."
+    },
+    {
+      "id": "csdl-230",
+      "chapter": 5,
+      "text": "Câu lệnh nào in ra tổng dư nợ bằng hàm vô hướng fnBalanceDue (RETURNS money)? ```sql CREATE FUNCTION fnBalanceDue() RETURNS money BEGIN RETURN (SELECT SUM(InvoiceTotal - PaymentTotal - CreditTotal) FROM Invoices WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0) END ```",
+      "options": [
+        "PRINT 'Balance due: $' + CONVERT(varchar, fnBalanceDue, 1)",
+        "EXEC fnBalanceDue",
+        "PRINT 'Balance due: $' + CONVERT(varchar, dbo.fnBalanceDue(), 1)",
+        "PRINT 'Balance due: $' + fnBalanceDue()"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: Ví dụ về hàm giá trị vô hướng – phải có tiền tố schema dbo và cặp ngoặc ()."
+    },
+    {
+      "id": "csdl-231",
+      "chapter": 5,
+      "text": "Dòng nào là phần bắt buộc để khai báo hàm giá trị vô hướng? ```sql CREATE FUNCTION [<tên schema>.] <tên hàm> ([@<tên tham số> <kiểu dữ liệu> [= <Giá trị mặc định>]] [, …]) RETURNS <kiểu dữ liệu> [AS] BEGIN [<Câu lệnh SQL>] RETURN <Biểu thức vô hướng> END ```",
+      "options": [
+        "WITH CHECK OPTION",
+        "RETURNS TABLE",
+        "OUTPUT trong danh sách tham số",
+        "RETURNS \\<kiểu dữ liệu> và RETURN \\<biểu thức vô hướng> trong thân hàm"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo hàm giá trị vô hướng."
+    },
+    {
+      "id": "csdl-232",
+      "chapter": 5,
+      "text": "Hàm fnTopVendorsDue thuộc loại nào và cách gọi nào sau đây đúng? ```sql CREATE FUNCTION fnTopVendorsDue (@CutOff money = 0) RETURNS table RETURN (SELECT VendorName, SUM(InvoiceTotal) AS TotalDue FROM Vendors JOIN Invoices ON Vendors.VendorID = Invoices.VendorID WHERE InvoiceTotal - CreditTotal - PaymentTotal > 0 GROUP BY VendorName HAVING SUM(InvoiceTotal) >= @CutOff) ```",
+      "options": [
+        "Hàm nhiều câu lệnh; EXEC fnTopVendorsDue 5000",
+        "Hàm giá trị bảng đơn giản; EXEC dbo.fnTopVendorsDue(5000)",
+        "Hàm vô hướng; SELECT dbo.fnTopVendorsDue(5000)",
+        "Hàm giá trị bảng đơn giản; SELECT * FROM dbo.fnTopVendorsDue(5000)"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide Demo: RETURNS table và RETURN (SELECT ...)."
+    },
+    {
+      "id": "csdl-233",
+      "chapter": 5,
+      "text": "Để dùng giá trị mặc định (0) của tham số @CutOff khi gọi hàm fnTopVendorsDue trong phép JOIN, ta viết thế nào? ```sql SELECT Vendors.VendorName, VendorCity, TotalDue FROM Vendors JOIN dbo.fnTopVendorsDue(DEFAULT) AS TopVendors ON Vendors.VendorName = TopVendors.VendorName ```",
+      "options": [
+        "JOIN dbo.fnTopVendorsDue(DEFAULT) AS TopVendors",
+        "JOIN dbo.fnTopVendorsDue() AS TopVendors",
+        "JOIN dbo.fnTopVendorsDue(NULL) AS TopVendors",
+        "JOIN dbo.fnTopVendorsDue AS TopVendors"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide Demo: hàm không cho bỏ qua tham số; phải dùng DEFAULT."
+    },
+    {
+      "id": "csdl-234",
+      "chapter": 5,
+      "text": "Hàm fnCreditAdj thuộc loại nào và có đặc điểm cú pháp gì? ```sql CREATE FUNCTION fnCreditAdj (@HowMuch money) RETURNS @OutTable table (InvoiceID int, VendorID int, InvoiceNumber varchar(50), InvoiceDate smalldatetime, InvoiceTotal money, PaymentTotal money, CreditTotal money) BEGIN INSERT @OutTable SELECT InvoiceID, VendorID, InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal FROM Invoices WHERE InvoiceTotal - CreditTotal - PaymentTotal > 0 WHILE (SELECT SUM(InvoiceTotal - CreditTotal - PaymentTotal) FROM @OutTable) >= @HowMuch BEGIN UPDATE @OutTable SET CreditTotal = CreditTotal + .01 WHERE InvoiceTotal - CreditTotal - PaymentTotal > 0 END RETURN END ```",
+      "options": [
+        "Hàm bảng đơn giản: RETURNS table và RETURN (SELECT...)",
+        "Hàm vô hướng: RETURNS money",
+        "Hàm giá trị bảng nhiều câu lệnh: RETURNS @OutTable table (...), thân hàm trong BEGIN...END và kết thúc bằng RETURN",
+        "Stored Procedure có tham số OUTPUT"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide Demo hàm giá trị bảng đa câu lệnh."
+    },
+    {
+      "id": "csdl-235",
+      "chapter": 5,
+      "text": "Vì sao hàm fnCreditAdj ở câu trên được phép dùng lệnh UPDATE?",
+      "options": [
+        "Vì UPDATE tác động lên biến bảng @OutTable tạo trong thân hàm, không phải bảng đang tồn tại trong CSDL",
+        "Vì UPDATE được bọc trong WHILE",
+        "Vì hàm nhiều câu lệnh được phép UPDATE mọi bảng",
+        "Vì dùng tham số @HowMuch"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: Hàm có thể thao tác trên bảng, bảng tạm, biến bảng vừa tạo trong thân hàm."
+    },
+    {
+      "id": "csdl-236",
+      "chapter": 5,
+      "text": "Câu lệnh nào gọi đúng hàm nhiều câu lệnh fnCreditAdj(50000) và nhóm theo nhà cung cấp?",
+      "options": [
+        "SELECT dbo.fnCreditAdj(50000) FROM Vendors",
+        "SELECT VendorName, SUM(CreditTotal) FROM fnCreditAdj GROUP BY VendorName",
+        "EXEC dbo.fnCreditAdj 50000",
+        "SELECT VendorName, SUM(CreditTotal) AS CreditRequest FROM Vendors JOIN dbo.fnCreditAdj(50000) AS CreditTable ON Vendors.VendorID = CreditTable.VendorID GROUP BY VendorName"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide Demo."
+    },
+    {
+      "id": "csdl-237",
+      "chapter": 5,
+      "text": "View VendorInvoices sau lấy dữ liệu từ những bảng nào và gồm những cột nào? ```sql CREATE VIEW VendorInvoices AS SELECT VendorName, InvoiceNumber, InvoiceDate, InvoiceTotal FROM Vendors JOIN Invoices ON Vendors.VendorID = Invoices.VendorID ```",
+      "options": [
+        "Từ Vendors và Terms; cột VendorName, TermsID",
+        "Từ Invoices và InvoiceLineItems",
+        "Từ Vendors và Invoices; các cột VendorName, InvoiceNumber, InvoiceDate, InvoiceTotal",
+        "Chỉ từ Invoices; mọi cột"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: Ví dụ về View – Ví dụ 1."
+    },
+    {
+      "id": "csdl-238",
+      "chapter": 5,
+      "text": "View TopVendors có mệnh đề ORDER BY được hay không và vì sao? ```sql CREATE VIEW TopVendors AS SELECT TOP 5 PERCENT Invoices.VendorID, InvoiceTotal FROM Invoices JOIN Vendors ON Vendors.VendorID = Invoices.VendorID ORDER BY InvoiceTotal DESC ```",
+      "options": [
+        "Không, vì có mệnh đề PERCENT",
+        "Không, vì View không bao giờ cho phép ORDER BY",
+        "Được, vì có mệnh đề JOIN",
+        "Được, vì câu SELECT có từ khóa TOP"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: Tạo View – ORDER BY chỉ được dùng nếu có TOP."
+    },
+    {
+      "id": "csdl-239",
+      "chapter": 5,
+      "text": "Trong hai view OutstandingInvoices sau, cách nào ĐÚNG về mặt đặt tên cột? ```sql -- Cách 1 CREATE VIEW OutstandingInvoices (InvoiceNumber, InvoiceDate, InvoiceTotal, BalanceDue) AS SELECT InvoiceNumber, InvoiceDate, InvoiceTotal, InvoiceTotal - PaymentTotal - CreditTotal FROM Invoices WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0 GO -- Cách 2 CREATE VIEW OutstandingInvoices AS SELECT InvoiceNumber, InvoiceDate, InvoiceTotal, InvoiceTotal - PaymentTotal - CreditTotal AS BalanceDue FROM Invoices WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0 ```",
+      "options": [
+        "Chỉ cách 2 đúng",
+        "Cả hai đều đúng: một cách đặt tên toàn bộ cột sau tên view, một cách đặt tên riêng cột tính toán bằng AS",
+        "Chỉ cách 1 đúng",
+        "Cả hai đều sai vì có cột tính toán"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Ví dụ về View – Ví dụ 3 và 4."
+    },
+    {
+      "id": "csdl-240",
+      "chapter": 5,
+      "text": "View InvoiceCredit sau là loại View nào? ```sql CREATE VIEW InvoiceCredit AS SELECT InvoiceNumber, InvoiceDate, InvoiceTotal, PaymentTotal, CreditTotal FROM Invoices WHERE InvoiceTotal - PaymentTotal - CreditTotal > 0 ```",
+      "options": [
+        "View chỉ đọc vì có WHERE",
+        "View có thể cập nhật, vì SELECT không chứa DISTINCT/TOP, hàm kết tập, cột tính toán, GROUP BY, UNION",
+        "Không phải View hợp lệ",
+        "View chỉ đọc vì có điều kiện tính toán"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: Ví dụ View có thể cập nhật."
+    },
+    {
+      "id": "csdl-241",
+      "chapter": 5,
+      "text": "Câu lệnh UPDATE sau thực hiện việc gì? ```sql UPDATE InvoiceCredit SET CreditTotal = CreditTotal + 200 WHERE InvoiceTotal - PaymentTotal - CreditTotal >= 200 ```",
+      "options": [
+        "Báo lỗi vì không thể UPDATE view",
+        "Cộng thêm 200 vào CreditTotal của các hóa đơn còn dư nợ ít nhất 200 (thông qua view, ghi vào bảng Invoices)",
+        "Xóa các hóa đơn có CreditTotal ≥ 200",
+        "Cập nhật view thành bảng mới"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: View có thể cập nhật."
+    },
+    {
+      "id": "csdl-242",
+      "chapter": 5,
+      "text": "Theo quy tắc phân loại của slide, View OutstandingInvoices (có cột BalanceDue = InvoiceTotal - PaymentTotal - CreditTotal) là loại nào?",
+      "options": [
+        "View có thể cập nhật",
+        "View có thể cập nhật vì có WHERE",
+        "View chỉ đọc (theo slide) vì chứa cột giá trị được tính toán",
+        "Không tạo được"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: View có thể cập nhật – cột tính toán khiến view được xếp vào loại chỉ đọc. (Thực tế SQL Server vẫn cho sửa các cột không tính toán, nhưng không sửa được chính cột tính toán.)"
+    },
+    {
+      "id": "csdl-243",
+      "chapter": 5,
+      "text": "Sau câu lệnh ALTER VIEW sau, view Vendors_SW lọc dữ liệu thế nào? ```sql ALTER VIEW Vendors_SW AS SELECT * FROM Vendors WHERE VendorState IN ('CA','AZ','NV','NM','UT','CO') ```",
+      "options": [
+        "Chỉ UT và CO",
+        "Chỉ CA, AZ, NV, NM như trước",
+        "Lấy các nhà cung cấp ở bang CA, AZ, NV, NM, UT, CO",
+        "Xóa view Vendors_SW"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Slide: Ví dụ xóa và chỉnh sửa View."
+    },
+    {
+      "id": "csdl-244",
+      "chapter": 5,
+      "text": "Cú pháp tạo trigger nào sau đây đúng? ```sql CREATE TRIGGER tên_trigger ON tên_bảng FOR {[INSERT][,][UPDATE][,][DELETE]} AS [IF UPDATE(tên_cột) [AND UPDATE(tên_cột) | OR UPDATE(tên_cột)] ...] các_câu_lệnh_của_trigger ```",
+      "options": [
+        "CREATE TRIGGER tên_trigger FOR tên_bảng ON INSERT AS ...",
+        "CREATE TRIGGER tên_trigger WITH INSERT ON tên_bảng AS ...",
+        "CREATE TRIGGER ON tên_bảng tên_trigger AS ...",
+        "CREATE TRIGGER tên_trigger ON tên_bảng FOR INSERT AS ..."
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER – Cú pháp."
+    },
+    {
+      "id": "csdl-245",
+      "chapter": 5,
+      "text": "Trigger trg_tblMH_Insert thực hiện việc gì khi thêm một dòng vào tblMuahang? ```sql CREATE TRIGGER trg_tblMH_Insert ON tblMuahang FOR INSERT AS UPDATE tblSach SET tblSach.Soluong = tblSach.Soluong - inserted.Soluong FROM tblSach INNER JOIN inserted ON tblSach.MaSach = inserted.MaSach ```",
+      "options": [
+        "Giảm số lượng sách trong tblSach đi đúng số lượng vừa mua (inserted.Soluong)",
+        "Xóa dòng vừa thêm",
+        "Tăng số lượng sách trong tblSach",
+        "Không thay đổi dữ liệu nào"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER – Ví dụ 1."
+    },
+    {
+      "id": "csdl-246",
+      "chapter": 5,
+      "text": "Sách KT01 có tồn kho 10. Sau khi thêm 1 dòng mua hàng 'KT01' với Soluong = 2, tồn kho tblSach.Soluong còn bao nhiêu (dùng trigger trên)?",
+      "options": [
+        "10",
+        "8",
+        "2",
+        "12"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "10 − 2 = 8."
+    },
+    {
+      "id": "csdl-247",
+      "chapter": 5,
+      "text": "Trigger trg_tblMH_Update chạy khi nào và dùng gì để tính chênh lệch số lượng? ```sql CREATE TRIGGER trg_tblMH_Update ON tblMuahang FOR UPDATE AS IF UPDATE(soluong) UPDATE tblSach SET tblSach.Soluong = tblSach.Soluong - (inserted.Soluong - deleted.Soluong) FROM (deleted INNER JOIN inserted ON deleted.MaSach = inserted.MaSach) INNER JOIN tblSach ON tblSach.MaSach = deleted.MaSach ```",
+      "options": [
+        "Khi DELETE; dùng deleted.Soluong",
+        "Khi INSERT; dùng inserted.Soluong",
+        "Luôn chạy mà không cần kiểm tra cột",
+        "Khi UPDATE tblMuahang làm thay đổi cột soluong; dùng (inserted.Soluong − deleted.Soluong) để điều chỉnh tblSach"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER – Sửa số lượng trong tblMuahang."
+    },
+    {
+      "id": "csdl-248",
+      "chapter": 5,
+      "text": "Tồn kho tblSach của KT01 đang là 10 (sau khi đã trừ lần mua cũ 3). Cập nhật số lượng mua từ 3 thành 5, tồn kho mới bằng bao nhiêu?",
+      "options": [
+        "5",
+        "12",
+        "10",
+        "8"
+      ],
+      "answer": 3,
+      "hint": "Chương V",
+      "explanation": "Chênh lệch = 5 − 3 = 2; 10 − 2 = 8."
+    },
+    {
+      "id": "csdl-249",
+      "chapter": 5,
+      "text": "Với lệnh UPDATE chỉ sửa MaKh (không sửa Soluong), trigger trg_tblMH_Update có thay đổi tồn kho không?",
+      "options": [
+        "Không, vì điều kiện IF UPDATE(soluong) không thỏa",
+        "Có, cộng thêm tồn kho",
+        "Báo lỗi",
+        "Có, luôn trừ tồn kho"
+      ],
+      "answer": 0,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER – 'Trường hợp Update chỉ có MaKH'."
+    },
+    {
+      "id": "csdl-250",
+      "chapter": 5,
+      "text": "Trong trigger trg_tblMuahang_Insert1 sau, nếu tồn kho (@slHienco) = 5 và số lượng mua (@slBan) = 8 thì điều gì xảy ra? ```sql CREATE TRIGGER trg_tblMuahang_Insert1 ON tblMuahang FOR INSERT AS DECLARE @slBan int DECLARE @slHienco int DECLARE @masach char(10) SELECT @masach = MaSach, @slBan = Soluong FROM inserted SELECT @slHienco = Soluong FROM tblSach WHERE MaSach = @masach IF @slHienco < @slBan ROLLBACK TRAN ELSE UPDATE tblSach SET Soluong = Soluong - @slBan WHERE MaSach = @masach ```",
+      "options": [
+        "Tồn kho thành -3",
+        "ROLLBACK TRAN: hủy thao tác chèn, tồn kho không thay đổi",
+        "Chèn thành công và tồn kho giữ nguyên 5",
+        "Tồn kho thành 0"
+      ],
+      "answer": 1,
+      "hint": "Chương V",
+      "explanation": "Slide: TRIGGER – nếu @slHienco \\< @slBan thì Rollback Tran."
+    },
+    {
+      "id": "csdl-251",
+      "chapter": 5,
+      "text": "Với trigger trg_tblMuahang_Insert1, nếu tồn kho = 5 và số lượng mua = 3 thì tồn kho sau khi chèn là bao nhiêu?",
+      "options": [
+        "0",
+        "8",
+        "2",
+        "5"
+      ],
+      "answer": 2,
+      "hint": "Chương V",
+      "explanation": "Nhánh ELSE: 5 − 3 = 2."
+    }
+  ]
+}

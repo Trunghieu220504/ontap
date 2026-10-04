@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn tập trắc nghiệm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Màn chọn môn -->
+        <div id="screen-subjects" class="screen">
+            <div class="container">
+                <h1>Chọn môn học</h1>
+                <div id="subjects-list"></div>
+            </div>
+        </div>
+
+        <!-- Màn chọn chế độ -->
+        <div id="screen-mode" class="screen hidden">
+            <div class="container">
+                <button id="btn-back-to-subjects" class="btn-secondary">← Đổi môn</button>
+                <h1 id="mode-subject-name"></h1>
+                <div class="mode-grid">
+                    <button class="mode-btn" data-mode="all">
+                        <div class="mode-title">Tất cả câu hỏi</div>
+                        <div class="mode-desc" id="mode-all-desc"></div>
+                    </button>
+                    <button class="mode-btn" data-mode="chapters">
+                        <div class="mode-title">Theo chương</div>
+                        <div class="mode-desc" id="mode-chapters-desc"></div>
+                    </button>
+                    <button class="mode-btn" data-mode="sets">
+                        <div class="mode-title">Theo đề 50 câu</div>
+                        <div class="mode-desc" id="mode-sets-desc"></div>
+                    </button>
+                    <button class="mode-btn" data-mode="wrong">
+                        <div class="mode-title">Câu đã làm sai</div>
+                        <div class="mode-desc" id="mode-wrong-desc"></div>
+                    </button>
+                </div>
+                <button id="btn-view-history" class="btn-secondary" style="margin-top: 20px">Xem lịch sử</button>
+            </div>
+        </div>
+
+        <!-- Màn chọn chương -->
+        <div id="screen-chapters" class="screen hidden">
+            <div class="container">
+                <button id="btn-back-to-mode" class="btn-secondary">← Quay lại</button>
+                <h2>Chọn chương</h2>
+                <div id="chapters-list"></div>
+                <button id="btn-start-chapters" class="btn-primary">Bắt đầu</button>
+            </div>
+        </div>
+
+        <!-- Màn chọn đề -->
+        <div id="screen-sets" class="screen hidden">
+            <div class="container">
+                <button id="btn-back-to-mode-sets" class="btn-secondary">← Quay lại</button>
+                <h2>Chọn đề</h2>
+                <div id="sets-list"></div>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="checkbox-shuffle-set">
+                    Xáo trộn thứ tự câu trong đề
+                </label>
+            </div>
+        </div>
+
+        <!-- Màn cấu hình thời gian -->
+        <div id="screen-time-config" class="screen hidden">
+            <div class="container">
+                <h2>Cấu hình thời gian</h2>
+                <p id="time-info"></p>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="checkbox-unlimited-time">
+                    Không giới hạn thời gian
+                </label>
+                <div style="margin-top: 20px">
+                    <button id="btn-start-quiz" class="btn-primary">Bắt đầu</button>
+                    <button id="btn-cancel-quiz" class="btn-secondary">Huỷ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn làm bài -->
+        <div id="screen-quiz" class="screen hidden">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="quiz-subject-name"></span>
+                    <span id="quiz-mode-name"></span>
+                </div>
+                <div id="timer-display"></div>
+            </div>
+            <div class="container">
+                <div id="question-navigation"></div>
+                <div id="question-container">
+                    <div id="question-text"></div>
+                    <div id="question-options"></div>
+                    <button id="btn-hint" class="btn-secondary">Gợi ý</button>
+                    <div id="hint-text" class="hidden"></div>
+                    <div id="explanation-text" class="hidden"></div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="btn-prev" class="btn-secondary">← Câu trước</button>
+                    <button id="btn-next" class="btn-secondary">Câu sau →</button>
+                    <button id="btn-submit" class="btn-primary">Nộp bài</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn kết quả -->
+        <div id="screen-result" class="screen hidden">
+            <div class="container">
+                <h1>Kết quả</h1>
+                <div id="result-summary"></div>
+                <div class="result-controls">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="checkbox-filter-wrong">
+                        Chỉ xem câu sai
+                    </label>
+                </div>
+                <div id="result-details"></div>
+                <div style="margin-top: 20px">
+                    <button id="btn-redo-wrong" class="btn-primary">Làm lại câu sai</button>
+                    <button id="btn-back-to-mode-result" class="btn-secondary">Về màn hình chính</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn lịch sử -->
+        <div id="screen-history" class="screen hidden">
+            <div class="container">
+                <button id="btn-back-from-history" class="btn-secondary">← Quay lại</button>
+                <h1>Lịch sử làm bài</h1>
+                <div class="history-controls">
+                    <button id="btn-export-history" class="btn-secondary">Xuất lịch sử</button>
+                    <button id="btn-import-history" class="btn-secondary">Nhập lịch sử</button>
+                    <input type="file" id="file-import-history" accept=".json" class="hidden">
+                    <button id="btn-clear-history" class="btn-danger">Xoá toàn bộ</button>
+                </div>
+                <div id="history-list"></div>
+            </div>
+        </div>
+
+        <!-- Màn xem chi tiết lịch sử -->
+        <div id="screen-history-detail" class="screen hidden">
+            <div class="container">
+                <button id="btn-back-to-history" class="btn-secondary">← Quay lại</button>
+                <h2>Chi tiết bài làm</h2>
+                <div id="history-detail-summary"></div>
+                <div id="history-detail-questions"></div>
+                <button id="btn-delete-history-item" class="btn-danger">Xoá bài làm này</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
