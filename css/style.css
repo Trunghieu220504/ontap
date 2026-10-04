@@ -228,10 +228,7 @@ button.danger:hover {
 }
 
 .question-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  display: none;
 }
 
 .question-nav button {
