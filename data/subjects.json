@@ -3,5 +3,10 @@
     "id": "csdl",
     "name": "Cơ sở dữ liệu nâng cao",
     "dataFile": "data/csdl.json"
+  },
+  {
+    "id": "qlda",
+    "name": "Quản lý dự án phần mềm",
+    "dataFile": "data/qlda.json"
   }
 ]

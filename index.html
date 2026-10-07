@@ -46,23 +46,40 @@
         <!-- Màn chọn chương -->
         <div id="screen-chapters" class="screen hidden">
             <div class="container">
-                <button id="btn-back-to-mode" class="btn-secondary">← Quay lại</button>
+                <div class="screen-top-bar">
+                    <button id="btn-back-to-mode" class="btn-secondary">← Quay lại</button>
+                </div>
                 <h2>Chọn chương</h2>
-                <div id="chapters-list"></div>
-                <button id="btn-start-chapters" class="btn-primary">Bắt đầu</button>
+                <div class="chapters-toolbar">
+                    <div class="chapters-summary">
+                        Đã chọn: <strong id="selected-chapters-count">0</strong>/<span id="total-chapters-count">0</span> chương (<strong id="selected-questions-count">0</strong> câu)
+                    </div>
+                    <div class="chapters-actions">
+                        <button type="button" id="btn-select-all-chapters" class="btn-secondary btn-sm">Chọn tất cả</button>
+                        <button type="button" id="btn-deselect-all-chapters" class="btn-secondary btn-sm">Bỏ chọn</button>
+                    </div>
+                </div>
+                <div id="chapters-list" class="chapters-list"></div>
+                <div class="chapters-footer">
+                    <button id="btn-start-chapters" class="btn-primary btn-large">Bắt đầu</button>
+                </div>
             </div>
         </div>
 
         <!-- Màn chọn đề -->
         <div id="screen-sets" class="screen hidden">
             <div class="container">
-                <button id="btn-back-to-mode-sets" class="btn-secondary">← Quay lại</button>
-                <h2>Chọn đề</h2>
-                <div id="sets-list"></div>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="checkbox-shuffle-set">
-                    Xáo trộn thứ tự câu trong đề
-                </label>
+                <div class="screen-top-bar">
+                    <button id="btn-back-to-mode-sets" class="btn-secondary">← Quay lại</button>
+                </div>
+                <h2>Chọn đề ôn tập</h2>
+                <div class="sets-toolbar">
+                    <label class="checkbox-label shuffle-checkbox-label">
+                        <input type="checkbox" id="checkbox-shuffle-set">
+                        <span>Xáo trộn thứ tự câu trong đề</span>
+                    </label>
+                </div>
+                <div id="sets-list" class="sets-grid"></div>
             </div>
         </div>
 
@@ -94,6 +111,9 @@
             <div class="container">
                 <div id="question-navigation"></div>
                 <div id="question-container">
+                    <div class="question-header-bar">
+                        <span class="question-progress-badge" id="question-progress-badge"></span>
+                    </div>
                     <div id="question-text"></div>
                     <div id="question-options"></div>
                     <button id="btn-hint" class="btn-secondary">Gợi ý</button>

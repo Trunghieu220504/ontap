@@ -63,22 +63,64 @@ button:disabled {
   cursor: not-allowed;
 }
 
-button.secondary {
+button.secondary,
+.btn-secondary {
   background: var(--bg);
   color: var(--text);
   border: 1px solid var(--border);
 }
 
-button.secondary:hover {
+button.secondary:hover,
+.btn-secondary:hover {
   background: var(--bg-secondary);
 }
 
-button.danger {
-  background: var(--incorrect);
+button.primary,
+.btn-primary {
+  background: var(--primary);
+  color: white;
 }
 
-button.danger:hover {
+button.primary:hover,
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+button.danger,
+.btn-danger {
+  background: var(--incorrect);
+  color: white;
+}
+
+button.danger:hover,
+.btn-danger:hover {
   background: #b91c1c;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.875rem;
+}
+
+.btn-large {
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .card {
@@ -94,9 +136,41 @@ button.danger:hover {
 }
 
 /* Màn chọn môn */
-.subject-list {
-  display: grid;
-  gap: 16px;
+.subject-list,
+#subjects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.subject-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 24px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.subject-card:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(97, 134, 221, 0.12);
+}
+
+.subject-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .subject-item {
@@ -126,6 +200,10 @@ button.danger:hover {
   text-align: right;
   font-size: 0.875rem;
   color: var(--text-light);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 
 /* Màn chọn chế độ */
@@ -155,47 +233,252 @@ button.danger:hover {
   opacity: 0.8;
 }
 
-.chapter-selection {
-  margin: 20px 0;
+/* Màn chọn chương */
+.screen-top-bar {
+  margin-bottom: 16px;
 }
 
-.chapter-selection label {
-  display: block;
-  padding: 10px;
-  margin-bottom: 8px;
-  background: var(--bg-secondary);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.chapter-selection input {
-  margin-right: 8px;
-}
-
-.exam-list {
-  display: grid;
+.chapters-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-wrap: wrap;
   gap: 12px;
 }
 
-.exam-item {
-  padding: 16px;
-  background: var(--bg-secondary);
-  border-radius: 6px;
+.chapters-summary {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.chapters-summary strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.chapters-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.chapters-list,
+#chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.chapter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  gap: 16px;
 }
 
-.exam-item:hover {
-  background: var(--border);
+.chapter-row:hover {
+  border-color: var(--primary);
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.exam-item h4 {
-  margin-bottom: 4px;
+.chapter-row.selected,
+.chapter-row:has(.chapter-checkbox:checked) {
+  border-color: var(--primary);
+  background: #f0f5ff;
 }
 
-.exam-item p {
-  font-size: 0.875rem;
+.chapter-row-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.chapter-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(97, 134, 221, 0.12);
+  color: #3b5998;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.chapter-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.chapter-row.selected .chapter-name,
+.chapter-row:has(.chapter-checkbox:checked) .chapter-name {
+  font-weight: 600;
+}
+
+.chapter-row-right {
+  flex-shrink: 0;
+}
+
+.chapter-count-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-light);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.chapter-row.selected .chapter-count-badge,
+.chapter-row:has(.chapter-checkbox:checked) .chapter-count-badge {
+  color: var(--primary);
+  border-color: rgba(97, 134, 221, 0.35);
+  background: #ffffff;
+}
+
+.chapters-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* Màn chọn đề */
+.sets-toolbar {
+  margin: 16px 0 20px;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.sets-grid,
+#sets-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.set-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  gap: 14px;
+}
+
+.set-card:hover {
+  border-color: var(--primary);
+  background: #f8faff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(97, 134, 221, 0.12);
+}
+
+.set-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.set-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(97, 134, 221, 0.12);
+  color: #3b5998;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+.set-count-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.set-card:hover .set-count-badge {
+  color: var(--primary);
+  border-color: rgba(97, 134, 221, 0.35);
+  background: #ffffff;
+}
+
+.set-range-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.set-start-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  transition: transform 0.2s ease;
+}
+
+.set-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.set-card:hover .set-arrow {
+  transform: translateX(4px);
 }
 
 .timer-settings {
@@ -550,6 +833,98 @@ button.danger:hover {
   border-left-color: var(--incorrect);
 }
 
+/* Question numbering & progress badge */
+.question-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.question-progress-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+#question-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.question-number {
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: 4px;
+}
+
+.question-content {
+  color: var(--text);
+}
+
+/* Option label (A, B, C, D) */
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.option-label {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  transition: all 0.2s;
+}
+
+.option:hover:not(.disabled) .option-label {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.option.correct .option-label {
+  background: var(--correct);
+  border-color: var(--correct);
+  color: white;
+}
+
+.option.incorrect .option-label {
+  background: var(--incorrect);
+  border-color: var(--incorrect);
+  color: white;
+}
+
+.option.selected:not(.incorrect) .option-label {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.option-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .container {
@@ -597,6 +972,44 @@ button.danger:hover {
   }
 
   .modal-content {
+    padding: 16px;
+  }
+
+  .chapters-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chapters-actions {
+    width: 100%;
+  }
+
+  .chapters-actions button {
+    flex: 1;
+  }
+
+  .chapter-row {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .chapter-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .chapters-footer button {
+    width: 100%;
+  }
+
+  .sets-grid,
+  #sets-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .set-card {
     padding: 16px;
   }
 }

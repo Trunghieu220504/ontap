@@ -1,0 +1,2534 @@
+{
+  "id": "qlda",
+  "name": "Quản lý dự án phần mềm",
+  "chapters": [
+    {
+      "id": 1,
+      "name": "Các khái niệm & nguyên tắc chính"
+    },
+    {
+      "id": 2,
+      "name": "Các độ đo dự án và đo lường phần mềm"
+    },
+    {
+      "id": 3,
+      "name": "Lập kế hoạch dự án phần mềm"
+    },
+    {
+      "id": 4,
+      "name": "Phân tích & quản lý rủi ro"
+    },
+    {
+      "id": 5,
+      "name": "Lập tiến độ và theo dõi dự án"
+    }
+  ],
+  "questions": [
+    {
+      "id": "qlda-001",
+      "chapter": 1,
+      "text": "Bốn khái niệm chính của Phần I là:",
+      "options": [
+        "Thời gian – Chi phí – Chất lượng – Phạm vi",
+        "Con người – Sản phẩm – Quy trình – Dự án",
+        "Con người – Công nghệ – Chi phí – Rủi ro",
+        "Khách hàng – Sản phẩm – Kế hoạch – Dự án"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 5"
+    },
+    {
+      "id": "qlda-002",
+      "chapter": 1,
+      "text": "Ai là người xác định các vấn đề kinh doanh?",
+      "options": [
+        "Khách hàng",
+        "Kỹ sư thực hành",
+        "Các nhà quản lý cấp cao",
+        "Người dùng cuối"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 6"
+    },
+    {
+      "id": "qlda-003",
+      "chapter": 1,
+      "text": "Ai là người phải lập kế hoạch, thúc đẩy, tổ chức và kiểm soát các kỹ sư thực hành làm phần mềm?",
+      "options": [
+        "Các nhà quản lý dự án (kỹ thuật)",
+        "Các nhà quản lý cấp cao",
+        "Khách hàng",
+        "Người dùng cuối"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 6"
+    },
+    {
+      "id": "qlda-004",
+      "chapter": 1,
+      "text": "Ai là người cung cấp các kỹ năng kỹ thuật cần thiết để kỹ nghệ hóa một sản phẩm hoặc ứng dụng?",
+      "options": [
+        "Các nhà quản lý cấp cao",
+        "Khách hàng",
+        "Người dùng cuối",
+        "Các kỹ sư thực hành"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 6"
+    },
+    {
+      "id": "qlda-005",
+      "chapter": 1,
+      "text": "Ai là người đặc tả các yêu cầu cho phần mềm cần được kỹ nghệ hóa?",
+      "options": [
+        "Người dùng cuối",
+        "Các nhà quản lý cấp cao",
+        "Khách hàng",
+        "Các kỹ sư thực hành"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 6"
+    },
+    {
+      "id": "qlda-006",
+      "chapter": 1,
+      "text": "Người dùng cuối là những người:",
+      "options": [
+        "Đặc tả yêu cầu cho phần mềm cần được kỹ nghệ hóa",
+        "Tương tác với phần mềm sau khi nó được phát hành để đưa vào sử dụng",
+        "Xác định các vấn đề kinh doanh",
+        "Lập kế hoạch và kiểm soát các kỹ sư thực hành"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 6"
+    },
+    {
+      "id": "qlda-007",
+      "chapter": 1,
+      "text": "Ba phẩm chất cần có của người trưởng nhóm là:",
+      "options": [
+        "Động lực – Tổ chức – Ý tưởng hoặc đổi mới",
+        "Động lực – Kỷ luật – Giao tiếp",
+        "Tổ chức – Quyền lực – Sáng tạo",
+        "Ý tưởng – Kiểm soát – Đánh giá"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 7"
+    },
+    {
+      "id": "qlda-008",
+      "chapter": 1,
+      "text": "\"Khả năng khuyến khích (bằng 'đẩy hoặc kéo') các nhân sự kỹ thuật làm việc hết khả năng của họ\" là phẩm chất nào của trưởng nhóm?",
+      "options": [
+        "Tổ chức",
+        "Động lực",
+        "Ý tưởng hoặc đổi mới",
+        "Cả ba phẩm chất trên"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 7"
+    },
+    {
+      "id": "qlda-009",
+      "chapter": 1,
+      "text": "\"Khả năng định hình các quy trình hiện có (hoặc sáng tạo quy trình mới) để cho phép chuyển ý tưởng ban đầu thành sản phẩm cuối cùng\" là phẩm chất nào của trưởng nhóm?",
+      "options": [
+        "Động lực",
+        "Ý tưởng hoặc đổi mới",
+        "Tổ chức",
+        "Giao tiếp"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 7"
+    },
+    {
+      "id": "qlda-010",
+      "chapter": 1,
+      "text": "\"Khả năng khuyến khích mọi người sáng tạo và cảm thấy mình sáng tạo, ngay cả khi họ phải làm việc trong những giới hạn đã được thiết lập\" là phẩm chất nào của trưởng nhóm?",
+      "options": [
+        "Động lực",
+        "Tổ chức",
+        "Giao tiếp",
+        "Ý tưởng hoặc đổi mới"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 7"
+    },
+    {
+      "id": "qlda-011",
+      "chapter": 1,
+      "text": "Với cách tổ chức nhóm trong đó n cá nhân được giao cho m nhiệm vụ chức năng khác nhau và rất ít công việc chung diễn ra, ai chịu trách nhiệm điều phối?",
+      "options": [
+        "Cả nhóm và người quản lý dự án",
+        "Một trưởng nhóm lâm thời",
+        "Khách hàng",
+        "Người quản lý phần mềm (người này có thể còn phải quan tâm đến các dự án khác)"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 8"
+    },
+    {
+      "id": "qlda-012",
+      "chapter": 1,
+      "text": "Cách tổ chức nào có n cá nhân được giao cho m nhiệm vụ chức năng (m \\< n) để hình thành các \"nhóm\" không chính thức, có thể chỉ định một trưởng nhóm lâm thời?",
+      "options": [
+        "Cách 1 (rất ít công việc chung)",
+        "Cách 2 (các nhóm không chính thức)",
+        "Cách 3 (t nhóm có cấu trúc xác định chung)",
+        "Không cách nào trong ba cách"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 8"
+    },
+    {
+      "id": "qlda-013",
+      "chapter": 1,
+      "text": "Cách tổ chức nào có n cá nhân được tổ chức thành t nhóm, mỗi nhóm có một cấu trúc cụ thể xác định chung cho mọi nhóm, việc điều phối do cả nhóm và người quản lý dự án phần mềm kiểm soát?",
+      "options": [
+        "Cách 1",
+        "Cách 2",
+        "Cách 3",
+        "Không cách nào trong ba cách"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 8"
+    },
+    {
+      "id": "qlda-014",
+      "chapter": 1,
+      "text": "Điều nào sau đây KHÔNG nằm trong các điều kiện để có một nhóm hiệu suất cao?",
+      "options": [
+        "Các thành viên trong nhóm phải tin tưởng lẫn nhau",
+        "Sự phân bổ kỹ năng phải phù hợp với bài toán",
+        "Có thể phải loại những cá nhân hành động theo ý riêng (mavericks) nếu muốn duy trì tính gắn kết",
+        "Mọi thành viên phải có cùng một chuyên môn"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 9"
+    },
+    {
+      "id": "qlda-015",
+      "chapter": 1,
+      "text": "Phạm vi của sản phẩm được xác định bằng cách trả lời các câu hỏi về:",
+      "options": [
+        "Ngữ cảnh, mục tiêu thông tin, chức năng và hiệu năng",
+        "Chi phí, tiến độ, nhân sự",
+        "Rủi ro, chất lượng, thay đổi",
+        "Quy trình, công nghệ, con người"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 10"
+    },
+    {
+      "id": "qlda-016",
+      "chapter": 1,
+      "text": "Câu hỏi \"Phần mềm cần xây dựng nằm ở đâu trong một hệ thống, sản phẩm hoặc bối cảnh kinh doanh lớn hơn, và bối cảnh đó áp đặt những ràng buộc nào?\" thuộc nội dung nào?",
+      "options": [
+        "Mục tiêu thông tin",
+        "Chức năng và hiệu năng",
+        "Ngữ cảnh",
+        "Tính khả thi"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 10"
+    },
+    {
+      "id": "qlda-017",
+      "chapter": 1,
+      "text": "Câu hỏi \"Những đối tượng dữ liệu nào mà khách hàng nhìn thấy được sẽ được phần mềm tạo ra ở đầu ra? Cần những đối tượng dữ liệu nào ở đầu vào?\" thuộc nội dung nào?",
+      "options": [
+        "Ngữ cảnh",
+        "Mục tiêu thông tin",
+        "Chức năng và hiệu năng",
+        "Tính khả thi"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 10"
+    },
+    {
+      "id": "qlda-018",
+      "chapter": 1,
+      "text": "Hoạt động nằm ở cốt lõi của phân tích yêu cầu phần mềm là:",
+      "options": [
+        "Kiểm thử",
+        "Ước lượng chi phí",
+        "Phân rã bài toán",
+        "Lập tiến độ"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 10"
+    },
+    {
+      "id": "qlda-019",
+      "chapter": 1,
+      "text": "Mô hình nào KHÔNG nằm trong danh sách các mô hình quy trình của tài liệu?",
+      "options": [
+        "Mô hình xoắn ốc",
+        "Mô hình chữ V",
+        "Mô hình làm bản mẫu",
+        "Mô hình tăng trưởng"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 11"
+    },
+    {
+      "id": "qlda-020",
+      "chapter": 1,
+      "text": "Tài liệu nêu bao nhiêu hoạt động khung của quy trình?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-021",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm \"các nhiệm vụ cần thiết để xác định nguồn lực, tiến độ và các thông tin khác liên quan đến dự án\"?",
+      "options": [
+        "Kỹ nghệ",
+        "Giao tiếp với khách hàng",
+        "Xây dựng và phát hành",
+        "Lập kế hoạch"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-022",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm \"các nhiệm vụ cần thiết để đánh giá cả rủi ro kỹ thuật và rủi ro quản lý\"?",
+      "options": [
+        "Phân tích rủi ro",
+        "Lập kế hoạch",
+        "Kỹ nghệ",
+        "Đánh giá của khách hàng"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-023",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm các nhiệm vụ xây dựng, kiểm thử, cài đặt và hỗ trợ người dùng (ví dụ: tài liệu và đào tạo)?",
+      "options": [
+        "Kỹ nghệ",
+        "Xây dựng và phát hành",
+        "Giao tiếp với khách hàng",
+        "Phân tích rủi ro"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-024",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm các nhiệm vụ thu nhận phản hồi của khách hàng dựa trên việc đánh giá các biểu diễn phần mềm?",
+      "options": [
+        "Giao tiếp với khách hàng",
+        "Lập kế hoạch",
+        "Đánh giá của khách hàng",
+        "Kỹ nghệ"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-025",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm các nhiệm vụ cần thiết để xây dựng một hoặc nhiều biểu diễn của ứng dụng?",
+      "options": [
+        "Lập kế hoạch",
+        "Giao tiếp với khách hàng",
+        "Phân tích rủi ro",
+        "Kỹ nghệ"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-026",
+      "chapter": 1,
+      "text": "Hoạt động khung nào gồm các nhiệm vụ thiết lập việc khai thác yêu cầu hiệu quả giữa nhà phát triển và khách hàng?",
+      "options": [
+        "Giao tiếp với khách hàng",
+        "Lập lịch",
+        "Xây dựng và phát hành",
+        "Phân tích rủi ro"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 12"
+    },
+    {
+      "id": "qlda-027",
+      "chapter": 1,
+      "text": "Trong phần \"Kết hợp Sản phẩm và Quy trình\", ma trận đặt các hoạt động khung của quy trình tương ứng với:",
+      "options": [
+        "Danh sách nhân sự của dự án",
+        "Các rủi ro của dự án",
+        "Các chức năng sản phẩm (ví dụ: nhập văn bản, soạn thảo và định dạng, quản lý tệp)",
+        "Các mốc thời gian của dự án"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 13"
+    },
+    {
+      "id": "qlda-028",
+      "chapter": 1,
+      "text": "Trong ví dụ phân rã quy trình, hoạt động giao tiếp với khách hàng của một dự án nhỏ được dự kiến trong bao lâu?",
+      "options": [
+        "48 giờ",
+        "24 giờ",
+        "72 giờ",
+        "1 tuần"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 14"
+    },
+    {
+      "id": "qlda-029",
+      "chapter": 1,
+      "text": "Trong hoạt động giao tiếp với khách hàng của dự án nhỏ, bước đầu tiên là:",
+      "options": [
+        "Cùng xây dựng bản tuyên bố phạm vi",
+        "Họp với khách hàng để giải quyết các vấn đề cần làm rõ",
+        "Lập danh sách các vấn đề cần làm rõ",
+        "Sửa đổi bản tuyên bố phạm vi khi cần"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 14"
+    },
+    {
+      "id": "qlda-030",
+      "chapter": 1,
+      "text": "Trong hoạt động giao tiếp với khách hàng của dự án nhỏ, sau bước \"Họp với khách hàng để giải quyết các vấn đề cần làm rõ\" là bước nào?",
+      "options": [
+        "Lập danh sách các vấn đề cần làm rõ",
+        "Cùng xây dựng bản tuyên bố phạm vi",
+        "Xem xét bản tuyên bố phạm vi với tất cả các bên liên quan",
+        "Sửa đổi bản tuyên bố phạm vi khi cần"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 14"
+    },
+    {
+      "id": "qlda-031",
+      "chapter": 1,
+      "text": "Trong phiên bản chi tiết của hoạt động giao tiếp, từng đặc tả nhỏ được xem xét về:",
+      "options": [
+        "Chi phí, tiến độ, rủi ro",
+        "Hiệu năng, bảo mật, tính khả dụng",
+        "Tính đúng đắn, tính nhất quán và tính không mơ hồ",
+        "Quy mô, độ phức tạp, ngôn ngữ lập trình"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 15"
+    },
+    {
+      "id": "qlda-032",
+      "chapter": 1,
+      "text": "Trong phiên bản chi tiết của hoạt động giao tiếp, \"tài liệu làm việc\" và chương trình nghị sự được chuẩn bị cho:",
+      "options": [
+        "Cuộc họp chính thức",
+        "Buổi kiểm thử",
+        "Buổi bảo trì",
+        "Buổi bàn giao"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 15"
+    },
+    {
+      "id": "qlda-033",
+      "chapter": 1,
+      "text": "Danh sách \"Điều gì có thể sai trong một dự án?\" do ai nêu và gồm bao nhiêu mục?",
+      "options": [
+        "Barry Boehm – 6 mục",
+        "John Reel – 10 mục",
+        "Page-Jones – 10 mục",
+        "John Reel – 6 mục"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 16"
+    },
+    {
+      "id": "qlda-034",
+      "chapter": 1,
+      "text": "Mục nào KHÔNG nằm trong danh sách \"Điều gì có thể sai trong một dự án?\"",
+      "options": [
+        "Thời hạn không thực tế",
+        "Người dùng chống đối",
+        "Công nghệ đã chọn thay đổi",
+        "Giá phần cứng giảm"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 16"
+    },
+    {
+      "id": "qlda-035",
+      "chapter": 1,
+      "text": "Theo tài liệu, \"Khởi đầu đúng hướng\" đạt được bằng cách:",
+      "options": [
+        "Rút ngắn thời hạn để tạo áp lực",
+        "Làm việc chăm chỉ để hiểu vấn đề cần giải quyết, rồi đặt mục tiêu và kỳ vọng thực tế cho tất cả người tham gia",
+        "Tăng số lượng nhân sự ngay từ đầu",
+        "Bỏ qua phân tích để vào lập trình sớm"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 17"
+    },
+    {
+      "id": "qlda-036",
+      "chapter": 1,
+      "text": "Để \"duy trì đà tiến\", điều nào đúng theo tài liệu?",
+      "options": [
+        "Tăng tỷ lệ thay đổi nhân sự để làm mới ý tưởng",
+        "Quản lý cấp cao giám sát chặt mọi nhiệm vụ của nhóm",
+        "Giữ tỷ lệ thay đổi nhân sự ở mức tối thiểu tuyệt đối bằng các biện pháp khuyến khích, nhóm nhấn mạnh chất lượng trong mọi nhiệm vụ",
+        "Giảm yêu cầu về chất lượng để kịp tiến độ"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 17"
+    },
+    {
+      "id": "qlda-037",
+      "chapter": 1,
+      "text": "Với một dự án phần mềm, tiến độ được theo dõi qua:",
+      "options": [
+        "Các sản phẩm công việc",
+        "Số giờ làm thêm",
+        "Số lượng thành viên nhóm",
+        "Doanh thu của khách hàng"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 18"
+    },
+    {
+      "id": "qlda-038",
+      "chapter": 1,
+      "text": "Theo tài liệu, bản chất của các quyết định của người quản lý dự án và nhóm phần mềm nên là:",
+      "options": [
+        "\"Giữ cho đơn giản\"",
+        "Bao quát mọi trường hợp có thể xảy ra",
+        "Giao hết cho khách hàng quyết định",
+        "Trì hoãn đến cuối dự án"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 18"
+    },
+    {
+      "id": "qlda-039",
+      "chapter": 1,
+      "text": "Phân tích hậu kiểm (rút kinh nghiệm) theo tài liệu bao gồm:",
+      "options": [
+        "Chỉ sửa các lỗi còn tồn tại",
+        "Chỉ thu thập độ đo sau khi bàn giao",
+        "Giải tán nhóm ngay khi dự án kết thúc",
+        "Đánh giá tiến độ kế hoạch và thực tế, thu thập và phân tích độ đo, nhận phản hồi từ thành viên nhóm và khách hàng, ghi lại các phát hiện thành văn bản"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 18"
+    },
+    {
+      "id": "qlda-040",
+      "chapter": 1,
+      "text": "Nguyên tắc W5HH do ai đề xuất?",
+      "options": [
+        "John Reel",
+        "Barry Boehm",
+        "Lord Kelvin",
+        "Page-Jones"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 19"
+    },
+    {
+      "id": "qlda-041",
+      "chapter": 1,
+      "text": "Trong W5HH, câu hỏi \"Ai chịu trách nhiệm về một chức năng?\" tương ứng với chữ nào?",
+      "options": [
+        "Who",
+        "What",
+        "Where",
+        "Why"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 19"
+    },
+    {
+      "id": "qlda-042",
+      "chapter": 1,
+      "text": "Trong W5HH, câu hỏi \"Cần bao nhiêu của mỗi nguồn lực?\" tương ứng với:",
+      "options": [
+        "How",
+        "Why",
+        "How much",
+        "When"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 19"
+    },
+    {
+      "id": "qlda-043",
+      "chapter": 1,
+      "text": "Trong W5HH, câu hỏi \"Where\" hỏi về điều gì?",
+      "options": [
+        "Dự án được triển khai ở quốc gia nào",
+        "Họ nằm ở đâu trong tổ chức",
+        "Dữ liệu được lưu ở đâu",
+        "Máy chủ được đặt ở đâu"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 19"
+    },
+    {
+      "id": "qlda-044",
+      "chapter": 1,
+      "text": "Trong W5HH, câu hỏi \"How\" hỏi về điều gì?",
+      "options": [
+        "Cần bao nhiêu nguồn lực",
+        "Ai chịu trách nhiệm",
+        "Vì sao hệ thống được phát triển",
+        "Công việc sẽ được thực hiện như thế nào về mặt kỹ thuật và quản lý"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 19"
+    },
+    {
+      "id": "qlda-045",
+      "chapter": 1,
+      "text": "Đặc điểm nào KHÔNG đúng với một dự án theo tài liệu?",
+      "options": [
+        "Là hoạt động thường lệ hay hoạt động vận hành hằng ngày",
+        "Có thể có một mục tiêu riêng và khác biệt",
+        "Có thời điểm bắt đầu và thời điểm kết thúc",
+        "Cần đủ nguồn lực về thời gian, nhân lực, tài chính, vật liệu và kho tri thức"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 20"
+    },
+    {
+      "id": "qlda-046",
+      "chapter": 1,
+      "text": "Theo tài liệu, dự án kết thúc khi nào?",
+      "options": [
+        "Khi hết ngân sách",
+        "Khi đạt được mục tiêu",
+        "Khi khách hàng yêu cầu",
+        "Khi nhóm giải tán"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 20"
+    },
+    {
+      "id": "qlda-047",
+      "chapter": 1,
+      "text": "Năm loại nguồn lực mà một dự án cần đủ, theo tài liệu, là:",
+      "options": [
+        "Con người, máy móc, tiền, thời gian, thông tin",
+        "Nhân lực, phần cứng, phần mềm, dữ liệu, tài liệu",
+        "Thời gian, nhân lực, tài chính, vật liệu và kho tri thức",
+        "Khách hàng, nhà quản lý, kỹ sư, người dùng, nhà cung cấp"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 20"
+    },
+    {
+      "id": "qlda-048",
+      "chapter": 1,
+      "text": "\"Toàn bộ quy trình phát triển phần mềm từ thu thập yêu cầu đến kiểm thử và bảo trì, được thực hiện theo các phương pháp luận thực thi, trong một khoảng thời gian xác định\" là định nghĩa của:",
+      "options": [
+        "Dự án phần mềm",
+        "Quy trình phần mềm",
+        "Sản phẩm phần mềm",
+        "Kế hoạch dự án"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 20"
+    },
+    {
+      "id": "qlda-049",
+      "chapter": 1,
+      "text": "Hình tam giác trong phần định nghĩa dự án gồm các cạnh nào và yếu tố nào ở giữa?",
+      "options": [
+        "Con người – Quy trình – Sản phẩm; ở giữa là Công nghệ",
+        "Phạm vi – Rủi ro – Chất lượng; ở giữa là Chi phí",
+        "Thời gian – Phạm vi – Rủi ro; ở giữa là Chất lượng",
+        "Thời gian – Chi phí – Chất lượng; ở giữa là Phạm vi"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 20"
+    },
+    {
+      "id": "qlda-050",
+      "chapter": 1,
+      "text": "Thực tiễn then chốt nào gồm \"mười rủi ro hàng đầu của dự án, khả năng rủi ro trở thành hiện thực, tác động nếu nó xảy ra\"?",
+      "options": [
+        "Quản lý dự án dựa trên độ đo",
+        "Quản lý rủi ro chính thức",
+        "Theo dõi giá trị thu được",
+        "Ước lượng chi phí và tiến độ theo thực nghiệm"
+      ],
+      "answer": 1,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 21"
+    },
+    {
+      "id": "qlda-051",
+      "chapter": 1,
+      "text": "\"Một chương trình độ đo để cảnh báo sớm các vấn đề đang hình thành\" thuộc thực tiễn then chốt nào?",
+      "options": [
+        "Quản lý dự án dựa trên độ đo",
+        "Quản lý rủi ro chính thức",
+        "Quản lý chương trình quan tâm đến con người",
+        "Theo dõi khiếm khuyết so với mục tiêu chất lượng"
+      ],
+      "answer": 0,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 21"
+    },
+    {
+      "id": "qlda-052",
+      "chapter": 1,
+      "text": "Thực tiễn then chốt \"Theo dõi khiếm khuyết so với mục tiêu chất lượng\" bao gồm việc theo dõi và báo cáo:",
+      "options": [
+        "Tỷ lệ thay đổi nhân sự của từng nhà cung cấp",
+        "Quy mô ước lượng của phần mềm ứng dụng",
+        "Số khiếm khuyết tìm thấy, việc thực thi kiểm thử từ khi bắt đầu chương trình, số khiếm khuyết đã đóng / đang mở",
+        "Các độ đo giá trị thu được hằng tháng"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 21"
+    },
+    {
+      "id": "qlda-053",
+      "chapter": 1,
+      "text": "Thực tiễn \"Quản lý chương trình quan tâm đến con người\" theo dõi tỷ lệ thay đổi nhân sự trung bình trong khoảng thời gian nào?",
+      "options": [
+        "Một tháng qua",
+        "Một năm qua",
+        "Sáu tháng qua",
+        "Ba tháng qua"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 21"
+    },
+    {
+      "id": "qlda-054",
+      "chapter": 1,
+      "text": "Trong hình \"Các yếu tố quyết định chất lượng phần mềm & hiệu quả tổ chức\", yếu tố nằm ở giữa là:",
+      "options": [
+        "Con người",
+        "Công nghệ",
+        "Quy trình",
+        "Sản phẩm"
+      ],
+      "answer": 2,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 22"
+    },
+    {
+      "id": "qlda-055",
+      "chapter": 1,
+      "text": "Ba cạnh (yếu tố bao quanh) trong hình đó là:",
+      "options": [
+        "Con người, Sản phẩm, Công nghệ",
+        "Thời gian, Chi phí, Chất lượng",
+        "Phạm vi, Rủi ro, Tiến độ",
+        "Đặc điểm khách hàng, Điều kiện kinh doanh, Môi trường phát triển"
+      ],
+      "answer": 3,
+      "hint": "Phần 1: Các khái niệm & nguyên tắc chính",
+      "explanation": "Căn cứ: Slide 22"
+    },
+    {
+      "id": "qlda-056",
+      "chapter": 2,
+      "text": "Mục tiêu của đo lường phần mềm là hỗ trợ cho:",
+      "options": [
+        "Chỉ việc ước lượng chi phí",
+        "Chỉ việc kiểm thử phần mềm",
+        "Chỉ việc đánh giá năng suất",
+        "Việc ước lượng, kiểm soát chất lượng, đánh giá năng suất và kiểm soát dự án"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 25"
+    },
+    {
+      "id": "qlda-057",
+      "chapter": 2,
+      "text": "Bước đầu tiên trong các bước đo lường của tài liệu là:",
+      "options": [
+        "Xác định một tập hạn chế các độ đo về quy trình, dự án và sản phẩm dễ thu thập",
+        "Thu thập tối đa mọi độ đo có thể",
+        "So sánh kết quả với đối thủ cạnh tranh",
+        "Đánh giá các xu hướng và rút ra kết luận"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 26"
+    },
+    {
+      "id": "qlda-058",
+      "chapter": 2,
+      "text": "Kết quả đo được phân tích và so sánh với:",
+      "options": [
+        "Mục tiêu do khách hàng đặt ra",
+        "Các giá trị trung bình trong quá khứ của những dự án tương tự đã thực hiện",
+        "Chuẩn quốc tế bắt buộc",
+        "Kết quả của các dự án đang chạy song song"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 26"
+    },
+    {
+      "id": "qlda-059",
+      "chapter": 2,
+      "text": "\"Chỉ báo định lượng về mức độ, số lượng, chiều kích, năng lực hoặc kích thước của một thuộc tính nào đó của sản phẩm hoặc quy trình\" là định nghĩa của:",
+      "options": [
+        "Chỉ báo",
+        "Độ đo",
+        "Số đo",
+        "Đo lường"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 27"
+    },
+    {
+      "id": "qlda-060",
+      "chapter": 2,
+      "text": "\"Hành động xác định một số đo\" là định nghĩa của:",
+      "options": [
+        "Độ đo",
+        "Chỉ báo",
+        "Số đo",
+        "Đo lường"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 27"
+    },
+    {
+      "id": "qlda-061",
+      "chapter": 2,
+      "text": "\"Thước đo định lượng về mức độ mà một hệ thống, thành phần hoặc quy trình sở hữu một thuộc tính nhất định\" (theo IEEE93) là định nghĩa của:",
+      "options": [
+        "Độ đo",
+        "Số đo",
+        "Đo lường",
+        "Chỉ báo"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 27"
+    },
+    {
+      "id": "qlda-062",
+      "chapter": 2,
+      "text": "\"Một độ đo hoặc sự kết hợp các độ đo cung cấp cái nhìn sâu sắc về quy trình phần mềm, một dự án phần mềm, hoặc chính sản phẩm\" là định nghĩa của:",
+      "options": [
+        "Số đo",
+        "Chỉ báo",
+        "Đo lường",
+        "Độ đo phần mềm"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 27"
+    },
+    {
+      "id": "qlda-063",
+      "chapter": 2,
+      "text": "Độ đo phần mềm là:",
+      "options": [
+        "Hành động xác định một số đo",
+        "Một chỉ báo định lượng về kích thước của sản phẩm",
+        "Tập hợp các tiêu chuẩn kiểm thử",
+        "Sự liên hệ các số đo riêng lẻ với nhau theo một cách nào đó (độ đo quy trình, dự án và sản phẩm)"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 27"
+    },
+    {
+      "id": "qlda-064",
+      "chapter": 2,
+      "text": "Điều nào KHÔNG phải là điều mà các chỉ báo dự án cho phép người quản lý thực hiện?",
+      "options": [
+        "Đánh giá trạng thái của một dự án đang thực hiện",
+        "Theo dõi các rủi ro tiềm ẩn",
+        "Tự động sinh mã nguồn cho dự án",
+        "Phát hiện các vùng có vấn đề trước khi chúng trở nên \"nghiêm trọng\""
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 28"
+    },
+    {
+      "id": "qlda-065",
+      "chapter": 2,
+      "text": "Các độ đo phần mềm hướng kích thước được suy ra bằng cách:",
+      "options": [
+        "Xét kích thước của phần mềm đã được tạo ra",
+        "Đếm số chức năng mà ứng dụng cung cấp",
+        "Đánh giá mức độ hài lòng của người dùng",
+        "Tính số người dùng của hệ thống"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 29"
+    },
+    {
+      "id": "qlda-066",
+      "chapter": 2,
+      "text": "Theo bảng số liệu ví dụ, dự án beta có bao nhiêu LOC?",
+      "options": [
+        "12,100",
+        "20,200",
+        "62",
+        "27,200"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 29"
+    },
+    {
+      "id": "qlda-067",
+      "chapter": 2,
+      "text": "Theo bảng số liệu ví dụ, dự án gamma có bao nhiêu người tham gia?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "43"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 29"
+    },
+    {
+      "id": "qlda-068",
+      "chapter": 2,
+      "text": "Theo bảng số liệu ví dụ, dự án alpha có 12,100 LOC và 29 khiếm khuyết. Số khiếm khuyết trên mỗi KLOC xấp xỉ:",
+      "options": [
+        "0,42",
+        "2,40",
+        "11,07",
+        "24,0"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 29 (29 ÷ 12,1 ≈ 2,40)"
+    },
+    {
+      "id": "qlda-069",
+      "chapter": 2,
+      "text": "Độ đo nào KHÔNG phải là độ đo hướng kích thước?",
+      "options": [
+        "Số lỗi trên mỗi KLOC",
+        "$ trên mỗi LOC",
+        "Số trang tài liệu trên mỗi KLOC",
+        "FP trên mỗi người-tháng"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 30, 39"
+    },
+    {
+      "id": "qlda-070",
+      "chapter": 2,
+      "text": "Các độ đo phần mềm hướng chức năng dùng làm giá trị chuẩn hóa:",
+      "options": [
+        "Thước đo chức năng mà ứng dụng cung cấp",
+        "Số dòng mã nguồn",
+        "Số người tham gia dự án",
+        "Chi phí của dự án"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 31"
+    },
+    {
+      "id": "qlda-071",
+      "chapter": 2,
+      "text": "Vì sao điểm chức năng phải được tính theo cách gián tiếp?",
+      "options": [
+        "Vì LOC không đếm được",
+        "Vì khách hàng không cung cấp số liệu",
+        "Vì tài liệu không mô tả chức năng",
+        "Vì \"chức năng\" không thể đo trực tiếp, nó phải được suy ra gián tiếp từ các số đo trực tiếp khác"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 31"
+    },
+    {
+      "id": "qlda-072",
+      "chapter": 2,
+      "text": "Điểm chức năng dựa trên:",
+      "options": [
+        "Số dòng mã và số trang tài liệu",
+        "Số lỗi tìm thấy sau bàn giao",
+        "Các số đo (trực tiếp) đếm được của miền thông tin của phần mềm và các đánh giá về độ phức tạp của phần mềm",
+        "Nỗ lực và chi phí của dự án"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 31"
+    },
+    {
+      "id": "qlda-073",
+      "chapter": 2,
+      "text": "Năm tham số đo (đặc trưng của miền thông tin) để tính điểm chức năng là:",
+      "options": [
+        "Đầu vào, đầu ra, lớp, tệp, giao diện",
+        "Đầu vào, đầu ra, truy vấn, tệp, giao diện bên ngoài",
+        "Đầu vào, đầu ra, truy vấn, bảng, mô-đun",
+        "Đầu vào, đầu ra, tác nhân, tệp, API"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32–33"
+    },
+    {
+      "id": "qlda-074",
+      "chapter": 2,
+      "text": "Trong bảng tính điểm chức năng, hệ số trọng số của \"Số lượng đầu vào của người dùng\" ở mức phức tạp là:",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32"
+    },
+    {
+      "id": "qlda-075",
+      "chapter": 2,
+      "text": "Hệ số trọng số của \"Số lượng tệp\" ở mức phức tạp là:",
+      "options": [
+        "15",
+        "10",
+        "7",
+        "5"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32"
+    },
+    {
+      "id": "qlda-076",
+      "chapter": 2,
+      "text": "Hệ số trọng số của \"Số lượng giao diện bên ngoài\" ở mức trung bình là:",
+      "options": [
+        "5",
+        "10",
+        "7",
+        "4"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32"
+    },
+    {
+      "id": "qlda-077",
+      "chapter": 2,
+      "text": "Hệ số trọng số (đơn giản – trung bình – phức tạp) của \"Số lượng đầu ra của người dùng\" là:",
+      "options": [
+        "3 – 4 – 6",
+        "4 – 5 – 7",
+        "7 – 10 – 15",
+        "5 – 7 – 10"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32"
+    },
+    {
+      "id": "qlda-078",
+      "chapter": 2,
+      "text": "Khi đếm số lượng đầu vào của người dùng, cần phân biệt đầu vào với:",
+      "options": [
+        "Truy vấn, vì truy vấn được đếm riêng",
+        "Tệp, vì tệp được đếm riêng",
+        "Giao diện, vì giao diện được đếm riêng",
+        "Đầu ra, vì đầu ra được đếm riêng"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 34"
+    },
+    {
+      "id": "qlda-079",
+      "chapter": 2,
+      "text": "Khi đếm số lượng đầu ra của người dùng (báo cáo, màn hình, thông báo lỗi...), các mục dữ liệu riêng lẻ trong một báo cáo:",
+      "options": [
+        "Được đếm riêng",
+        "Chỉ đếm khi là thông báo lỗi",
+        "Chỉ đếm khi phức tạp",
+        "Không được đếm riêng"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 34"
+    },
+    {
+      "id": "qlda-080",
+      "chapter": 2,
+      "text": "Truy vấn của người dùng được định nghĩa là:",
+      "options": [
+        "Một tệp chủ logic của cơ sở dữ liệu",
+        "Một giao diện máy đọc được dùng để truyền thông tin sang hệ thống khác",
+        "Một đầu vào trực tuyến dẫn đến việc phần mềm tạo ra phản hồi tức thời dưới dạng đầu ra trực tuyến",
+        "Một báo cáo do phần mềm in ra"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 35"
+    },
+    {
+      "id": "qlda-081",
+      "chapter": 2,
+      "text": "Khi đếm số lượng tệp, đối tượng được đếm là:",
+      "options": [
+        "Mỗi tệp mã nguồn của dự án",
+        "Mỗi tệp chủ logic (một nhóm dữ liệu logic, có thể là một phần của cơ sở dữ liệu lớn hoặc một tệp riêng)",
+        "Mỗi tệp tài liệu của dự án",
+        "Mỗi tệp thực thi được"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 35"
+    },
+    {
+      "id": "qlda-082",
+      "chapter": 2,
+      "text": "Số lượng giao diện bên ngoài đếm:",
+      "options": [
+        "Tất cả các giao diện máy đọc được (ví dụ: tệp dữ liệu trên phương tiện lưu trữ) dùng để truyền thông tin sang hệ thống khác",
+        "Tất cả các màn hình của ứng dụng",
+        "Tất cả các báo cáo gửi cho người dùng",
+        "Tất cả các thông báo lỗi"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 35"
+    },
+    {
+      "id": "qlda-083",
+      "chapter": 2,
+      "text": "Công thức tính điểm chức năng (FP) theo tài liệu là:",
+      "options": [
+        "FP = tổng số đếm × Σ(Fi)",
+        "FP = tổng số đếm + 0,65 × Σ(Fi)",
+        "FP = tổng số đếm × \\[0,65 × Σ(Fi)\\]",
+        "FP = tổng số đếm × \\[0,65 + 0,01 × Σ(Fi)\\]"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 36"
+    },
+    {
+      "id": "qlda-084",
+      "chapter": 2,
+      "text": "Có 14 giá trị Fi, mỗi giá trị theo thang 0 đến 5. Hệ số \\[0,65 + 0,01 × Σ(Fi)\\] nằm trong khoảng:",
+      "options": [
+        "0 – 1",
+        "1 – 1,35",
+        "0,65 – 1,35",
+        "0,65 – 1,00"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 36–38 (tính từ 14 câu, thang 0–5)"
+    },
+    {
+      "id": "qlda-085",
+      "chapter": 2,
+      "text": "Trong thang điểm trả lời các câu hỏi Fi từ 0 đến 5, giá trị 0 và 5 lần lượt có nghĩa là:",
+      "options": [
+        "Hoàn toàn thiết yếu; không quan trọng hoặc không áp dụng",
+        "Không quan trọng hoặc không áp dụng; hoàn toàn thiết yếu",
+        "Đơn giản; phức tạp",
+        "Thấp; cao"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 38"
+    },
+    {
+      "id": "qlda-086",
+      "chapter": 2,
+      "text": "Câu hỏi nào sau đây KHÔNG nằm trong 14 câu hỏi xác định Fi?",
+      "options": [
+        "Hệ thống có sử dụng trí tuệ nhân tạo không?",
+        "Mã nguồn có được thiết kế để tái sử dụng không?",
+        "Hiệu năng có mang tính then chốt không?",
+        "Có yêu cầu truyền thông dữ liệu không?"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 37–38"
+    },
+    {
+      "id": "qlda-087",
+      "chapter": 2,
+      "text": "Một dự án có 5 đầu vào ở mức trung bình, 4 đầu ra ở mức đơn giản và 2 tệp ở mức phức tạp (không có tham số nào khác). Tổng số đếm là:",
+      "options": [
+        "61",
+        "64",
+        "80",
+        "66"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 32 (5×4 + 4×4 + 2×15 = 66)"
+    },
+    {
+      "id": "qlda-088",
+      "chapter": 2,
+      "text": "Một dự án có tổng số đếm = 200 và Σ(Fi) = 40. Điểm chức năng FP là:",
+      "options": [
+        "200",
+        "210",
+        "190",
+        "240"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 36 (200 × 1,05 = 210)"
+    },
+    {
+      "id": "qlda-089",
+      "chapter": 2,
+      "text": "Độ đo nào KHÔNG dùng điểm chức năng để chuẩn hóa?",
+      "options": [
+        "Số lỗi trên mỗi FP",
+        "$ trên mỗi FP",
+        "FP trên mỗi người-tháng",
+        "Số khiếm khuyết trên mỗi KLOC"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 30, 39"
+    },
+    {
+      "id": "qlda-090",
+      "chapter": 2,
+      "text": "Theo tài liệu, chất lượng của một hệ thống chỉ tốt như:",
+      "options": [
+        "Chi phí đã bỏ ra cho dự án",
+        "Số lượng nhân sự của nhóm",
+        "Công nghệ mà hệ thống sử dụng",
+        "Các yêu cầu mô tả bài toán, thiết kế mô hình hóa lời giải, mã nguồn, các ca kiểm thử, và cả tiến trình của dự án"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 40"
+    },
+    {
+      "id": "qlda-091",
+      "chapter": 2,
+      "text": "Tính đúng đắn được đo bằng:",
+      "options": [
+        "Số khiếm khuyết trên mỗi KLOC, đếm trong một khoảng thời gian chuẩn, thường là một năm",
+        "Thời gian thay đổi trung bình",
+        "Số lỗi trên mỗi FP sau bàn giao",
+        "Xác suất cuộc tấn công bị đẩy lùi"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 41"
+    },
+    {
+      "id": "qlda-092",
+      "chapter": 2,
+      "text": "Độ đo hướng thời gian đơn giản của tính bảo trì được là:",
+      "options": [
+        "Thời gian giữa các lỗi",
+        "Thời gian thay đổi trung bình (MTTC)",
+        "Thời gian kiểm thử trung bình",
+        "Thời gian phát triển trung bình"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 41"
+    },
+    {
+      "id": "qlda-093",
+      "chapter": 2,
+      "text": "Thời gian thay đổi trung bình (MTTC) KHÔNG bao gồm thời gian cho việc:",
+      "options": [
+        "Phân tích yêu cầu thay đổi",
+        "Thiết kế một sửa đổi phù hợp",
+        "Viết tài liệu quảng bá sản phẩm",
+        "Thực hiện thay đổi, kiểm thử và phân phối thay đổi đó cho tất cả người dùng"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 41"
+    },
+    {
+      "id": "qlda-094",
+      "chapter": 2,
+      "text": "Ba thành phần của phần mềm có thể bị tấn công (xét tính toàn vẹn) là:",
+      "options": [
+        "Mạng, máy chủ, người dùng",
+        "Đầu vào, đầu ra, tệp",
+        "Mã nguồn, ca kiểm thử, giao diện",
+        "Chương trình, dữ liệu và tài liệu"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 42"
+    },
+    {
+      "id": "qlda-095",
+      "chapter": 2,
+      "text": "Để đo tính toàn vẹn, phải xác định thêm hai thuộc tính:",
+      "options": [
+        "Mối đe dọa và an ninh",
+        "Tính đúng đắn và tính bảo trì được",
+        "Nguy cơ và rủi ro",
+        "Xác suất và tác động"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 42"
+    },
+    {
+      "id": "qlda-096",
+      "chapter": 2,
+      "text": "Công thức tính toàn vẹn là:",
+      "options": [
+        "Tổng \\[mối đe dọa × an ninh\\]",
+        "Tổng \\[(1 – mối đe dọa) + (1 – an ninh)\\]",
+        "Tổng \\[(1 – mối đe dọa) × (1 – an ninh)\\]",
+        "(1 – tổng mối đe dọa) + an ninh"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 43"
+    },
+    {
+      "id": "qlda-097",
+      "chapter": 2,
+      "text": "Trong công thức tính toàn vẹn, \"mối đe dọa\" là:",
+      "options": [
+        "Xác suất cuộc tấn công kiểu đó bị đẩy lùi",
+        "Xác suất một kiểu tấn công cụ thể sẽ xảy ra trong một khoảng thời gian cho trước",
+        "Số cuộc tấn công đã xảy ra",
+        "Mức thiệt hại do tấn công gây ra"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 43"
+    },
+    {
+      "id": "qlda-098",
+      "chapter": 2,
+      "text": "Trong công thức tính toàn vẹn, \"an ninh\" là:",
+      "options": [
+        "Xác suất một kiểu tấn công sẽ xảy ra",
+        "Số lỗ hổng đã được vá",
+        "Số lượng người dùng được cấp quyền",
+        "Xác suất cuộc tấn công thuộc kiểu cụ thể đó sẽ bị đẩy lùi"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 43"
+    },
+    {
+      "id": "qlda-099",
+      "chapter": 2,
+      "text": "Đặc trưng nào KHÔNG nằm trong bốn đặc trưng đo tính khả dụng?",
+      "options": [
+        "Số dòng mã của phần giao diện",
+        "Thời gian cần thiết để sử dụng hệ thống hiệu quả ở mức vừa phải",
+        "Mức tăng ròng về năng suất so với cách làm mà hệ thống thay thế",
+        "Kỹ năng thể chất và/hoặc trí tuệ cần có để học hệ thống"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 45"
+    },
+    {
+      "id": "qlda-100",
+      "chapter": 2,
+      "text": "Đặc trưng nào của tính khả dụng có thể thu được qua bảng câu hỏi?",
+      "options": [
+        "Kỹ năng cần có để học hệ thống",
+        "Thời gian cần thiết để sử dụng hiệu quả",
+        "Đánh giá chủ quan về thái độ của người dùng đối với hệ thống",
+        "Mức tăng ròng về năng suất"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 45"
+    },
+    {
+      "id": "qlda-101",
+      "chapter": 2,
+      "text": "Hiệu quả loại bỏ khiếm khuyết (DRE) là:",
+      "options": [
+        "Số khiếm khuyết trên mỗi KLOC",
+        "Thước đo khả năng lọc của các hoạt động bảo đảm chất lượng và kiểm soát chất lượng khi áp dụng xuyên suốt mọi hoạt động khung",
+        "Thời gian trung bình để sửa một khiếm khuyết",
+        "Tỷ lệ kiểm thử thành công"
+      ],
+      "answer": 1,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 46"
+    },
+    {
+      "id": "qlda-102",
+      "chapter": 2,
+      "text": "Công thức tính DRE là:",
+      "options": [
+        "DRE = D/(E + D)",
+        "DRE = E × D",
+        "DRE = E – D",
+        "DRE = E/(E + D)"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 46"
+    },
+    {
+      "id": "qlda-103",
+      "chapter": 2,
+      "text": "Trong công thức DRE, D là:",
+      "options": [
+        "Số khiếm khuyết được tìm thấy sau khi bàn giao",
+        "Số lỗi được tìm thấy trước khi bàn giao",
+        "Tổng số dòng mã",
+        "Số ngày phát triển"
+      ],
+      "answer": 0,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 46"
+    },
+    {
+      "id": "qlda-104",
+      "chapter": 2,
+      "text": "Giá trị lý tưởng của DRE là:",
+      "options": [
+        "0",
+        "0,5",
+        "1",
+        "100"
+      ],
+      "answer": 2,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 46"
+    },
+    {
+      "id": "qlda-105",
+      "chapter": 2,
+      "text": "Một dự án có E = 90 (lỗi tìm thấy trước khi bàn giao) và D = 10 (khiếm khuyết tìm thấy sau khi bàn giao). DRE bằng:",
+      "options": [
+        "0,10",
+        "1,0",
+        "9,0",
+        "0,9"
+      ],
+      "answer": 3,
+      "hint": "Phần 2: Các độ đo dự án và đo lường phần mềm",
+      "explanation": "Căn cứ: Slide 46 (90 ÷ 100 = 0,9)"
+    },
+    {
+      "id": "qlda-106",
+      "chapter": 3,
+      "text": "Trước khi dự án bắt đầu, người quản lý và nhóm phần mềm phải ước lượng:",
+      "options": [
+        "Doanh thu, lợi nhuận, thị phần",
+        "Khối lượng công việc cần làm, các nguồn lực sẽ cần, và khoảng thời gian trôi qua từ lúc bắt đầu đến khi kết thúc",
+        "Số lỗi, số khiếm khuyết, số trang tài liệu",
+        "Số khách hàng và số người dùng cuối"
+      ],
+      "answer": 1,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 48"
+    },
+    {
+      "id": "qlda-107",
+      "chapter": 3,
+      "text": "Phạm vi phần mềm mô tả:",
+      "options": [
+        "Chi phí, tiến độ và nhân sự",
+        "Rủi ro, chất lượng và thay đổi",
+        "Quy trình, công nghệ và con người",
+        "Dữ liệu và điều khiển cần xử lý, chức năng, hiệu năng, các ràng buộc, các giao diện và độ tin cậy"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 49"
+    },
+    {
+      "id": "qlda-108",
+      "chapter": 3,
+      "text": "Câu hỏi nào nằm trong nhóm câu hỏi thu thập thông tin về phạm vi phần mềm?",
+      "options": [
+        "Lợi ích kinh tế của một giải pháp thành công sẽ là gì?",
+        "Hệ điều hành nào phổ biến nhất?",
+        "Đối thủ cạnh tranh có bao nhiêu nhân viên?",
+        "Ai sẽ viết tài liệu kiểm thử?"
+      ],
+      "answer": 0,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 49"
+    },
+    {
+      "id": "qlda-109",
+      "chapter": 3,
+      "text": "Sau khi đã hiểu phạm vi, nhiệm vụ về \"tính khả thi\" là:",
+      "options": [
+        "Tính tổng chi phí cuối cùng của dự án",
+        "Chọn mô hình quy trình",
+        "Xác định xem dự án có thể thực hiện được trong các chiều kích đã nêu hay không",
+        "Lập danh sách rủi ro"
+      ],
+      "answer": 2,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 49"
+    },
+    {
+      "id": "qlda-110",
+      "chapter": 3,
+      "text": "Nhiệm vụ lập kế hoạch phần mềm thứ hai (sau phạm vi) là:",
+      "options": [
+        "Lập tiến độ chi tiết",
+        "Ước lượng các nguồn lực cần thiết để hoàn thành nỗ lực phát triển phần mềm",
+        "Kiểm thử phần mềm",
+        "Bàn giao phần mềm"
+      ],
+      "answer": 1,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 50"
+    },
+    {
+      "id": "qlda-111",
+      "chapter": 3,
+      "text": "Trong hình kim tự tháp các nguồn lực, nguồn lực nằm ở đỉnh là:",
+      "options": [
+        "Công cụ phần cứng/phần mềm",
+        "Các thành phần phần mềm có thể tái sử dụng",
+        "Môi trường kiểm thử",
+        "Con người"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 50"
+    },
+    {
+      "id": "qlda-112",
+      "chapter": 3,
+      "text": "Mỗi nguồn lực được đặc tả bằng bốn đặc trưng nào?",
+      "options": [
+        "Mô tả nguồn lực, phát biểu về tính sẵn có, thời điểm nguồn lực được cần đến, khoảng thời gian nguồn lực sẽ được sử dụng",
+        "Tên, giá, nhà cung cấp, bảo hành",
+        "Số lượng, chất lượng, chi phí, rủi ro",
+        "Loại, kích thước, vị trí, người quản lý"
+      ],
+      "answer": 0,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 51"
+    },
+    {
+      "id": "qlda-113",
+      "chapter": 3,
+      "text": "Với nguồn nhân lực, người lập kế hoạch bắt đầu bằng việc:",
+      "options": [
+        "Tính tổng chi phí tiền lương",
+        "Chọn công cụ phát triển",
+        "Đánh giá phạm vi và chọn các kỹ năng cần thiết để hoàn thành việc phát triển",
+        "Tuyển dụng toàn bộ nhân sự"
+      ],
+      "answer": 2,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 52"
+    },
+    {
+      "id": "qlda-114",
+      "chapter": 3,
+      "text": "Với các dự án tương đối nhỏ (một người-năm hoặc ít hơn), theo tài liệu:",
+      "options": [
+        "Cần tối thiểu ba người",
+        "Một cá nhân có thể thực hiện mọi nhiệm vụ kỹ nghệ phần mềm, tham vấn các chuyên gia khi cần",
+        "Phải có nhóm chuyên trách cho từng nhiệm vụ",
+        "Không cần lập kế hoạch"
+      ],
+      "answer": 1,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 52"
+    },
+    {
+      "id": "qlda-115",
+      "chapter": 3,
+      "text": "Số người cần cho một dự án phần mềm chỉ được xác định sau khi:",
+      "options": [
+        "Đã chọn xong công cụ",
+        "Đã ký hợp đồng với khách hàng",
+        "Đã hoàn thành kiểm thử",
+        "Đã ước lượng nỗ lực phát triển (người-tháng)"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 52"
+    },
+    {
+      "id": "qlda-116",
+      "chapter": 3,
+      "text": "Loại nào nằm trong bốn loại nguồn lực phần mềm có thể tái sử dụng?",
+      "options": [
+        "Thành phần có kinh nghiệm một phần",
+        "Thành phần phụ thuộc",
+        "Thành phần ngoại lai",
+        "Thành phần cấp cao"
+      ],
+      "answer": 0,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 53–54"
+    },
+    {
+      "id": "qlda-117",
+      "chapter": 3,
+      "text": "\"Phần mềm hiện có có thể mua từ bên thứ ba hoặc đã được phát triển nội bộ cho một dự án trước đây\" là loại nguồn lực nào?",
+      "options": [
+        "Thành phần mới",
+        "Thành phần có kinh nghiệm đầy đủ",
+        "Thành phần có sẵn",
+        "Thành phần có kinh nghiệm một phần"
+      ],
+      "answer": 2,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 53"
+    },
+    {
+      "id": "qlda-118",
+      "chapter": 3,
+      "text": "Loại thành phần nào có đặc điểm: được phát triển cho các dự án trước đây tương tự với phần mềm cần xây dựng, và các thành viên nhóm hiện tại đã có kinh nghiệm đầy đủ trong lĩnh vực ứng dụng?",
+      "options": [
+        "Thành phần có sẵn",
+        "Thành phần có kinh nghiệm đầy đủ",
+        "Thành phần có kinh nghiệm một phần",
+        "Thành phần mới"
+      ],
+      "answer": 1,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 53"
+    },
+    {
+      "id": "qlda-119",
+      "chapter": 3,
+      "text": "Loại thành phần nào có đặc điểm: liên quan đến phần mềm cần xây dựng nhưng sẽ cần sửa đổi đáng kể, và nhóm chỉ có kinh nghiệm hạn chế trong lĩnh vực ứng dụng?",
+      "options": [
+        "Thành phần có sẵn",
+        "Thành phần có kinh nghiệm đầy đủ",
+        "Thành phần mới",
+        "Thành phần có kinh nghiệm một phần"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 54"
+    },
+    {
+      "id": "qlda-120",
+      "chapter": 3,
+      "text": "Loại thành phần nào \"phải được nhóm phần mềm xây dựng riêng cho nhu cầu của dự án hiện tại\"?",
+      "options": [
+        "Thành phần mới",
+        "Thành phần có sẵn",
+        "Thành phần có kinh nghiệm đầy đủ",
+        "Thành phần có kinh nghiệm một phần"
+      ],
+      "answer": 0,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 54"
+    },
+    {
+      "id": "qlda-121",
+      "chapter": 3,
+      "text": "Môi trường kỹ nghệ phần mềm (SEE) bao gồm:",
+      "options": [
+        "Nhân sự và khách hàng",
+        "Tài liệu và quy trình",
+        "Phần cứng và phần mềm",
+        "Chỉ các công cụ kiểm thử"
+      ],
+      "answer": 2,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 55"
+    },
+    {
+      "id": "qlda-122",
+      "chapter": 3,
+      "text": "Các biến số có thể ảnh hưởng đến chi phí và nỗ lực cuối cùng của phần mềm, theo tài liệu, là:",
+      "options": [
+        "Thời gian, chi phí, chất lượng, phạm vi",
+        "Đầu vào, đầu ra, truy vấn, tệp",
+        "Khách hàng, nhà phát triển, người dùng, nhà quản lý",
+        "Con người, kỹ thuật, môi trường, chính trị"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 56"
+    },
+    {
+      "id": "qlda-123",
+      "chapter": 3,
+      "text": "Để đạt được ước lượng chi phí và nỗ lực đáng tin cậy, tài liệu đề xuất:",
+      "options": [
+        "Ước lượng ngay từ đầu dự án mà không cần dữ liệu tham chiếu",
+        "Dựa các ước lượng trên những dự án tương tự đã hoàn thành",
+        "Chỉ dùng con số do khách hàng đưa ra",
+        "Tránh dùng các mô hình thực nghiệm"
+      ],
+      "answer": 1,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 56"
+    },
+    {
+      "id": "qlda-124",
+      "chapter": 3,
+      "text": "Các kỹ thuật phân rã áp dụng cách tiếp cận nào cho việc ước lượng dự án phần mềm?",
+      "options": [
+        "\"Chia để trị\" – phân rã dự án thành các chức năng chính và các hoạt động kỹ nghệ phần mềm liên quan (ví dụ: ước lượng dựa trên LOC, dựa trên FP)",
+        "\"Thử và sai\" – ước lượng lại sau mỗi tuần",
+        "\"Từ dưới lên\" – chỉ ước lượng từng dòng mã",
+        "\"Một lần duy nhất\" – ước lượng một con số cho cả dự án"
+      ],
+      "answer": 0,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 57"
+    },
+    {
+      "id": "qlda-125",
+      "chapter": 3,
+      "text": "Mô hình ước lượng thực nghiệm được nêu làm ví dụ trong tài liệu là:",
+      "options": [
+        "PERT",
+        "CPM",
+        "Gantt",
+        "COCOMO"
+      ],
+      "answer": 3,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 57"
+    },
+    {
+      "id": "qlda-126",
+      "chapter": 3,
+      "text": "Các công cụ ước lượng tự động:",
+      "options": [
+        "Thay thế hoàn toàn người quản lý dự án",
+        "Chỉ dùng để vẽ biểu đồ Gantt",
+        "Triển khai một hoặc nhiều kỹ thuật phân rã hoặc mô hình thực nghiệm",
+        "Chỉ dùng để ước lượng rủi ro"
+      ],
+      "answer": 2,
+      "hint": "Phần 3: Lập kế hoạch dự án phần mềm",
+      "explanation": "Căn cứ: Slide 57"
+    },
+    {
+      "id": "qlda-127",
+      "chapter": 4,
+      "text": "Rủi ro luôn bao gồm hai đặc trưng nào?",
+      "options": [
+        "Xác suất và thời gian",
+        "Tính bất định và tổn thất",
+        "Chi phí và tiến độ",
+        "Nguyên nhân và hậu quả"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 59–60"
+    },
+    {
+      "id": "qlda-128",
+      "chapter": 4,
+      "text": "Phát biểu nào đúng về tính bất định của rủi ro?",
+      "options": [
+        "Rủi ro chắc chắn sẽ xảy ra",
+        "Rủi ro chỉ xảy ra ở giai đoạn bảo trì",
+        "Rủi ro luôn xảy ra với xác suất 50%",
+        "Rủi ro có thể xảy ra hoặc không; không có rủi ro nào chắc chắn 100%"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 59–60"
+    },
+    {
+      "id": "qlda-129",
+      "chapter": 4,
+      "text": "Loại rủi ro nào đe dọa kế hoạch dự án, nếu xảy ra nhiều khả năng tiến độ sẽ bị trượt và chi phí sẽ tăng (các vấn đề về ngân sách, tiến độ, nhân sự, nguồn lực, khách hàng và yêu cầu)?",
+      "options": [
+        "Rủi ro dự án",
+        "Rủi ro kinh doanh",
+        "Rủi ro kỹ thuật",
+        "Rủi ro môi trường"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 61"
+    },
+    {
+      "id": "qlda-130",
+      "chapter": 4,
+      "text": "Loại rủi ro nào đe dọa chất lượng và tính kịp thời của phần mềm (các vấn đề về thiết kế, triển khai, giao diện, kiểm chứng và bảo trì)?",
+      "options": [
+        "Rủi ro dự án",
+        "Rủi ro kinh doanh",
+        "Rủi ro kỹ thuật",
+        "Rủi ro khách hàng"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 61"
+    },
+    {
+      "id": "qlda-131",
+      "chapter": 4,
+      "text": "Loại rủi ro nào đe dọa khả năng tồn tại của phần mềm sẽ được xây dựng?",
+      "options": [
+        "Rủi ro dự án",
+        "Rủi ro kinh doanh",
+        "Rủi ro kỹ thuật",
+        "Rủi ro nhân sự"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 61"
+    },
+    {
+      "id": "qlda-132",
+      "chapter": 4,
+      "text": "Nhận diện rủi ro là:",
+      "options": [
+        "Nỗ lực có hệ thống nhằm chỉ ra các mối đe dọa đối với kế hoạch dự án (ước lượng, tiến độ, phân bổ nguồn lực, …)",
+        "Việc loại bỏ hoàn toàn mọi rủi ro",
+        "Việc tính tổng chi phí rủi ro",
+        "Việc phân công người xử lý rủi ro"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 62"
+    },
+    {
+      "id": "qlda-133",
+      "chapter": 4,
+      "text": "Danh mục kiểm tra các hạng mục rủi ro trong tài liệu gồm bao nhiêu hạng mục?",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "7"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 62–63"
+    },
+    {
+      "id": "qlda-134",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào \"gắn với quy mô tổng thể của phần mềm cần xây dựng hoặc sửa đổi\"?",
+      "options": [
+        "Tác động kinh doanh",
+        "Công nghệ cần xây dựng",
+        "Quy mô sản phẩm",
+        "Môi trường phát triển"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 62"
+    },
+    {
+      "id": "qlda-135",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào \"gắn với những ràng buộc do ban quản lý áp đặt đối với thị trường\"?",
+      "options": [
+        "Tác động kinh doanh",
+        "Đặc điểm khách hàng",
+        "Định nghĩa quy trình",
+        "Quy mô sản phẩm"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 62"
+    },
+    {
+      "id": "qlda-136",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào gắn với mức độ am hiểu của khách hàng và khả năng của nhà phát triển trong việc giao tiếp kịp thời với khách hàng?",
+      "options": [
+        "Tác động kinh doanh",
+        "Định nghĩa quy trình",
+        "Môi trường phát triển",
+        "Đặc điểm khách hàng"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 62"
+    },
+    {
+      "id": "qlda-137",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào gắn với mức độ quy trình phần mềm đã được xác định và được tổ chức phát triển tuân thủ?",
+      "options": [
+        "Quy mô sản phẩm",
+        "Định nghĩa quy trình",
+        "Công nghệ cần xây dựng",
+        "Đặc điểm khách hàng"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 63"
+    },
+    {
+      "id": "qlda-138",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào gắn với tính sẵn có và chất lượng của các công cụ dùng để xây dựng sản phẩm?",
+      "options": [
+        "Quy mô và kinh nghiệm nhân sự",
+        "Tác động kinh doanh",
+        "Môi trường phát triển",
+        "Định nghĩa quy trình"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 63"
+    },
+    {
+      "id": "qlda-139",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào gắn với độ phức tạp của hệ thống và tính \"mới\" của công nghệ được đóng gói trong hệ thống?",
+      "options": [
+        "Công nghệ cần xây dựng",
+        "Môi trường phát triển",
+        "Quy mô sản phẩm",
+        "Đặc điểm khách hàng"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 63"
+    },
+    {
+      "id": "qlda-140",
+      "chapter": 4,
+      "text": "Hạng mục rủi ro nào gắn với kinh nghiệm kỹ thuật và kinh nghiệm dự án nói chung của các kỹ sư phần mềm?",
+      "options": [
+        "Môi trường phát triển",
+        "Công nghệ cần xây dựng",
+        "Định nghĩa quy trình",
+        "Quy mô và kinh nghiệm nhân sự"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 63"
+    },
+    {
+      "id": "qlda-141",
+      "chapter": 4,
+      "text": "Dự báo rủi ro (ước lượng rủi ro) xếp hạng mỗi rủi ro theo hai cách nào?",
+      "options": [
+        "Chi phí xử lý và thời gian xử lý",
+        "Khả năng (xác suất) rủi ro là có thật và hậu quả của các vấn đề gắn với rủi ro đó nếu nó xảy ra",
+        "Loại rủi ro và người chịu trách nhiệm",
+        "Mức độ ưu tiên và ngày phát hiện"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 64"
+    },
+    {
+      "id": "qlda-142",
+      "chapter": 4,
+      "text": "Các cột của bảng rủi ro trong tài liệu là:",
+      "options": [
+        "Rủi ro, Nguyên nhân, Hậu quả, Giải pháp",
+        "Mã, Mô tả, Ngày, Trạng thái",
+        "Rủi ro, Loại, Xác suất, Tác động, RMMM",
+        "Rủi ro, Chi phí, Tiến độ, Nhân sự"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 65"
+    },
+    {
+      "id": "qlda-143",
+      "chapter": 4,
+      "text": "Trong bảng rủi ro, giá trị tác động bằng 3 có nghĩa là:",
+      "options": [
+        "Cận biên",
+        "Nghiêm trọng",
+        "Thảm họa",
+        "Không đáng kể"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 65"
+    },
+    {
+      "id": "qlda-144",
+      "chapter": 4,
+      "text": "Rủi ro \"Khách hàng sẽ thay đổi yêu cầu\" trong bảng rủi ro ví dụ có loại, xác suất và tác động là:",
+      "options": [
+        "BU, 40%, 3",
+        "TE, 30%, 1",
+        "ST, 60%, 2",
+        "PS, 80%, 2"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 65"
+    },
+    {
+      "id": "qlda-145",
+      "chapter": 4,
+      "text": "Rủi ro \"Thiếu đào tạo về công cụ\" trong bảng rủi ro ví dụ có loại, xác suất và tác động là:",
+      "options": [
+        "PS, 60%, 2",
+        "DE, 80%, 3",
+        "ST, 30%, 2",
+        "TE, 30%, 1"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 65"
+    },
+    {
+      "id": "qlda-146",
+      "chapter": 4,
+      "text": "Rủi ro \"Mức tái sử dụng thấp hơn dự kiến\" trong bảng rủi ro ví dụ có xác suất là:",
+      "options": [
+        "30%",
+        "60%",
+        "70%",
+        "80%"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 65"
+    },
+    {
+      "id": "qlda-147",
+      "chapter": 4,
+      "text": "Biểu diễn rủi ro theo dạng điều kiện–chuyển tiếp–hậu quả (CTC) có mẫu câu là:",
+      "options": [
+        "\"Với \\<điều kiện> thì có lo ngại rằng (có thể) \\<hậu quả>.\"",
+        "\"Nếu \\<hậu quả> xảy ra thì \\<điều kiện> sẽ thay đổi.\"",
+        "\"\\<Nguyên nhân> dẫn đến \\<xác suất> và \\<tác động>.\"",
+        "\"Với \\<tác động> thì phải \\<giải pháp>.\""
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 66"
+    },
+    {
+      "id": "qlda-148",
+      "chapter": 4,
+      "text": "Trong tinh chỉnh rủi ro, \\<điều kiện> sẽ được tinh chỉnh thành:",
+      "options": [
+        "Nhiều hậu quả khác nhau",
+        "Nhiều giá trị xác suất",
+        "Các giải pháp dự phòng",
+        "\\<điều kiện con 1>, \\<điều kiện con 2>, \\<điều kiện con 3>, …"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 66"
+    },
+    {
+      "id": "qlda-149",
+      "chapter": 4,
+      "text": "Phiếu thông tin rủi ro ví dụ (mã P02-4-32) ghi xác suất và tác động là:",
+      "options": [
+        "60%, cao",
+        "80%, cao",
+        "80%, thấp",
+        "70%, cao"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-150",
+      "chapter": 4,
+      "text": "Rủi ro mô tả trong phiếu thông tin rủi ro ví dụ là:",
+      "options": [
+        "Khách hàng thay đổi yêu cầu liên tục",
+        "Nhân sự có tỷ lệ thay đổi cao",
+        "Chỉ 70 phần trăm các thành phần phần mềm được lên lịch tái sử dụng sẽ thực sự được tích hợp vào ứng dụng, phần chức năng còn lại phải được phát triển riêng",
+        "Công nghệ không đáp ứng kỳ vọng"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-151",
+      "chapter": 4,
+      "text": "\"Một số thành phần tái sử dụng được phát triển bởi bên thứ ba mà không biết gì về các tiêu chuẩn thiết kế nội bộ\" là:",
+      "options": [
+        "Điều kiện con 1",
+        "Điều kiện con 2",
+        "Điều kiện con 3",
+        "Điều kiện kích hoạt"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-152",
+      "chapter": 4,
+      "text": "\"Một số thành phần tái sử dụng đã được triển khai bằng một ngôn ngữ không được hỗ trợ trên môi trường đích\" là:",
+      "options": [
+        "Điều kiện con 1",
+        "Điều kiện con 2",
+        "Điều kiện kích hoạt",
+        "Điều kiện con 3"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-153",
+      "chapter": 4,
+      "text": "Trong phần quản lý/kế hoạch dự phòng của phiếu ví dụ, lịch trình sửa đổi được xây dựng với giả định phải phát triển riêng thêm bao nhiêu thành phần?",
+      "options": [
+        "12",
+        "18",
+        "20",
+        "70"
+      ],
+      "answer": 1,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-154",
+      "chapter": 4,
+      "text": "Điều kiện kích hoạt kế hoạch dự phòng trong phiếu ví dụ là:",
+      "options": [
+        "Khách hàng yêu cầu thay đổi",
+        "Hết ngân sách dự phòng",
+        "Các bước giảm thiểu không hiệu quả tính đến ngày 1/7/02",
+        "Có thêm 18 thành phần mới"
+      ],
+      "answer": 2,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-155",
+      "chapter": 4,
+      "text": "Trong phiếu ví dụ, người khởi tạo và người được giao lần lượt là:",
+      "options": [
+        "D. Gagne; B. Laster",
+        "B. Laster; D. Gagne",
+        "D. Gagne; D. Gagne",
+        "B. Laster; B. Laster"
+      ],
+      "answer": 0,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-156",
+      "chapter": 4,
+      "text": "Trạng thái hiện tại ghi trong phiếu ví dụ là:",
+      "options": [
+        "Rủi ro đã được đóng",
+        "Kế hoạch dự phòng đã được kích hoạt",
+        "Chưa có hành động nào",
+        "Ngày 12/5/02: Đã bắt đầu các bước giảm thiểu"
+      ],
+      "answer": 3,
+      "hint": "Phần 4: Phân tích & quản lý rủi ro",
+      "explanation": "Căn cứ: Slide 67"
+    },
+    {
+      "id": "qlda-157",
+      "chapter": 5,
+      "text": "Lập tiến độ dự án phần mềm là hoạt động:",
+      "options": [
+        "Tính tổng chi phí của dự án",
+        "Chọn các thành viên của nhóm",
+        "Phân bổ nỗ lực đã ước lượng vào toàn bộ thời gian dự kiến của dự án bằng cách gán nỗ lực cho các nhiệm vụ kỹ nghệ phần mềm cụ thể",
+        "Kiểm tra chất lượng sản phẩm bàn giao"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 69"
+    },
+    {
+      "id": "qlda-158",
+      "chapter": 5,
+      "text": "Quy tắc phân bổ nỗ lực được nêu trong tài liệu là:",
+      "options": [
+        "30–40–30",
+        "40–20–40",
+        "20–60–20",
+        "50–25–25"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 69"
+    },
+    {
+      "id": "qlda-159",
+      "chapter": 5,
+      "text": "Theo tài liệu, một tiến độ vĩ mô được:",
+      "options": [
+        "Tinh chỉnh thành một tiến độ chi tiết",
+        "Thay thế hoàn toàn bằng biểu đồ Gantt",
+        "Giữ nguyên cho đến hết dự án",
+        "Chỉ dùng cho dự án nhỏ"
+      ],
+      "answer": 0,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 69"
+    },
+    {
+      "id": "qlda-160",
+      "chapter": 5,
+      "text": "Tập nhiệm vụ là:",
+      "options": [
+        "Biểu diễn đồ họa của luồng nhiệm vụ của dự án",
+        "Bảng liệt kê ngày bắt đầu và kết thúc của nhiệm vụ",
+        "Danh sách thành viên của nhóm",
+        "Một tập hợp các nhiệm vụ công việc kỹ nghệ phần mềm, các cột mốc và các sản phẩm bàn giao phải hoàn thành để hoàn tất một dự án cụ thể"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 70"
+    },
+    {
+      "id": "qlda-161",
+      "chapter": 5,
+      "text": "Mạng nhiệm vụ (mạng hoạt động) là:",
+      "options": [
+        "Danh sách các cột mốc của dự án",
+        "Bảng tính nỗ lực của từng nhiệm vụ",
+        "Biểu diễn đồ họa của luồng nhiệm vụ của một dự án",
+        "Sơ đồ tổ chức của nhóm dự án"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 70"
+    },
+    {
+      "id": "qlda-162",
+      "chapter": 5,
+      "text": "Trong ví dụ mạng nhiệm vụ cho giai đoạn phát triển khái niệm, ba nhiệm vụ I.5 (a, b, c) được áp dụng:",
+      "options": [
+        "Tuần tự cho cùng một chức năng",
+        "Song song cho 3 chức năng khái niệm khác nhau",
+        "Chỉ khi khách hàng yêu cầu",
+        "Sau khi đã nhận phản hồi của khách hàng"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 71"
+    },
+    {
+      "id": "qlda-163",
+      "chapter": 5,
+      "text": "Trong ví dụ mạng nhiệm vụ đó, ngay sau I.2 \"Lập kế hoạch khái niệm\" là:",
+      "options": [
+        "Các nhiệm vụ I.3 (a, b, c) – Đánh giá rủi ro kỹ thuật",
+        "I.4 – Chứng minh khái niệm",
+        "I.6 – Phản hồi của khách hàng",
+        "Các nhiệm vụ I.5 (a, b, c) – Triển khai khái niệm"
+      ],
+      "answer": 0,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 71"
+    },
+    {
+      "id": "qlda-164",
+      "chapter": 5,
+      "text": "Nhiệm vụ cuối cùng trong ví dụ mạng nhiệm vụ đó (sau bước tích hợp) là:",
+      "options": [
+        "I.1 – Xác định phạm vi khái niệm",
+        "I.4 – Chứng minh khái niệm",
+        "I.2 – Lập kế hoạch khái niệm",
+        "I.6 – Phản hồi của khách hàng"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 71"
+    },
+    {
+      "id": "qlda-165",
+      "chapter": 5,
+      "text": "Hai phương pháp lập tiến độ được nêu trong tài liệu là:",
+      "options": [
+        "COCOMO và Gantt",
+        "PERT và CPM",
+        "FP và LOC",
+        "W5HH và CTC"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 72"
+    },
+    {
+      "id": "qlda-166",
+      "chapter": 5,
+      "text": "Đường găng là:",
+      "options": [
+        "Đường biểu diễn chi phí của dự án",
+        "Chuỗi các nhiệm vụ có nỗ lực thấp nhất",
+        "Chuỗi các nhiệm vụ quyết định thời gian của dự án",
+        "Chuỗi các cột mốc của dự án"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 72"
+    },
+    {
+      "id": "qlda-167",
+      "chapter": 5,
+      "text": "Các ước lượng thời gian \"khả dĩ nhất\" cho từng nhiệm vụ được thiết lập bằng cách:",
+      "options": [
+        "Hỏi ý kiến khách hàng",
+        "Lấy trung bình cộng nỗ lực",
+        "Sao chép từ dự án trước",
+        "Áp dụng các mô hình thống kê"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 72"
+    },
+    {
+      "id": "qlda-168",
+      "chapter": 5,
+      "text": "\"Các thời điểm biên\" dùng để:",
+      "options": [
+        "Xác định một \"cửa sổ\" thời gian cho một nhiệm vụ cụ thể",
+        "Xác định chi phí cho từng nhiệm vụ",
+        "Xác định số người cần cho nhiệm vụ",
+        "Xác định mức độ rủi ro của nhiệm vụ"
+      ],
+      "answer": 0,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 72"
+    },
+    {
+      "id": "qlda-169",
+      "chapter": 5,
+      "text": "Yếu tố nào KHÔNG nằm trong những yếu tố dẫn dắt việc lập tiến độ theo tài liệu?",
+      "options": [
+        "Các ước lượng nỗ lực",
+        "Việc phân rã chức năng sản phẩm",
+        "Số lượng người dùng cuối của hệ thống",
+        "Việc phân rã các nhiệm vụ"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 72"
+    },
+    {
+      "id": "qlda-170",
+      "chapter": 5,
+      "text": "Biểu đồ dòng thời gian (biểu đồ Gantt) bắt đầu với:",
+      "options": [
+        "Bảng rủi ro",
+        "Một tập các nhiệm vụ (cấu trúc phân rã công việc), sau đó nhập nỗ lực, thời lượng và ngày bắt đầu cho từng nhiệm vụ",
+        "Mạng nhiệm vụ",
+        "Đường găng"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 73"
+    },
+    {
+      "id": "qlda-171",
+      "chapter": 5,
+      "text": "Trong biểu đồ Gantt của tài liệu, hình thoi thể hiện:",
+      "options": [
+        "Thời lượng của nhiệm vụ",
+        "Nỗ lực của nhiệm vụ",
+        "Người được giao",
+        "Cột mốc"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 73"
+    },
+    {
+      "id": "qlda-172",
+      "chapter": 5,
+      "text": "Bảng dự án:",
+      "options": [
+        "Liệt kê tất cả các nhiệm vụ của dự án, ngày bắt đầu và kết thúc theo kế hoạch và thực tế, cùng nhiều thông tin liên quan khác; giúp người quản lý theo dõi tiến độ",
+        "Chỉ liệt kê danh sách thành viên",
+        "Chỉ liệt kê các rủi ro",
+        "Chỉ liệt kê các cột mốc"
+      ],
+      "answer": 0,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 74"
+    },
+    {
+      "id": "qlda-173",
+      "chapter": 5,
+      "text": "Trong bảng dự án ví dụ, nhiệm vụ \"Họp với khách hàng\" được giao cho ai và có nỗ lực phân bổ bao nhiêu?",
+      "options": [
+        "JPP, 1 p-d",
+        "MLL, 3 p-d",
+        "BLS, 2 p-d",
+        "Tất cả, 3 p-d"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 74"
+    },
+    {
+      "id": "qlda-174",
+      "chapter": 5,
+      "text": "Trong bảng dự án ví dụ, nhiệm vụ \"Xác định phạm vi các chức năng bàn phím\" được giao cho ai và có nỗ lực phân bổ bao nhiêu?",
+      "options": [
+        "JPP, 2 p-d",
+        "BLS, 1.5 p-d",
+        "MLL, 1 p-d",
+        "BLS/JPP, 1 p-d"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 74"
+    },
+    {
+      "id": "qlda-175",
+      "chapter": 5,
+      "text": "Cách nào KHÔNG phải là cách theo dõi tiến độ theo tài liệu?",
+      "options": [
+        "Tiến hành các cuộc họp định kỳ về trạng thái dự án, mỗi thành viên báo cáo tiến độ và vấn đề",
+        "Đánh giá kết quả của tất cả các cuộc rà soát trong suốt quy trình kỹ nghệ phần mềm",
+        "Xác định xem các cột mốc chính thức đã hoàn thành đúng ngày đã lên lịch hay chưa",
+        "Chỉ dựa vào báo cáo bằng văn bản của khách hàng"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 75"
+    },
+    {
+      "id": "qlda-176",
+      "chapter": 5,
+      "text": "Để theo dõi tiến độ bằng bảng dự án, người quản lý:",
+      "options": [
+        "So sánh ngày bắt đầu thực tế với ngày bắt đầu theo kế hoạch của từng nhiệm vụ được liệt kê",
+        "So sánh chi phí với doanh thu",
+        "So sánh số dòng mã với số trang tài liệu",
+        "So sánh số lỗi với số khiếm khuyết"
+      ],
+      "answer": 0,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 75"
+    },
+    {
+      "id": "qlda-177",
+      "chapter": 5,
+      "text": "Việc \"gặp gỡ không chính thức với các kỹ sư thực hành\" nhằm mục đích:",
+      "options": [
+        "Đánh giá năng lực cá nhân để sa thải",
+        "Thay thế các cuộc họp trạng thái chính thức",
+        "Nắm được đánh giá chủ quan của họ về tiến độ đến nay và các vấn đề sắp xuất hiện",
+        "Thu thập yêu cầu mới của khách hàng"
+      ],
+      "answer": 2,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 75"
+    },
+    {
+      "id": "qlda-178",
+      "chapter": 5,
+      "text": "Kế hoạch dự án phần mềm truyền đạt phạm vi và nguồn lực tới:",
+      "options": [
+        "Chỉ khách hàng",
+        "Ban quản lý phần mềm, đội ngũ kỹ thuật và khách hàng",
+        "Chỉ đội ngũ kỹ thuật",
+        "Chỉ ban quản lý cấp cao"
+      ],
+      "answer": 1,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 76"
+    },
+    {
+      "id": "qlda-179",
+      "chapter": 5,
+      "text": "Điều nào KHÔNG phải là mục đích của kế hoạch dự án phần mềm theo tài liệu?",
+      "options": [
+        "Xác định các rủi ro và đề xuất các kỹ thuật tránh rủi ro",
+        "Xác định chi phí và tiến độ để ban quản lý xem xét",
+        "Phác thảo cách bảo đảm chất lượng và cách quản lý thay đổi",
+        "Thay thế toàn bộ mã nguồn của sản phẩm"
+      ],
+      "answer": 3,
+      "hint": "Phần 5: Lập tiến độ và theo dõi dự án",
+      "explanation": "Căn cứ: Slide 76"
+    }
+  ]
+}

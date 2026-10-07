@@ -117,19 +117,63 @@ function renderChaptersScreen() {
     const chapters = currentSubject.chapters || [];
 
     if (chapters.length === 0) {
-        list.innerHTML = '<p>Môn này không có phân chương.</p>';
+        list.innerHTML = '<p style="color: var(--text-light); padding: 12px 0;">Môn này không có phân chương.</p>';
+        updateChaptersSummary();
         return;
     }
 
     list.innerHTML = chapters.map(chapter => {
         const count = currentSubject.questions.filter(q => q.chapter === chapter.id).length;
+        const hasChapterPrefix = /^(chương|bài|phần)\s*\d+/i.test(chapter.name);
+        const badgeHtml = hasChapterPrefix ? '' : `<span class="chapter-badge">Chương ${chapter.id}</span>`;
         return `
-            <label class="checkbox-label chapter-item">
-                <input type="checkbox" class="chapter-checkbox" value="${chapter.id}">
-                ${chapter.name} (${count} câu)
+            <label class="chapter-row chapter-item">
+                <div class="chapter-row-left">
+                    <input type="checkbox" class="chapter-checkbox" value="${chapter.id}" data-count="${count}">
+                    <div class="chapter-info">
+                        ${badgeHtml}
+                        <span class="chapter-name">${chapter.name}</span>
+                    </div>
+                </div>
+                <div class="chapter-row-right">
+                    <span class="chapter-count-badge">${count} câu</span>
+                </div>
             </label>
         `;
     }).join('');
+
+    updateChaptersSummary();
+}
+
+function updateChaptersSummary() {
+    const checkboxes = Array.from(document.querySelectorAll('.chapter-checkbox'));
+    const checked = checkboxes.filter(cb => cb.checked);
+
+    checkboxes.forEach(cb => {
+        const row = cb.closest('.chapter-row');
+        if (row) {
+            row.classList.toggle('selected', cb.checked);
+        }
+    });
+
+    const totalChapters = checkboxes.length;
+    const selectedChapters = checked.length;
+    const selectedQuestions = checked.reduce((sum, cb) => sum + (parseInt(cb.dataset.count, 10) || 0), 0);
+
+    const totalEl = document.getElementById('total-chapters-count');
+    const selectedChaptersEl = document.getElementById('selected-chapters-count');
+    const selectedQuestionsEl = document.getElementById('selected-questions-count');
+    const startBtn = document.getElementById('btn-start-chapters');
+
+    if (totalEl) totalEl.textContent = totalChapters;
+    if (selectedChaptersEl) selectedChaptersEl.textContent = selectedChapters;
+    if (selectedQuestionsEl) selectedQuestionsEl.textContent = selectedQuestions;
+
+    if (startBtn) {
+        startBtn.textContent = selectedQuestions > 0 
+            ? `Bắt đầu (${selectedQuestions} câu)` 
+            : 'Bắt đầu';
+    }
 }
 
 function startChaptersMode() {
@@ -143,7 +187,10 @@ function startChaptersMode() {
 
     const questions = currentSubject.questions.filter(q => selected.includes(q.chapter));
     shuffle(questions);
-    showTimeConfig(questions, `Chương ${selected.join(', ')}`);
+    const modeTitle = selected.length === (currentSubject.chapters?.length || 0)
+        ? 'Tất cả các chương'
+        : `Chương ${selected.join(', ')}`;
+    showTimeConfig(questions, modeTitle);
 }
 
 // Màn chọn đề
@@ -158,8 +205,16 @@ function renderSetsScreen() {
         const end = Math.min((i + 1) * 50, totalQuestions);
         const count = end - start;
         return `
-            <button class="set-btn" data-set="${setNum}">
-                Đề ${setNum} (câu ${start + 1}–${end}, ${count} câu)
+            <button class="set-card set-btn" data-set="${setNum}">
+                <div class="set-card-header">
+                    <span class="set-badge">Đề ${setNum}</span>
+                    <span class="set-count-badge">${count} câu</span>
+                </div>
+                <div class="set-range-text">Câu ${start + 1} – ${end}</div>
+                <div class="set-start-hint">
+                    <span>Làm đề này</span>
+                    <span class="set-arrow">→</span>
+                </div>
             </button>
         `;
     }).join('');
@@ -263,7 +318,18 @@ function renderCurrentQuestion() {
     const answer = currentQuiz.answers[question.id];
     const isAnswered = answer?.selected !== undefined;
 
-    document.getElementById('question-text').textContent = question.text;
+    const qNum = currentQuiz.currentIndex + 1;
+    const totalQ = currentQuiz.questions.length;
+    const cleanText = question.text.replace(/^câu\s*\d+\s*[:.]\s*/i, '');
+
+    document.getElementById('question-text').innerHTML = `
+        <span class="question-number">Câu ${qNum}:</span> <span class="question-content">${cleanText}</span>
+    `;
+
+    const progressBadge = document.getElementById('question-progress-badge');
+    if (progressBadge) {
+        progressBadge.textContent = `Câu ${qNum} / ${totalQ}`;
+    }
 
     const optionsHtml = question.options.map((option, i) => {
         let className = 'option';
@@ -620,6 +686,26 @@ function setupEventHandlers() {
         showScreen('screen-mode');
     });
     document.getElementById('btn-start-chapters').addEventListener('click', startChaptersMode);
+
+    document.getElementById('btn-select-all-chapters')?.addEventListener('click', () => {
+        document.querySelectorAll('.chapter-checkbox').forEach(cb => {
+            cb.checked = true;
+        });
+        updateChaptersSummary();
+    });
+
+    document.getElementById('btn-deselect-all-chapters')?.addEventListener('click', () => {
+        document.querySelectorAll('.chapter-checkbox').forEach(cb => {
+            cb.checked = false;
+        });
+        updateChaptersSummary();
+    });
+
+    document.getElementById('chapters-list')?.addEventListener('change', (e) => {
+        if (e.target.classList.contains('chapter-checkbox')) {
+            updateChaptersSummary();
+        }
+    });
 
     // Chọn đề
     document.getElementById('btn-back-to-mode-sets').addEventListener('click', () => {
