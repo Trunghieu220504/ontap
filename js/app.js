@@ -267,8 +267,10 @@ function showTimeConfig(questions, modeName) {
 function startQuiz() {
     const { questions, modeName, minutes } = window._pendingQuiz;
     const unlimited = document.getElementById('checkbox-unlimited-time').checked;
+    const answerMode = document.querySelector('input[name="answer-mode"]:checked')?.value || 'instant';
 
     currentQuiz = new Quiz(currentSubject, questions, modeName, handleQuizUpdate);
+    currentQuiz.answerMode = answerMode; // 'instant' | 'exam'
 
     if (!unlimited) {
         currentQuiz.startTimer(minutes);
@@ -290,6 +292,8 @@ function renderQuiz() {
 
 function renderQuestionNavigation() {
     const nav = document.getElementById('question-navigation');
+    const isExamMode = currentQuiz.answerMode === 'exam' && !currentQuiz.submitted;
+
     nav.innerHTML = currentQuiz.questions.map((q, i) => {
         const answer = currentQuiz.answers[q.id];
         let className = 'nav-btn';
@@ -299,8 +303,12 @@ function renderQuestionNavigation() {
         }
 
         if (answer?.selected !== undefined) {
-            const isCorrect = answer.selected === q.answer;
-            className += isCorrect ? ' correct' : ' incorrect';
+            if (isExamMode) {
+                className += ' answered';
+            } else {
+                const isCorrect = answer.selected === q.answer;
+                className += isCorrect ? ' correct' : ' incorrect';
+            }
         }
 
         return `<button class="${className}" data-index="${i}">${i + 1}</button>`;
@@ -317,6 +325,9 @@ function renderCurrentQuestion() {
     const question = currentQuiz.getCurrentQuestion();
     const answer = currentQuiz.answers[question.id];
     const isAnswered = answer?.selected !== undefined;
+    const isExamMode = currentQuiz.answerMode === 'exam' && !currentQuiz.submitted;
+    // In exam mode, treat as "not yet revealed" until submitted
+    const showResult = isAnswered && !isExamMode;
 
     const qNum = currentQuiz.currentIndex + 1;
     const totalQ = currentQuiz.questions.length;
@@ -334,16 +345,17 @@ function renderCurrentQuestion() {
     const optionsHtml = question.options.map((option, i) => {
         let className = 'option';
 
-        if (isAnswered) {
-            if (i === question.answer) {
-                className += ' correct';
-            }
+        if (showResult) {
+            // Instant mode: show correct/incorrect immediately
+            if (i === question.answer) className += ' correct';
             if (i === answer.selected) {
                 className += ' selected';
-                if (i !== question.answer) {
-                    className += ' incorrect';
-                }
+                if (i !== question.answer) className += ' incorrect';
             }
+            className += ' disabled';
+        } else if (isAnswered && isExamMode) {
+            // Exam mode: only highlight selected, no color feedback
+            if (i === answer.selected) className += ' selected exam-selected';
             className += ' disabled';
         }
 
@@ -367,11 +379,11 @@ function renderCurrentQuestion() {
         });
     }
 
-    // Gợi ý
+    // Gợi ý — ẩn trong chế độ thi
     const hintBtn = document.getElementById('btn-hint');
     const hintText = document.getElementById('hint-text');
 
-    if (question.hint && !isAnswered) {
+    if (question.hint && !isAnswered && !isExamMode) {
         hintBtn.classList.remove('hidden');
         hintBtn.onclick = () => {
             currentQuiz.useHint();
@@ -393,13 +405,19 @@ function renderCurrentQuestion() {
         hintText.classList.add('hidden');
     }
 
-    // Giải thích
+    // Giải thích — chỉ hiện sau khi trả lời ở chế độ instant, hoặc sau nộp bài
     const explanationEl = document.getElementById('explanation-text');
-    if (isAnswered && question.explanation) {
+    if (showResult && question.explanation) {
         explanationEl.textContent = question.explanation;
         explanationEl.classList.remove('hidden');
     } else {
         explanationEl.classList.add('hidden');
+    }
+
+    // Exam mode badge indicator
+    const examBadge = document.getElementById('exam-mode-indicator');
+    if (examBadge) {
+        examBadge.classList.toggle('hidden', !isExamMode);
     }
 
     // Navigation buttons

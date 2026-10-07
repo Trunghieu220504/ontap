@@ -837,7 +837,7 @@ button.danger:hover,
 .question-header-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
@@ -867,6 +867,106 @@ button.danger:hover,
 
 .question-content {
   color: var(--text);
+}
+
+/* Exam mode indicator */
+.exam-mode-indicator {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* Time config screen */
+.config-section {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.config-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+
+.answer-mode-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.answer-mode-option {
+  cursor: pointer;
+  display: block;
+}
+
+.answer-mode-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.answer-mode-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.answer-mode-option input[type="radio"]:checked + .answer-mode-card {
+  border-color: var(--primary);
+  background: #f0f5ff;
+  box-shadow: 0 2px 8px rgba(97,134,221,0.15);
+}
+
+.answer-mode-card:hover {
+  border-color: var(--primary);
+  background: #f8faff;
+}
+
+.answer-mode-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.answer-mode-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.answer-mode-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.answer-mode-desc {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Exam mode option (selected but no color reveal) */
+.option.exam-selected {
+  border-color: var(--primary);
+  background: #eff6ff;
 }
 
 /* Option label (A, B, C, D) */
@@ -1011,5 +1111,9 @@ button.danger:hover,
 
   .set-card {
     padding: 16px;
+  }
+
+  .answer-mode-group {
+    grid-template-columns: 1fr;
   }
 }

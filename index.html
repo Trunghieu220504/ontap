@@ -86,14 +86,45 @@
         <!-- Màn cấu hình thời gian -->
         <div id="screen-time-config" class="screen hidden">
             <div class="container">
-                <h2>Cấu hình thời gian</h2>
+                <h2>Cấu hình bài thi</h2>
                 <p id="time-info"></p>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="checkbox-unlimited-time">
-                    Không giới hạn thời gian
-                </label>
-                <div style="margin-top: 20px">
-                    <button id="btn-start-quiz" class="btn-primary">Bắt đầu</button>
+
+                <div class="config-section">
+                    <div class="config-section-title">⏱ Thời gian</div>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="checkbox-unlimited-time">
+                        Không giới hạn thời gian
+                    </label>
+                </div>
+
+                <div class="config-section">
+                    <div class="config-section-title">📋 Chế độ hiển thị đáp án</div>
+                    <div class="answer-mode-group">
+                        <label class="answer-mode-option" id="label-mode-instant">
+                            <input type="radio" name="answer-mode" id="radio-mode-instant" value="instant" checked>
+                            <div class="answer-mode-card">
+                                <div class="answer-mode-icon">✅</div>
+                                <div class="answer-mode-info">
+                                    <div class="answer-mode-name">Hiện đáp án ngay</div>
+                                    <div class="answer-mode-desc">Sau mỗi câu trả lời sẽ hiện đúng/sai luôn</div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="answer-mode-option" id="label-mode-exam">
+                            <input type="radio" name="answer-mode" id="radio-mode-exam" value="exam">
+                            <div class="answer-mode-card">
+                                <div class="answer-mode-icon">📝</div>
+                                <div class="answer-mode-info">
+                                    <div class="answer-mode-name">Chế độ thi</div>
+                                    <div class="answer-mode-desc">Ẩn đáp án, chỉ hiện kết quả sau khi nộp bài</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; display: flex; gap: 12px;">
+                    <button id="btn-start-quiz" class="btn-primary btn-large">Bắt đầu</button>
                     <button id="btn-cancel-quiz" class="btn-secondary">Huỷ</button>
                 </div>
             </div>
@@ -112,6 +143,7 @@
                 <div id="question-navigation"></div>
                 <div id="question-container">
                     <div class="question-header-bar">
+                        <span class="exam-mode-indicator hidden" id="exam-mode-indicator">📝 Chế độ thi</span>
                         <span class="question-progress-badge" id="question-progress-badge"></span>
                     </div>
                     <div id="question-text"></div>
